@@ -1,0 +1,316 @@
+{
+  "resolvedId": "D:/Projects/Nabtaty-dashboard/locales/ar.json",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "{\r\n    \"Send\": \"أرسل\",\r\n    \"Message\": \"الرسالة\",\r\n    \"Phone\": \"الهاتف\",\r\n    \"Email\": \"البريد الإلكتروني\",\r\n    \"Name\": \"الاسم\",\r\n    \"Video\": \"الفيديو\",\r\n    \"PhotoAlbum\": \"ألبوم الصور\",\r\n    \"News\": \"الأخبار\",\r\n    \"SeeMore\": \"شاهد المزيد\",\r\n    \"LastName\": \"الاسم الأخير\",\r\n    \"FirstName\": \"الاسم الأول\",\r\n    \"Login\": \"تسجيل دخول\",\r\n    \"Register\": \"تسجيل جديد\",\r\n    \"Full Name En\": \"الاسم الكامل\",\r\n    \"Full Name Ar\": \"الاسم الكامل\",\r\n    \"confirmPassword\": \"تأكيد كلمة المرور\",\r\n    \"phone\": \"رقم الموبايل\",\r\n    \"email\": \"البريد الإلكتروني\",\r\n    \"password\": \"كلمة المرور\",\r\n    \"optional\": \"اختياري\",\r\n    \"Current-Password\": \"كلمة المرور الحالية\",\r\n    \"New-Password\": \"كلمة المرور الجديدة\",\r\n    \"Change-Password\": \"تغيير كلمة المرور\",\r\n    \"address\": \"العنوان\",\r\n    \"City\": \"المدينة\",\r\n    \"Place\": \"المكان\",\r\n    \"PlaceOrResort\": \"المكان او المنتجع\",\r\n    \"Completed\": \"مكتمل\",\r\n    \"Ordered\": \"تم الطلب\",\r\n    \"Processing\": \"تتم المعالجة\",\r\n    \"Shipping\": \"يتم الشحن\",\r\n    \"Deliverd\": \"تم الاستلام\",\r\n    \"OrderTracking\": \"تعقب الطلبية\",\r\n    \"Back\": \"رجوع\",\r\n    \"Pending\": \"انتظار\",\r\n    \"gender\": \"الجنس\",\r\n    \"Male\": \"ذكر\",\r\n    \"Female\": \"انثى\",\r\n    \"birthDate\": \"تاريخ الميلاد\",\r\n    \"mailBox\": \"صندوق البريد\",\r\n    \"fax\": \"الفاكس\",\r\n    \"male\": \"ذكر\",\r\n    \"female\": \"انثى\",\r\n    \"Company Website\": \"الموقع الإلكتروني للشركة\",\r\n    \"AboutUs\": \"من نحن\",\r\n    \"ContactUs\": \"اتصل بنا\",\r\n    \"Catalogues\": \"كتالوجات\",\r\n    \"OurPartners\": \"شركاؤنا\",\r\n    \"UsefulLinks\": \"روابط مفيدة\",\r\n    \"Baddar Furniture\": \"نبتتي\",\r\n    \"Categories\": \"الفئات\",\r\n    \"ShopNow\": \"تسوق الآن\",\r\n    \"ReadMore\": \"اقرأ المزيد\",\r\n    \"NewCollections\": \"المجموعات الجديدة\",\r\n    \"Chairs\": \"الكراسي\",\r\n    \"OfficeFurniture\": \"أثاث مكتبي\",\r\n    \"Sofa\": \"أريكة\",\r\n    \"OrderNow\": \"اطلب الآن\",\r\n    \"Register a company account\": \"تسجيل حساب شركة\",\r\n    \"PhoneNumber\": \"رقم الهاتف\",\r\n    \"Responsible Person mobile number\": \"رقم موبايل الشخص المسؤول\",\r\n    \"SingUp\": \"تسجيل الدخول\",\r\n    \"Home\": \"الصفحة الرئيسية\",\r\n    \"Products\": \"المنتجات\"\r\n}",
+      "start": 1730750313491,
+      "end": 1730750313600,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1730750313600,
+      "end": 1730750313600,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1730750313600,
+      "end": 1730750313600,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1730750313600,
+      "end": 1730750313600,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1730750313600,
+      "end": 1730750313600,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1730750313600,
+      "end": 1730750313600,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1730750313600,
+      "end": 1730750313600,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1730750313600,
+      "end": 1730750313600,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1730750313600,
+      "end": 1730750313600,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1730750313600,
+      "end": 1730750313600,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1730750313600,
+      "end": 1730750313600,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "result": "export const Send = \"أرسل\";\nexport const Message = \"الرسالة\";\nexport const Phone = \"الهاتف\";\nexport const Email = \"البريد الإلكتروني\";\nexport const Name = \"الاسم\";\nexport const Video = \"الفيديو\";\nexport const PhotoAlbum = \"ألبوم الصور\";\nexport const News = \"الأخبار\";\nexport const SeeMore = \"شاهد المزيد\";\nexport const LastName = \"الاسم الأخير\";\nexport const FirstName = \"الاسم الأول\";\nexport const Login = \"تسجيل دخول\";\nexport const Register = \"تسجيل جديد\";\nexport const confirmPassword = \"تأكيد كلمة المرور\";\nexport const phone = \"رقم الموبايل\";\nexport const email = \"البريد الإلكتروني\";\nexport const password = \"كلمة المرور\";\nexport const optional = \"اختياري\";\nexport const address = \"العنوان\";\nexport const City = \"المدينة\";\nexport const Place = \"المكان\";\nexport const PlaceOrResort = \"المكان او المنتجع\";\nexport const Completed = \"مكتمل\";\nexport const Ordered = \"تم الطلب\";\nexport const Processing = \"تتم المعالجة\";\nexport const Shipping = \"يتم الشحن\";\nexport const Deliverd = \"تم الاستلام\";\nexport const OrderTracking = \"تعقب الطلبية\";\nexport const Back = \"رجوع\";\nexport const Pending = \"انتظار\";\nexport const gender = \"الجنس\";\nexport const Male = \"ذكر\";\nexport const Female = \"انثى\";\nexport const birthDate = \"تاريخ الميلاد\";\nexport const mailBox = \"صندوق البريد\";\nexport const fax = \"الفاكس\";\nexport const male = \"ذكر\";\nexport const female = \"انثى\";\nexport const AboutUs = \"من نحن\";\nexport const ContactUs = \"اتصل بنا\";\nexport const Catalogues = \"كتالوجات\";\nexport const OurPartners = \"شركاؤنا\";\nexport const UsefulLinks = \"روابط مفيدة\";\nexport const Categories = \"الفئات\";\nexport const ShopNow = \"تسوق الآن\";\nexport const ReadMore = \"اقرأ المزيد\";\nexport const NewCollections = \"المجموعات الجديدة\";\nexport const Chairs = \"الكراسي\";\nexport const OfficeFurniture = \"أثاث مكتبي\";\nexport const Sofa = \"أريكة\";\nexport const OrderNow = \"اطلب الآن\";\nexport const PhoneNumber = \"رقم الهاتف\";\nexport const SingUp = \"تسجيل الدخول\";\nexport const Home = \"الصفحة الرئيسية\";\nexport const Products = \"المنتجات\";\nexport default {\n\tSend: Send,\n\tMessage: Message,\n\tPhone: Phone,\n\tEmail: Email,\n\tName: Name,\n\tVideo: Video,\n\tPhotoAlbum: PhotoAlbum,\n\tNews: News,\n\tSeeMore: SeeMore,\n\tLastName: LastName,\n\tFirstName: FirstName,\n\tLogin: Login,\n\tRegister: Register,\n\t\"Full Name En\": \"الاسم الكامل\",\n\t\"Full Name Ar\": \"الاسم الكامل\",\n\tconfirmPassword: confirmPassword,\n\tphone: phone,\n\temail: email,\n\tpassword: password,\n\toptional: optional,\n\t\"Current-Password\": \"كلمة المرور الحالية\",\n\t\"New-Password\": \"كلمة المرور الجديدة\",\n\t\"Change-Password\": \"تغيير كلمة المرور\",\n\taddress: address,\n\tCity: City,\n\tPlace: Place,\n\tPlaceOrResort: PlaceOrResort,\n\tCompleted: Completed,\n\tOrdered: Ordered,\n\tProcessing: Processing,\n\tShipping: Shipping,\n\tDeliverd: Deliverd,\n\tOrderTracking: OrderTracking,\n\tBack: Back,\n\tPending: Pending,\n\tgender: gender,\n\tMale: Male,\n\tFemale: Female,\n\tbirthDate: birthDate,\n\tmailBox: mailBox,\n\tfax: fax,\n\tmale: male,\n\tfemale: female,\n\t\"Company Website\": \"الموقع الإلكتروني للشركة\",\n\tAboutUs: AboutUs,\n\tContactUs: ContactUs,\n\tCatalogues: Catalogues,\n\tOurPartners: OurPartners,\n\tUsefulLinks: UsefulLinks,\n\t\"Baddar Furniture\": \"نبتتي\",\n\tCategories: Categories,\n\tShopNow: ShopNow,\n\tReadMore: ReadMore,\n\tNewCollections: NewCollections,\n\tChairs: Chairs,\n\tOfficeFurniture: OfficeFurniture,\n\tSofa: Sofa,\n\tOrderNow: OrderNow,\n\t\"Register a company account\": \"تسجيل حساب شركة\",\n\tPhoneNumber: PhoneNumber,\n\t\"Responsible Person mobile number\": \"رقم موبايل الشخص المسؤول\",\n\tSingUp: SingUp,\n\tHome: Home,\n\tProducts: Products\n};\n",
+      "start": 1730750313600,
+      "end": 1730750313601,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:worker",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1730750313601,
+      "end": 1730750313601,
+      "order": "normal"
+    }
+  ]
+}

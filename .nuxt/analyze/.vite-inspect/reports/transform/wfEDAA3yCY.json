@@ -1,0 +1,263 @@
+{
+  "resolvedId": "D:/Projects/Nabtaty-dashboard/components/Shared/Navbar/index.vue?vue&type=style&index=0&scoped=b985d9d0&lang.scss",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\r\n.router-link-active {\r\n  li {\r\n    color: #fff !important;\r\n    background: linear-gradient(118deg, #047751, #0dab77) !important;\r\n    svg{\r\n      color: #fff !important;\r\n    }\r\n  }\r\n}\r\n.nav-container {\r\n  position: fixed;\r\n  z-index: 10000;\r\n  nav {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    background-color: #fff;\r\n    padding: 10px 20px;\r\n    width: 100vw;\r\n    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);\r\n    .left-section {\r\n      display: flex;\r\n      align-items: center;\r\n\r\n      .logo {\r\n        cursor: pointer;\r\n        img {\r\n          height: 70px;\r\n\r\n          @media (max-width: 600px) {\r\n            height: 50px;\r\n          }\r\n        }\r\n      }\r\n      .navbar-collapse-button {\r\n        margin-left: 20px;\r\n        width: 34px;\r\n        height: 34px;\r\n        display: flex;\r\n        flex-direction: column;\r\n        justify-content: space-evenly;\r\n        cursor: pointer;\r\n        @media (max-width: 600px) {\r\n          width: 25px;\r\n          height: 25px;\r\n          margin-left: 8px;\r\n        }\r\n\r\n        span {\r\n          display: block;\r\n          background-color: #003d29;\r\n          width: 100%;\r\n          height: 4px;\r\n          border-radius: 24px;\r\n          transition: all 0.3s linear;\r\n          &.open {\r\n            &:nth-child(1) {\r\n              transform: translateY(3px) rotate(-45deg);\r\n              width: 16px;\r\n              @media (max-width: 600px) {\r\n                width: 10px;\r\n                transform: translateY(4px) rotate(-45deg);\r\n              }\r\n            }\r\n            &:nth-child(2) {\r\n              transform: translateX(0px);\r\n            }\r\n            &:nth-child(3) {\r\n              width: 16px;\r\n              transform: translateY(-4px) rotate(45deg);\r\n              @media (max-width: 600px) {\r\n                transform: translateY(-4px) rotate(45deg);\r\n                width: 10px;\r\n              }\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n    .user {\r\n      display: flex;\r\n      flex-direction: row-reverse;\r\n      align-items: center;\r\n      .user-img {\r\n        img {\r\n          width: 50px;\r\n          border-radius: 50%;\r\n          @media (max-width: 600px) {\r\n            width: 30px;\r\n          }\r\n        }\r\n      }\r\n      .user-name {\r\n        text-align: center;\r\n        padding-right: 16px;\r\n        @media (max-width: 600px) {\r\n          padding-right: 5px;\r\n        }\r\n        h5,\r\n        p {\r\n          margin: 5px;\r\n          @media (max-width: 600px) {\r\n            margin: 0px;\r\n          }\r\n        }\r\n        p {\r\n          font-size: 14px;\r\n          font-style: italic;\r\n          color: #6d6a77;\r\n        }\r\n        @media (max-width: 600px) {\r\n          p {\r\n            font-size: 12px;\r\n          }\r\n          h5 {\r\n            font-size: 14px;\r\n          }\r\n        }\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n// sidebar\r\n.sidebar {\r\n  background-color: #fff;\r\n  width: 260px;\r\n  position: fixed;\r\n  top: 90px;\r\n  bottom: 0;\r\n  inset-inline-start: 0;\r\n  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);\r\n  transition: all 0.3s linear;\r\n  z-index: 5;\r\n\r\n  @media (max-width: 600px) {\r\n    top: 55px;\r\n  }\r\n  &.open {\r\n    transform: translateX(-260px);\r\n  }\r\n  .main-links,\r\n  .second-links {\r\n    list-style: none;\r\n    margin: 0;\r\n    padding: 10px;\r\n    li {\r\n      font-weight: bold;\r\n      background-color: #fff;\r\n      color: #333;\r\n      font-size: 16px;\r\n      margin: 5px 0;\r\n      padding: 10px 4px;\r\n      border-radius: 6px;\r\n      cursor: pointer;\r\n      transition: all 0.3s linear;\r\n      &.active {\r\n        color: #fff;\r\n        background: linear-gradient(118deg, #047751, #0dab77);\r\n        svg {\r\n          color: #fff;\r\n        }\r\n      }\r\n      svg {\r\n        margin-inline-end: 10px;\r\n        margin-inline-start: 10px;\r\n        font-size: 20px;\r\n        height: 20px;\r\n        transition: all 0.3s linear;\r\n        color: $main;\r\n        &.caret {\r\n          transform: rotate(90deg);\r\n          &.active {\r\n            transform: rotate(0deg);\r\n          }\r\n        }\r\n      }\r\n    }\r\n  }\r\n  .second-links {\r\n    transition: all 0.3s linear;\r\n    height: 0;\r\n    overflow: hidden;\r\n    padding: 0px 10px;\r\n    .router-link-active {\r\n      svg {\r\n        color: #fff !important;\r\n      }\r\n    }\r\n    li {\r\n      font-weight: bold;\r\n      &.sub-active {\r\n        color: #fff;\r\n        background: linear-gradient(118deg, #035d3f, #158862);\r\n      }\r\n      svg {\r\n        margin-inline-end: 10px;\r\n        margin-inline-start: 10px;\r\n        font-size: 20px;\r\n        height: 20px;\r\n        transition: all 0.3s linear;\r\n        &.active {\r\n          transform: rotate(90deg);\r\n        }\r\n      }\r\n    }\r\n    &.showLink {\r\n      height: 110px;\r\n      padding-top: 10px;\r\n    }\r\n  }\r\n}\r\n.bodyAR {\r\n  .navbar-collapse-button {\r\n    margin-left: 0px !important;\r\n    margin-right: 20px !important;\r\n    span {\r\n      &.open {\r\n        &:nth-child(1) {\r\n          transform: translateY(3px) rotate(45deg) !important;\r\n          @media (max-width: 600px) {\r\n            transform: translateY(4px) rotate(45deg) !important;\r\n          }\r\n        }\r\n        &:nth-child(3) {\r\n          transform: translateY(-4px) rotate(-45deg) !important;\r\n          @media (max-width: 600px) {\r\n            transform: translateY(-4px) rotate(-45deg) !important;\r\n          }\r\n        }\r\n      }\r\n    }\r\n  }\r\n\r\n  .sidebar {\r\n    &.open {\r\n      transform: translateX(260px) !important;\r\n    }\r\n  }\r\n}\r\n",
+      "start": 1730750299890,
+      "end": 1730750299890
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1730750299890,
+      "end": 1730750299890,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1730750299890,
+      "end": 1730750299890,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1730750299890,
+      "end": 1730750299890,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1730750299890,
+      "end": 1730750299890,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": ".router-link-active li{background:linear-gradient(118deg,#047751,#0dab77)!important;color:#fff!important}.router-link-active li svg{color:#fff!important}.nav-container{position:fixed;z-index:10000}.nav-container nav{background-color:#fff;box-shadow:0 2px 5px 0 rgba(0,0,0,.05),0 2px 10px 0 rgba(0,0,0,.05);justify-content:space-between;padding:10px 20px;width:100vw}.nav-container nav,.nav-container nav .left-section{align-items:center;display:flex}.nav-container nav .left-section .logo{cursor:pointer}.nav-container nav .left-section .logo img{height:70px}@media (max-width:600px){.nav-container nav .left-section .logo img{height:50px}}.nav-container nav .left-section .navbar-collapse-button{cursor:pointer;display:flex;flex-direction:column;height:34px;justify-content:space-evenly;margin-left:20px;width:34px}@media (max-width:600px){.nav-container nav .left-section .navbar-collapse-button{height:25px;margin-left:8px;width:25px}}.nav-container nav .left-section .navbar-collapse-button span{background-color:#003d29;border-radius:24px;display:block;height:4px;transition:all .3s linear;width:100%}.nav-container nav .left-section .navbar-collapse-button span.open:first-child{transform:translateY(3px) rotate(-45deg);width:16px}@media (max-width:600px){.nav-container nav .left-section .navbar-collapse-button span.open:first-child{transform:translateY(4px) rotate(-45deg);width:10px}}.nav-container nav .left-section .navbar-collapse-button span.open:nth-child(2){transform:translateX(0)}.nav-container nav .left-section .navbar-collapse-button span.open:nth-child(3){transform:translateY(-4px) rotate(45deg);width:16px}@media (max-width:600px){.nav-container nav .left-section .navbar-collapse-button span.open:nth-child(3){transform:translateY(-4px) rotate(45deg);width:10px}}.nav-container nav .user{align-items:center;display:flex;flex-direction:row-reverse}.nav-container nav .user .user-img img{border-radius:50%;width:50px}@media (max-width:600px){.nav-container nav .user .user-img img{width:30px}}.nav-container nav .user .user-name{padding-right:16px;text-align:center}@media (max-width:600px){.nav-container nav .user .user-name{padding-right:5px}}.nav-container nav .user .user-name h5,.nav-container nav .user .user-name p{margin:5px}@media (max-width:600px){.nav-container nav .user .user-name h5,.nav-container nav .user .user-name p{margin:0}}.nav-container nav .user .user-name p{color:#6d6a77;font-size:14px;font-style:italic}@media (max-width:600px){.nav-container nav .user .user-name p{font-size:12px}.nav-container nav .user .user-name h5{font-size:14px}}.sidebar{background-color:#fff;bottom:0;box-shadow:0 2px 5px 0 rgba(0,0,0,.05),0 2px 10px 0 rgba(0,0,0,.05);inset-inline-start:0;position:fixed;top:90px;transition:all .3s linear;width:260px;z-index:5}@media (max-width:600px){.sidebar{top:55px}}.sidebar.open{transform:translateX(-260px)}.sidebar .main-links,.sidebar .second-links{list-style:none;margin:0;padding:10px}.sidebar .main-links li,.sidebar .second-links li{background-color:#fff;border-radius:6px;color:#333;cursor:pointer;font-size:16px;font-weight:700;margin:5px 0;padding:10px 4px;transition:all .3s linear}.sidebar .main-links li.active,.sidebar .second-links li.active{background:linear-gradient(118deg,#047751,#0dab77);color:#fff}.sidebar .main-links li.active svg,.sidebar .second-links li.active svg{color:#fff}.sidebar .main-links li svg,.sidebar .second-links li svg{color:rgba(0,61,46,.761);font-size:20px;height:20px;margin-inline-end:10px;margin-inline-start:10px;transition:all .3s linear}.sidebar .main-links li svg.caret,.sidebar .second-links li svg.caret{transform:rotate(90deg)}.sidebar .main-links li svg.caret.active,.sidebar .second-links li svg.caret.active{transform:rotate(0deg)}.sidebar .second-links{height:0;overflow:hidden;padding:0 10px;transition:all .3s linear}.sidebar .second-links .router-link-active svg{color:#fff!important}.sidebar .second-links li{font-weight:700}.sidebar .second-links li.sub-active{background:linear-gradient(118deg,#035d3f,#158862);color:#fff}.sidebar .second-links li svg{font-size:20px;height:20px;margin-inline-end:10px;margin-inline-start:10px;transition:all .3s linear}.sidebar .second-links li svg.active{transform:rotate(90deg)}.sidebar .second-links.showLink{height:110px;padding-top:10px}.bodyAR .navbar-collapse-button{margin-left:0!important;margin-right:20px!important}.bodyAR .navbar-collapse-button span.open:first-child{transform:translateY(3px) rotate(45deg)!important}@media (max-width:600px){.bodyAR .navbar-collapse-button span.open:first-child{transform:translateY(4px) rotate(45deg)!important}}.bodyAR .navbar-collapse-button span.open:nth-child(3){transform:translateY(-4px) rotate(-45deg)!important}@media (max-width:600px){.bodyAR .navbar-collapse-button span.open:nth-child(3){transform:translateY(-4px) rotate(-45deg)!important}}.bodyAR .sidebar.open{transform:translateX(260px)!important}",
+      "start": 1730750299890,
+      "end": 1730750300030,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1730750300030,
+      "end": 1730750300030,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1730750300030,
+      "end": 1730750300030,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1730750300030,
+      "end": 1730750300030,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": ".router-link-active li[data-v-b985d9d0]{background:linear-gradient(118deg,#047751,#0dab77)!important;color:#fff!important}.router-link-active li svg[data-v-b985d9d0]{color:#fff!important}.nav-container[data-v-b985d9d0]{position:fixed;z-index:10000}.nav-container nav[data-v-b985d9d0]{background-color:#fff;box-shadow:0 2px 5px 0 rgba(0,0,0,.05),0 2px 10px 0 rgba(0,0,0,.05);justify-content:space-between;padding:10px 20px;width:100vw}.nav-container nav[data-v-b985d9d0],.nav-container nav .left-section[data-v-b985d9d0]{align-items:center;display:flex}.nav-container nav .left-section .logo[data-v-b985d9d0]{cursor:pointer}.nav-container nav .left-section .logo img[data-v-b985d9d0]{height:70px}@media (max-width:600px){.nav-container nav .left-section .logo img[data-v-b985d9d0]{height:50px}}.nav-container nav .left-section .navbar-collapse-button[data-v-b985d9d0]{cursor:pointer;display:flex;flex-direction:column;height:34px;justify-content:space-evenly;margin-left:20px;width:34px}@media (max-width:600px){.nav-container nav .left-section .navbar-collapse-button[data-v-b985d9d0]{height:25px;margin-left:8px;width:25px}}.nav-container nav .left-section .navbar-collapse-button span[data-v-b985d9d0]{background-color:#003d29;border-radius:24px;display:block;height:4px;transition:all .3s linear;width:100%}.nav-container nav .left-section .navbar-collapse-button span.open[data-v-b985d9d0]:first-child{transform:translateY(3px) rotate(-45deg);width:16px}@media (max-width:600px){.nav-container nav .left-section .navbar-collapse-button span.open[data-v-b985d9d0]:first-child{transform:translateY(4px) rotate(-45deg);width:10px}}.nav-container nav .left-section .navbar-collapse-button span.open[data-v-b985d9d0]:nth-child(2){transform:translateX(0)}.nav-container nav .left-section .navbar-collapse-button span.open[data-v-b985d9d0]:nth-child(3){transform:translateY(-4px) rotate(45deg);width:16px}@media (max-width:600px){.nav-container nav .left-section .navbar-collapse-button span.open[data-v-b985d9d0]:nth-child(3){transform:translateY(-4px) rotate(45deg);width:10px}}.nav-container nav .user[data-v-b985d9d0]{align-items:center;display:flex;flex-direction:row-reverse}.nav-container nav .user .user-img img[data-v-b985d9d0]{border-radius:50%;width:50px}@media (max-width:600px){.nav-container nav .user .user-img img[data-v-b985d9d0]{width:30px}}.nav-container nav .user .user-name[data-v-b985d9d0]{padding-right:16px;text-align:center}@media (max-width:600px){.nav-container nav .user .user-name[data-v-b985d9d0]{padding-right:5px}}.nav-container nav .user .user-name h5[data-v-b985d9d0],.nav-container nav .user .user-name p[data-v-b985d9d0]{margin:5px}@media (max-width:600px){.nav-container nav .user .user-name h5[data-v-b985d9d0],.nav-container nav .user .user-name p[data-v-b985d9d0]{margin:0}}.nav-container nav .user .user-name p[data-v-b985d9d0]{color:#6d6a77;font-size:14px;font-style:italic}@media (max-width:600px){.nav-container nav .user .user-name p[data-v-b985d9d0]{font-size:12px}.nav-container nav .user .user-name h5[data-v-b985d9d0]{font-size:14px}}.sidebar[data-v-b985d9d0]{background-color:#fff;bottom:0;box-shadow:0 2px 5px 0 rgba(0,0,0,.05),0 2px 10px 0 rgba(0,0,0,.05);inset-inline-start:0;position:fixed;top:90px;transition:all .3s linear;width:260px;z-index:5}@media (max-width:600px){.sidebar[data-v-b985d9d0]{top:55px}}.sidebar.open[data-v-b985d9d0]{transform:translateX(-260px)}.sidebar .main-links[data-v-b985d9d0],.sidebar .second-links[data-v-b985d9d0]{list-style:none;margin:0;padding:10px}.sidebar .main-links li[data-v-b985d9d0],.sidebar .second-links li[data-v-b985d9d0]{background-color:#fff;border-radius:6px;color:#333;cursor:pointer;font-size:16px;font-weight:700;margin:5px 0;padding:10px 4px;transition:all .3s linear}.sidebar .main-links li.active[data-v-b985d9d0],.sidebar .second-links li.active[data-v-b985d9d0]{background:linear-gradient(118deg,#047751,#0dab77);color:#fff}.sidebar .main-links li.active svg[data-v-b985d9d0],.sidebar .second-links li.active svg[data-v-b985d9d0]{color:#fff}.sidebar .main-links li svg[data-v-b985d9d0],.sidebar .second-links li svg[data-v-b985d9d0]{color:rgba(0,61,46,.761);font-size:20px;height:20px;margin-inline-end:10px;margin-inline-start:10px;transition:all .3s linear}.sidebar .main-links li svg.caret[data-v-b985d9d0],.sidebar .second-links li svg.caret[data-v-b985d9d0]{transform:rotate(90deg)}.sidebar .main-links li svg.caret.active[data-v-b985d9d0],.sidebar .second-links li svg.caret.active[data-v-b985d9d0]{transform:rotate(0deg)}.sidebar .second-links[data-v-b985d9d0]{height:0;overflow:hidden;padding:0 10px;transition:all .3s linear}.sidebar .second-links .router-link-active svg[data-v-b985d9d0]{color:#fff!important}.sidebar .second-links li[data-v-b985d9d0]{font-weight:700}.sidebar .second-links li.sub-active[data-v-b985d9d0]{background:linear-gradient(118deg,#035d3f,#158862);color:#fff}.sidebar .second-links li svg[data-v-b985d9d0]{font-size:20px;height:20px;margin-inline-end:10px;margin-inline-start:10px;transition:all .3s linear}.sidebar .second-links li svg.active[data-v-b985d9d0]{transform:rotate(90deg)}.sidebar .second-links.showLink[data-v-b985d9d0]{height:110px;padding-top:10px}.bodyAR .navbar-collapse-button[data-v-b985d9d0]{margin-left:0!important;margin-right:20px!important}.bodyAR .navbar-collapse-button span.open[data-v-b985d9d0]:first-child{transform:translateY(3px) rotate(45deg)!important}@media (max-width:600px){.bodyAR .navbar-collapse-button span.open[data-v-b985d9d0]:first-child{transform:translateY(4px) rotate(45deg)!important}}.bodyAR .navbar-collapse-button span.open[data-v-b985d9d0]:nth-child(3){transform:translateY(-4px) rotate(-45deg)!important}@media (max-width:600px){.bodyAR .navbar-collapse-button span.open[data-v-b985d9d0]:nth-child(3){transform:translateY(-4px) rotate(-45deg)!important}}.bodyAR .sidebar.open[data-v-b985d9d0]{transform:translateX(260px)!important}",
+      "start": 1730750300030,
+      "end": 1730750300039,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1730750300039,
+      "end": 1730750300039,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1730750300039,
+      "end": 1730750300039,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1730750300039,
+      "end": 1730750300039,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1730750300039,
+      "end": 1730750300039,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1730750300039,
+      "end": 1730750300039,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1730750300039,
+      "end": 1730750300039,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1730750300039,
+      "end": 1730750300039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1730750300039,
+      "end": 1730750300039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "",
+      "start": 1730750300039,
+      "end": 1730750300039,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1730750300039,
+      "end": 1730750300039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1730750300039,
+      "end": 1730750300039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1730750300039,
+      "end": 1730750300039,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1730750300039,
+      "end": 1730750300039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1730750300039,
+      "end": 1730750300039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1730750300039,
+      "end": 1730750300039,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1730750300039,
+      "end": 1730750300039,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1730750300039,
+      "end": 1730750300039,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1730750300039,
+      "end": 1730750300039,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1730750300039,
+      "end": 1730750300039,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "result": "/* unplugin-vue-components disabled */",
+      "start": 1730750300039,
+      "end": 1730750300039,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard/components/Shared/Navbar/index.vue?vue&type=style&index=0&scoped=b985d9d0&lang.scss"
+        ],
+        "sourcesContent": [
+          ""
+        ],
+        "names": [],
+        "mappings": ""
+      }
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1730750300039,
+      "end": 1730750300039,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1730750300039,
+      "end": 1730750300040,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1730750300040,
+      "end": 1730750300040,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1730750300040,
+      "end": 1730750300040,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1730750300040,
+      "end": 1730750300040,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1730750300040,
+      "end": 1730750300040,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1730750300040,
+      "end": 1730750300040,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1730750300041,
+      "end": 1730750300041,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1730750300041,
+      "end": 1730750300041,
+      "order": "normal"
+    }
+  ]
+}

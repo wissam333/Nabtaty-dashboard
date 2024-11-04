@@ -1,0 +1,379 @@
+{
+  "resolvedId": "D:/Projects/Nabtaty-dashboard/components/elements/loader.vue?vue&type=style&index=0&scoped=0d9a60e2&lang.scss",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\r\n@import \"~/assets/styles/scss/theme/variables\";\r\n@import \"~/assets/styles/scss/theme/mixin\";\r\n#preloader {\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  z-index: 9999;\r\n  overflow: hidden;\r\n  // background: $blue;\r\n  // background: $primary;\r\n  background: linear-gradient(to left, #fff, #fff);\r\n}\r\n\r\n#preloaders {\r\n  width: 100%;\r\n  height: 100%;\r\n  position: relative;\r\n}\r\nimg.logoLoader {\r\n  // height: 130px;\r\n  // width: 350px;\r\n  top: 20%;\r\n  position: absolute;\r\n  left: 50%;\r\n  transform: translateX(-50%);\r\n  width: 300px;\r\n  @media (max-width: 991px) {\r\n    width: 200px;\r\n  }\r\n}\r\nimg.Loader {\r\n  top: 70%;\r\n  position: absolute;\r\n  left: 50%;\r\n  transform: translate(-50%, -50%);\r\n}\r\n\r\n@-webkit-keyframes animate-preloader {\r\n  0% {\r\n    width: 400px;\r\n  }\r\n  25% {\r\n    width: 350px;\r\n  }\r\n  50% {\r\n    width: 400px;\r\n  }\r\n  75% {\r\n    width: 350px;\r\n  }\r\n  100% {\r\n    width: 400px;\r\n  }\r\n}\r\n\r\n@keyframes animate-preloader {\r\n  0% {\r\n    width: 200px;\r\n  }\r\n  25% {\r\n    width: 250px;\r\n  }\r\n  50% {\r\n    width: 300px;\r\n  }\r\n  75% {\r\n    width: 250px;\r\n  }\r\n  100% {\r\n    width: 200px;\r\n  }\r\n}\r\n",
+      "start": 1730750313441,
+      "end": 1730750313441,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard/components/elements/loader.vue"
+        ],
+        "names": [],
+        "mappings": "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",
+        "file": "D:/Projects/Nabtaty-dashboard/components/elements/loader.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<template>\r\n  <div>\r\n    <ClientOnly>\r\n      <div class=\"main-loader-overlay\" v-if=\"data.show\">\r\n        <div id=\"preloader\">\r\n          <div id=\"preloaders\" class=\"preloader\">\r\n            <img\r\n              id=\"logoLoader\"\r\n              class=\"logoLoader\"\r\n              src=\"/photos/nabt.png\"\r\n              alt=\"UnionLogo\"\r\n            />\r\n            <img\r\n              class=\"Loader\"\r\n              width=\"150\"\r\n              src=\"/loading/loadingnew2.svg\"\r\n              alt=\"\"\r\n            />\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </ClientOnly>\r\n  </div>\r\n</template>\r\n\r\n<script setup>\r\nconst props = defineProps({\r\n  throttle: {\r\n    type: Number,\r\n    default: 200,\r\n  },\r\n  duration: {\r\n    type: Number,\r\n    default: 2000,\r\n  },\r\n  height: {\r\n    type: Number,\r\n    default: 3,\r\n  },\r\n});\r\n// Options & Data\r\nconst data = reactive({\r\n  percent: 0,\r\n  show: false,\r\n  canSucceed: true,\r\n});\r\n// Local variables\r\nlet _timer = null;\r\nlet _throttle = null;\r\nlet _cut;\r\n\r\n// Functions\r\nconst clear = () => {\r\n  _timer && clearInterval(_timer);\r\n  _throttle && clearTimeout(_throttle);\r\n  _timer = null;\r\n};\r\nconst start = () => {\r\n  clear();\r\n  data.percent = 0;\r\n  data.canSucceed = true;\r\n\r\n  if (props.throttle) {\r\n    _throttle = setTimeout(startTimer, props.throttle);\r\n  } else {\r\n    startTimer();\r\n  }\r\n};\r\nconst set = (num) => {\r\n  data.show = true;\r\n  data.canSucceed = true;\r\n  data.percent = Math.min(100, Math.max(0, Math.floor(num)));\r\n};\r\nconst increase = (num) => {\r\n  data.percent = Math.min(100, Math.floor(data.percent + num));\r\n};\r\nconst decrease = (num) => {\r\n  data.percent = Math.max(0, Math.floor(data.percent - num));\r\n};\r\nconst pause = () => clearInterval(_timer);\r\nconst resume = () => startTimer();\r\nconst finish = () => {\r\n  // isLoaded.value = useImageLouded().value.loaded\r\n  data.percent = 100;\r\n  hide();\r\n};\r\nconst hide = () => {\r\n  clear();\r\n  setTimeout(() => {\r\n    data.show = false;\r\n    // isLoaded.value = useImageLouded().value.loaded = false;\r\n    setTimeout(() => {\r\n      data.percent = 0;\r\n    }, 400);\r\n  }, 500);\r\n};\r\nconst startTimer = () => {\r\n  data.show = true;\r\n  _cut = 10000 / Math.floor(props.duration);\r\n  _timer = setInterval(() => {\r\n    increase(_cut);\r\n  }, 100);\r\n};\r\n\r\n// Hooks\r\nconst nuxtApp = useNuxtApp();\r\n\r\nnuxtApp.hook(\"page:start\", start);\r\nnuxtApp.hook(\"page:finish\", finish);\r\n\r\n// watchEffect(() => {\r\n//   isLoaded.value = useImageLouded().value.loaded\r\n//   console.log('loader check 1', isLoaded.value);\r\n// })\r\nonBeforeUnmount(() => clear);\r\n</script>\r\n<style lang=\"scss\" scoped>\r\n@import \"~/assets/styles/scss/theme/variables\";\r\n@import \"~/assets/styles/scss/theme/mixin\";\r\n#preloader {\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  z-index: 9999;\r\n  overflow: hidden;\r\n  // background: $blue;\r\n  // background: $primary;\r\n  background: linear-gradient(to left, #fff, #fff);\r\n}\r\n\r\n#preloaders {\r\n  width: 100%;\r\n  height: 100%;\r\n  position: relative;\r\n}\r\nimg.logoLoader {\r\n  // height: 130px;\r\n  // width: 350px;\r\n  top: 20%;\r\n  position: absolute;\r\n  left: 50%;\r\n  transform: translateX(-50%);\r\n  width: 300px;\r\n  @media (max-width: 991px) {\r\n    width: 200px;\r\n  }\r\n}\r\nimg.Loader {\r\n  top: 70%;\r\n  position: absolute;\r\n  left: 50%;\r\n  transform: translate(-50%, -50%);\r\n}\r\n\r\n@-webkit-keyframes animate-preloader {\r\n  0% {\r\n    width: 400px;\r\n  }\r\n  25% {\r\n    width: 350px;\r\n  }\r\n  50% {\r\n    width: 400px;\r\n  }\r\n  75% {\r\n    width: 350px;\r\n  }\r\n  100% {\r\n    width: 400px;\r\n  }\r\n}\r\n\r\n@keyframes animate-preloader {\r\n  0% {\r\n    width: 200px;\r\n  }\r\n  25% {\r\n    width: 250px;\r\n  }\r\n  50% {\r\n    width: 300px;\r\n  }\r\n  75% {\r\n    width: 250px;\r\n  }\r\n  100% {\r\n    width: 200px;\r\n  }\r\n}\r\n</style>\r\n"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1730750313441,
+      "end": 1730750313441,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1730750313441,
+      "end": 1730750313441,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1730750313441,
+      "end": 1730750313441,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1730750313441,
+      "end": 1730750313441,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1730750313441,
+      "end": 1730750313441,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1730750313441,
+      "end": 1730750313441,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1730750313441,
+      "end": 1730750313441,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1730750313441,
+      "end": 1730750313441,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": "#preloader{background:linear-gradient(270deg,#fff,#fff);bottom:0;left:0;overflow:hidden;position:fixed;right:0;top:0;z-index:9999}#preloaders{height:100%;position:relative;width:100%}img.logoLoader{left:50%;position:absolute;top:20%;transform:translateX(-50%);width:300px}@media (max-width:991px){img.logoLoader{width:200px}}img.Loader{left:50%;position:absolute;top:70%;transform:translate(-50%,-50%)}@keyframes animate-preloader{0%{width:200px}25%{width:250px}50%{width:300px}75%{width:250px}to{width:200px}}",
+      "start": 1730750313441,
+      "end": 1730750313829,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "file": "D:/Projects/Nabtaty-dashboard/components/elements/loader.vue",
+        "mappings": "AAGA,WAUE,6CALA,SAFA,OAIA,gBANA,eAGA,QAFA,MAIA,aAOF,YAEE,YACA,kBAFA,WAIF,eAKE,SADA,kBADA,QAGA,2BACA,YACA,yBARF,eASI,aAGJ,WAGE,SADA,kBADA,QAGA,+BAqBF,6BACE,GACE,YAEF,IACE,YAEF,IACE,YAEF,IACE,YAEF,GACE",
+        "names": [],
+        "ignoreList": [],
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard/components/elements/loader.vue"
+        ],
+        "sourcesContent": [
+          null
+        ]
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1730750313829,
+      "end": 1730750313829,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1730750313829,
+      "end": 1730750313829,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1730750313829,
+      "end": 1730750313829,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "#preloader[data-v-0d9a60e2]{background:linear-gradient(270deg,#fff,#fff);bottom:0;left:0;overflow:hidden;position:fixed;right:0;top:0;z-index:9999}#preloaders[data-v-0d9a60e2]{height:100%;position:relative;width:100%}img.logoLoader[data-v-0d9a60e2]{left:50%;position:absolute;top:20%;transform:translateX(-50%);width:300px}@media (max-width:991px){img.logoLoader[data-v-0d9a60e2]{width:200px}}img.Loader[data-v-0d9a60e2]{left:50%;position:absolute;top:70%;transform:translate(-50%,-50%)}@keyframes animate-preloader-0d9a60e2{0%{width:200px}25%{width:250px}50%{width:300px}75%{width:250px}to{width:200px}}",
+      "start": 1730750313829,
+      "end": 1730750313830,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "D:/Projects/Nabtaty-dashboard/components/elements/loader.vue",
+        "mappings": "AAAA,4BAAW,4CAA4C,CAAC,QAAQ,CAAC,MAAM,CAAC,eAAe,CAAC,cAAc,CAAC,OAAO,CAAC,KAAK,CAAC,YAAY,CAAC,6BAAY,WAAW,CAAC,iBAAiB,CAAC,UAAU,CAAC,gCAAe,QAAQ,CAAC,iBAAiB,CAAC,OAAO,CAAC,0BAA0B,CAAC,WAAW,CAAC,yBAAyB,gCAAe,WAAW,CAAC,CAAC,4BAAW,QAAQ,CAAC,iBAAiB,CAAC,OAAO,CAAC,8BAA8B,CAAC,sCAA6B,GAAG,WAAW,CAAC,IAAI,WAAW,CAAC,IAAI,WAAW,CAAC,IAAI,WAAW,CAAC,GAAG,WAAW,CAAC",
+        "names": [],
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard/components/elements/loader.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1730750313830,
+      "end": 1730750313830,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1730750313830,
+      "end": 1730750313830,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1730750313830,
+      "end": 1730750313830,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1730750313830,
+      "end": 1730750313830,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1730750313830,
+      "end": 1730750313830,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1730750313830,
+      "end": 1730750313830,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1730750313830,
+      "end": 1730750313830,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1730750313830,
+      "end": 1730750313831,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1730750313831,
+      "end": 1730750313831,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "",
+      "start": 1730750313831,
+      "end": 1730750313831,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1730750313831,
+      "end": 1730750313831,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1730750313831,
+      "end": 1730750313831,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1730750313831,
+      "end": 1730750313831,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1730750313831,
+      "end": 1730750313831,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1730750313832,
+      "end": 1730750313832,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1730750313832,
+      "end": 1730750313832,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1730750313832,
+      "end": 1730750313832,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1730750313832,
+      "end": 1730750313832,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1730750313832,
+      "end": 1730750313832,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1730750313832,
+      "end": 1730750313832,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1730750313832,
+      "end": 1730750313832,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1730750313832,
+      "end": 1730750313832,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1730750313832,
+      "end": 1730750313832,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1730750313832,
+      "end": 1730750313832,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "result": "/* unplugin-vue-components disabled */",
+      "start": 1730750313832,
+      "end": 1730750313832,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard/components/elements/loader.vue?vue&type=style&index=0&scoped=0d9a60e2&lang.scss"
+        ],
+        "sourcesContent": [
+          ""
+        ],
+        "names": [],
+        "mappings": ""
+      }
+    },
+    {
+      "name": "unplugin-vue-components",
+      "result": "/* unplugin-vue-components disabled */",
+      "start": 1730750313832,
+      "end": 1730750313832,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard/components/elements/loader.vue?vue&type=style&index=0&scoped=0d9a60e2&lang.scss"
+        ],
+        "sourcesContent": [
+          ""
+        ],
+        "names": [],
+        "mappings": ""
+      }
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1730750313832,
+      "end": 1730750313832,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1730750313832,
+      "end": 1730750313832,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1730750313832,
+      "end": 1730750313832,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1730750313832,
+      "end": 1730750313832,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1730750313832,
+      "end": 1730750313832,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1730750313832,
+      "end": 1730750313832,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1730750313832,
+      "end": 1730750313832,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1730750313832,
+      "end": 1730750313832,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1730750313832,
+      "end": 1730750313832,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1730750313832,
+      "end": 1730750313832,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1730750313832,
+      "end": 1730750313832,
+      "order": "normal"
+    }
+  ]
+}

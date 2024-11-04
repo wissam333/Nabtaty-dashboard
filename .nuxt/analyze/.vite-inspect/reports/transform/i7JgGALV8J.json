@@ -1,0 +1,263 @@
+{
+  "resolvedId": "D:/Projects/Nabtaty-dashboard/pages/AddProduct.vue?vue&type=style&index=0&scoped=39e6929f&lang.scss",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\r\n.contain {\r\n  overflow-x: hidden;\r\n  transition: all 0.3s linear;\r\n  width: 100%;\r\n  min-height: calc(100vh - 77.6px);\r\n  background-color: #f8f7fa;\r\n  float: right;\r\n  margin-top: 77.6px;\r\n  padding: 16px;\r\n  @media (max-width: 600px) {\r\n    margin-top: 55px;\r\n  }\r\n\r\n  &.shrink {\r\n    width: calc(100% - 260px); /* 100% + 260px(sidebar)*/\r\n    @media (max-width: 600px) {\r\n      width: 100%;\r\n    }\r\n  }\r\n  .title-container {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    margin: 16px 0px;\r\n    @media (max-width: 991px) {\r\n      flex-direction: column;\r\n      align-items: flex-start;\r\n    }\r\n    .head-title {\r\n      p {\r\n        font-size: 15px;\r\n        color: #6d6a77;\r\n        a {\r\n          color: #19ad7b;\r\n          text-decoration: underline;\r\n        }\r\n      }\r\n    }\r\n  }\r\n  .form {\r\n    .main-info,\r\n    .second-info {\r\n      padding: 25px;\r\n      block-size: 100%;\r\n      background-color: #fff;\r\n      h5 {\r\n        margin: 16px 0px;\r\n      }\r\n    }\r\n    .second-info {\r\n      .circles {\r\n        display: flex;\r\n        flex-wrap: wrap;\r\n        margin-bottom: 20px;\r\n        .circle {\r\n          display: flex;\r\n          justify-content: center;\r\n          align-items: center;\r\n          width: 33px;\r\n          height: 33px;\r\n          border: 2px solid transparent;\r\n          margin: 2px;\r\n          cursor: pointer;\r\n\r\n          &.active {\r\n            border: 2px solid #19ad7b;\r\n          }\r\n\r\n          span {\r\n            display: flex;\r\n            width: 25px;\r\n            height: 25px;\r\n            border: 1px solid #c5c5c5;\r\n            justify-content: center;\r\n            font-size: 13px;\r\n            align-items: center;\r\n          }\r\n          &.colors {\r\n            border-radius: 50%;\r\n            span {\r\n              border-radius: 50%;\r\n            }\r\n          }\r\n          &.sizes {\r\n            border-radius: 6px;\r\n            span {\r\n              border-radius: 6px;\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  }\r\n  .uplod-image {\r\n    background-color: #fff;\r\n    padding: 25px;\r\n    block-size: 100%;\r\n    h5 {\r\n      margin: 16px 0px;\r\n    }\r\n  }\r\n  .category-price {\r\n    background-color: #fff;\r\n    padding: 25px;\r\n    block-size: 100%;\r\n    h5 {\r\n      margin: 16px 0px;\r\n    }\r\n    .custom-select {\r\n      position: relative;\r\n      display: flex;\r\n      align-items: center;\r\n      justify-content: space-between;\r\n      margin-bottom: 10px;\r\n\r\n      select {\r\n        appearance: none;\r\n        -webkit-appearance: none;\r\n        -moz-appearance: none;\r\n        padding: 10px 20px;\r\n        font-size: 16px;\r\n        border: 1px solid #ccc;\r\n        border-radius: 5px;\r\n        background-color: #f1f1f1;\r\n        cursor: pointer;\r\n        width: 100%;\r\n        outline: none; // Remove default focus styling\r\n        margin-right: 10px;\r\n      }\r\n\r\n      select::-ms-expand {\r\n        display: none; // Hide arrow in IE\r\n      }\r\n\r\n      select:focus {\r\n        border-color: #19ad7b;\r\n        box-shadow: 0 0 5px rgba(25, 173, 123, 0.5);\r\n      }\r\n      .plus-icon {\r\n        font-size: 20px;\r\n        padding: 10px;\r\n        width: 45px;\r\n        height: 45px;\r\n        background-color: #19ad7b;\r\n        border-radius: 6px;\r\n        display: flex;\r\n        align-items: center;\r\n        justify-content: center;\r\n        color: #fff;\r\n        cursor: pointer;\r\n      }\r\n      .delete-cat {\r\n        font-size: 20px;\r\n        padding: 10px;\r\n        width: 45px;\r\n        height: 45px;\r\n        background-color: #d83845;\r\n        border-radius: 6px;\r\n        display: flex;\r\n        align-items: center;\r\n        justify-content: center;\r\n        color: #fff;\r\n        cursor: pointer;\r\n      }\r\n    }\r\n  }\r\n}\r\nlabel {\r\n  svg {\r\n    margin-inline-end: 5px;\r\n  }\r\n}\r\n",
+      "start": 1730750298457,
+      "end": 1730750298457
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1730750298458,
+      "end": 1730750298458,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1730750298458,
+      "end": 1730750298458,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1730750298458,
+      "end": 1730750298458,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1730750298458,
+      "end": 1730750298458,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": ".contain{background-color:#f8f7fa;float:right;margin-top:77.6px;min-height:calc(100vh - 77.6px);overflow-x:hidden;padding:16px;transition:all .3s linear;width:100%}@media (max-width:600px){.contain{margin-top:55px}}.contain.shrink{width:calc(100% - 260px)}@media (max-width:600px){.contain.shrink{width:100%}}.contain .title-container{align-items:center;display:flex;justify-content:space-between;margin:16px 0}@media (max-width:991px){.contain .title-container{align-items:flex-start;flex-direction:column}}.contain .title-container .head-title p{color:#6d6a77;font-size:15px}.contain .title-container .head-title p a{color:#19ad7b;text-decoration:underline}.contain .form .main-info,.contain .form .second-info{background-color:#fff;block-size:100%;padding:25px}.contain .form .main-info h5,.contain .form .second-info h5{margin:16px 0}.contain .form .second-info .circles{display:flex;flex-wrap:wrap;margin-bottom:20px}.contain .form .second-info .circles .circle{align-items:center;border:2px solid transparent;cursor:pointer;display:flex;height:33px;justify-content:center;margin:2px;width:33px}.contain .form .second-info .circles .circle.active{border:2px solid #19ad7b}.contain .form .second-info .circles .circle span{align-items:center;border:1px solid #c5c5c5;display:flex;font-size:13px;height:25px;justify-content:center;width:25px}.contain .form .second-info .circles .circle.colors,.contain .form .second-info .circles .circle.colors span{border-radius:50%}.contain .form .second-info .circles .circle.sizes,.contain .form .second-info .circles .circle.sizes span{border-radius:6px}.contain .uplod-image{background-color:#fff;block-size:100%;padding:25px}.contain .uplod-image h5{margin:16px 0}.contain .category-price{background-color:#fff;block-size:100%;padding:25px}.contain .category-price h5{margin:16px 0}.contain .category-price .custom-select{align-items:center;display:flex;justify-content:space-between;margin-bottom:10px;position:relative}.contain .category-price .custom-select select{appearance:none;-webkit-appearance:none;-moz-appearance:none;background-color:#f1f1f1;border:1px solid #ccc;border-radius:5px;cursor:pointer;font-size:16px;margin-right:10px;outline:none;padding:10px 20px;width:100%}.contain .category-price .custom-select select::-ms-expand{display:none}.contain .category-price .custom-select select:focus{border-color:#19ad7b;box-shadow:0 0 5px rgba(25,173,123,.5)}.contain .category-price .custom-select .plus-icon{background-color:#19ad7b}.contain .category-price .custom-select .delete-cat,.contain .category-price .custom-select .plus-icon{align-items:center;border-radius:6px;color:#fff;cursor:pointer;display:flex;font-size:20px;height:45px;justify-content:center;padding:10px;width:45px}.contain .category-price .custom-select .delete-cat{background-color:#d83845}label svg{margin-inline-end:5px}",
+      "start": 1730750298458,
+      "end": 1730750298683,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1730750298683,
+      "end": 1730750298683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1730750298683,
+      "end": 1730750298683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1730750298683,
+      "end": 1730750298683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": ".contain[data-v-39e6929f]{background-color:#f8f7fa;float:right;margin-top:77.6px;min-height:calc(100vh - 77.6px);overflow-x:hidden;padding:16px;transition:all .3s linear;width:100%}@media (max-width:600px){.contain[data-v-39e6929f]{margin-top:55px}}.contain.shrink[data-v-39e6929f]{width:calc(100% - 260px)}@media (max-width:600px){.contain.shrink[data-v-39e6929f]{width:100%}}.contain .title-container[data-v-39e6929f]{align-items:center;display:flex;justify-content:space-between;margin:16px 0}@media (max-width:991px){.contain .title-container[data-v-39e6929f]{align-items:flex-start;flex-direction:column}}.contain .title-container .head-title p[data-v-39e6929f]{color:#6d6a77;font-size:15px}.contain .title-container .head-title p a[data-v-39e6929f]{color:#19ad7b;text-decoration:underline}.contain .form .main-info[data-v-39e6929f],.contain .form .second-info[data-v-39e6929f]{background-color:#fff;block-size:100%;padding:25px}.contain .form .main-info h5[data-v-39e6929f],.contain .form .second-info h5[data-v-39e6929f]{margin:16px 0}.contain .form .second-info .circles[data-v-39e6929f]{display:flex;flex-wrap:wrap;margin-bottom:20px}.contain .form .second-info .circles .circle[data-v-39e6929f]{align-items:center;border:2px solid transparent;cursor:pointer;display:flex;height:33px;justify-content:center;margin:2px;width:33px}.contain .form .second-info .circles .circle.active[data-v-39e6929f]{border:2px solid #19ad7b}.contain .form .second-info .circles .circle span[data-v-39e6929f]{align-items:center;border:1px solid #c5c5c5;display:flex;font-size:13px;height:25px;justify-content:center;width:25px}.contain .form .second-info .circles .circle.colors[data-v-39e6929f],.contain .form .second-info .circles .circle.colors span[data-v-39e6929f]{border-radius:50%}.contain .form .second-info .circles .circle.sizes[data-v-39e6929f],.contain .form .second-info .circles .circle.sizes span[data-v-39e6929f]{border-radius:6px}.contain .uplod-image[data-v-39e6929f]{background-color:#fff;block-size:100%;padding:25px}.contain .uplod-image h5[data-v-39e6929f]{margin:16px 0}.contain .category-price[data-v-39e6929f]{background-color:#fff;block-size:100%;padding:25px}.contain .category-price h5[data-v-39e6929f]{margin:16px 0}.contain .category-price .custom-select[data-v-39e6929f]{align-items:center;display:flex;justify-content:space-between;margin-bottom:10px;position:relative}.contain .category-price .custom-select select[data-v-39e6929f]{appearance:none;-webkit-appearance:none;-moz-appearance:none;background-color:#f1f1f1;border:1px solid #ccc;border-radius:5px;cursor:pointer;font-size:16px;margin-right:10px;outline:none;padding:10px 20px;width:100%}.contain .category-price .custom-select select[data-v-39e6929f]::-ms-expand{display:none}.contain .category-price .custom-select select[data-v-39e6929f]:focus{border-color:#19ad7b;box-shadow:0 0 5px rgba(25,173,123,.5)}.contain .category-price .custom-select .plus-icon[data-v-39e6929f]{background-color:#19ad7b}.contain .category-price .custom-select .delete-cat[data-v-39e6929f],.contain .category-price .custom-select .plus-icon[data-v-39e6929f]{align-items:center;border-radius:6px;color:#fff;cursor:pointer;display:flex;font-size:20px;height:45px;justify-content:center;padding:10px;width:45px}.contain .category-price .custom-select .delete-cat[data-v-39e6929f]{background-color:#d83845}label svg[data-v-39e6929f]{margin-inline-end:5px}",
+      "start": 1730750298700,
+      "end": 1730750298704,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1730750298704,
+      "end": 1730750298704,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1730750298704,
+      "end": 1730750298704,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1730750298704,
+      "end": 1730750298704,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1730750298704,
+      "end": 1730750298704,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1730750298705,
+      "end": 1730750298705,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1730750298705,
+      "end": 1730750298705,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1730750298705,
+      "end": 1730750298705,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1730750298705,
+      "end": 1730750298705,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "",
+      "start": 1730750298705,
+      "end": 1730750298705,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1730750298705,
+      "end": 1730750298705,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1730750298705,
+      "end": 1730750298705,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1730750298705,
+      "end": 1730750298705,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1730750298705,
+      "end": 1730750298705,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1730750298705,
+      "end": 1730750298705,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1730750298705,
+      "end": 1730750298705,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1730750298705,
+      "end": 1730750298705,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1730750298705,
+      "end": 1730750298705,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1730750298705,
+      "end": 1730750298705,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1730750298705,
+      "end": 1730750298705,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "result": "/* unplugin-vue-components disabled */",
+      "start": 1730750298705,
+      "end": 1730750298706,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard/pages/AddProduct.vue?vue&type=style&index=0&scoped=39e6929f&lang.scss"
+        ],
+        "sourcesContent": [
+          ""
+        ],
+        "names": [],
+        "mappings": ""
+      }
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1730750298706,
+      "end": 1730750298706,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1730750298706,
+      "end": 1730750298706,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1730750298706,
+      "end": 1730750298706,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1730750298706,
+      "end": 1730750298706,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1730750298706,
+      "end": 1730750298706,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1730750298706,
+      "end": 1730750298706,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1730750298706,
+      "end": 1730750298706,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1730750298706,
+      "end": 1730750298706,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1730750298706,
+      "end": 1730750298706,
+      "order": "normal"
+    }
+  ]
+}

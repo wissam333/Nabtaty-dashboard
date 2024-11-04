@@ -1,0 +1,267 @@
+{
+  "resolvedId": "D:/Projects/Nabtaty-dashboard/pages/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div>\r\n    <Home />\r\n  </div>\r\n</template>\r\n\r\n<script setup>\r\ndefinePageMeta({\r\n  middleware: [\"auth\"],\r\n});\r\n</script>\r\n\r\n<style lang=\"scss\" scoped></style>\r\n",
+      "start": 1730750295821,
+      "end": 1730750296604,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1730750296604,
+      "end": 1730750296604,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1730750296604,
+      "end": 1730750296604,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1730750296605,
+      "end": 1730750296605,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1730750296605,
+      "end": 1730750296605,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1730750296605,
+      "end": 1730750296605,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1730750296605,
+      "end": 1730750296605,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1730750296605,
+      "end": 1730750296605,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1730750296605,
+      "end": 1730750296605,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\r\ndefinePageMeta({\r\n  middleware: [\"auth\"],\r\n});\r\n\nreturn (_ctx, _cache) => {\n  const _component_Home = _resolveComponent(\"Home\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createVNode(_component_Home)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1730750296605,
+      "end": 1730750296606,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1730750296606,
+      "end": 1730750296606,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1730750296606,
+      "end": 1730750296606,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1730750296606,
+      "end": 1730750296606,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1730750296606,
+      "end": 1730750296606,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1730750296606,
+      "end": 1730750296606,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1730750296607,
+      "end": 1730750296607,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1730750296607,
+      "end": 1730750296607,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1730750296607,
+      "end": 1730750296607,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1730750296607,
+      "end": 1730750296607,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1730750296607,
+      "end": 1730750296607,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1730750296607,
+      "end": 1730750296607,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1730750296607,
+      "end": 1730750296607,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1730750296607,
+      "end": 1730750296607,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1730750296607,
+      "end": 1730750296607,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1730750296607,
+      "end": 1730750296607,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1730750296607,
+      "end": 1730750296607,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1730750296607,
+      "end": 1730750296607,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1730750296607,
+      "end": 1730750296607,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1730750296607,
+      "end": 1730750296607,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "result": "/* unplugin-vue-components disabled */import { resolveComponent as _resolveComponent, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\r\ndefinePageMeta({\r\n  middleware: [\"auth\"],\r\n});\r\n\nreturn (_ctx, _cache) => {\n  const _component_Home = _resolveComponent(\"Home\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createVNode(_component_Home)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1730750296607,
+      "end": 1730750296608,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard/pages/index.vue"
+        ],
+        "sourcesContent": [
+          "import { resolveComponent as _resolveComponent, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\r\ndefinePageMeta({\r\n  middleware: [\"auth\"],\r\n});\r\n\nreturn (_ctx, _cache) => {\n  const _component_Home = _resolveComponent(\"Home\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createVNode(_component_Home)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main"
+        ],
+        "names": [],
+        "mappings": "sCAAA,MAAM,CAAC,CAAC,CAAC,gBAAgB,CAAC,EAAE,CAAC,iBAAiB,CAAC,CAAC,WAAW,CAAC,EAAE,CAAC,YAAY,CAAC,CAAC,SAAS,CAAC,EAAE,CAAC,UAAU,CAAC,CAAC,kBAAkB,CAAC,EAAE,CAAC,mBAAmB,CAAC,CAAC,CAAC,IAAI,CAAC,CAAC,GAAG,CAAC;AAC5J;AACA;AACA,KAAK,CAAC,SAAS,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,MAAM,CAAC,CAAC,CAAC,KAAK,CAAC,CAAC;AAClB,CAAC,CAAC,KAAK,CAAC,OAAO,CAAC,CAAC,CAAC;AAClB,CAAC;AACD,cAAc,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,UAAU,CAAC,CAAC,CAAC,CAAC,IAAI,CAAC,CAAC,CAAC,CAAC;AACxB,CAAC,CAAC,CAAC,CAAC;AACJ;AACA,MAAM,CAAC,CAAC,IAAI,CAAC,CAAC,MAAM,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1B,CAAC,CAAC,KAAK,CAAC,eAAe,CAAC,CAAC,CAAC,iBAAiB,CAAC,CAAC,IAAI,CAAC,CAAC;AACnD;AACA,CAAC,CAAC,MAAM,CAAC,CAAC,UAAU,CAAC,CAAC,CAAC,CAAC,mBAAmB,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC,IAAI,CAAC,CAAC,CAAC;AAC1D,CAAC,CAAC,CAAC,CAAC,YAAY,CAAC,eAAe,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC;AACD,CAAC;AACD;AACA,CAAC;AACD;AACA;AACA;AACA,MAAM,CAAC,OAAO,CAAC"
+      }
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { definePageMeta } from 'D:/Projects/Nabtaty-dashboard/node_modules/nuxt/dist/pages/runtime/composables';\n/* unplugin-vue-components disabled */import { resolveComponent as _resolveComponent, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\r\ndefinePageMeta({\r\n  middleware: [\"auth\"],\r\n});\r\n\nreturn (_ctx, _cache) => {\n  const _component_Home = _resolveComponent(\"Home\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createVNode(_component_Home)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1730750296608,
+      "end": 1730750296609,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClM;AACA;AACA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC;AACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxB,CAAC,CAAC,CAAC,CAAC;AACJ;AACA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnD;AACA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC;AACD,CAAC;AACD;AACA,CAAC;AACD;AACA;AACA;AACA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1730750296609,
+      "end": 1730750296610,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1730750296610,
+      "end": 1730750296610,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1730750296610,
+      "end": 1730750296610,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1730750296610,
+      "end": 1730750296610,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"D:/Projects/Nabtaty-dashboard/components/Home/index.vue\";\nimport { definePageMeta } from 'D:/Projects/Nabtaty-dashboard/node_modules/nuxt/dist/pages/runtime/composables';\n/* unplugin-vue-components disabled */import { resolveComponent as _resolveComponent, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\r\ndefinePageMeta({\r\n  middleware: [\"auth\"],\r\n});\r\n\nreturn (_ctx, _cache) => {\n  const _component_Home = __nuxt_component_0\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createVNode(_component_Home)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1730750296610,
+      "end": 1730750296611,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "result": "import { default as __nuxt_component_0 } from \"D:/Projects/Nabtaty-dashboard/components/Home/index.vue\";\nimport { definePageMeta } from 'D:/Projects/Nabtaty-dashboard/node_modules/nuxt/dist/pages/runtime/composables';\n/* unplugin-vue-components disabled */import { resolveComponent as _resolveComponent, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\n\nconst _sfc_main = {\n  __name: 'index',\n  setup(__props) {\n\r\n false && /*@__PURE__*/ definePageMeta({\r\n  middleware: [\"auth\"],\r\n});\r\n\nreturn (_ctx, _cache) => {\n  const _component_Home = __nuxt_component_0\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createVNode(_component_Home)\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1730750296611,
+      "end": 1730750296612,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1730750296612,
+      "end": 1730750296612,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1730750296612,
+      "end": 1730750296612,
+      "order": "normal"
+    }
+  ]
+}

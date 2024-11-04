@@ -1,0 +1,265 @@
+{
+  "resolvedId": "D:/Projects/Nabtaty-dashboard/components/elements/LanguageToggle.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div\r\n    class=\"language-picker fw-bold pointer\"\r\n    :class=\"locale === 'ar' ? 'ar-flex' : ''\"\r\n  >\r\n    <span @click=\"toggleLanguage\" :style=\"`color: ${color};`\">\r\n      {{ locale === \"ar\" ? \"English\" : \"العربية\" }}\r\n    </span>\r\n  </div>\r\n</template>\r\n\r\n<script setup>\r\nconst { locale } = useI18n();\r\n\r\nconst props = defineProps({\r\n  color: {\r\n    type: String,\r\n    default: \"#fff\",\r\n    required: false,\r\n  },\r\n});\r\n\r\nconst toggleLanguage = () => {\r\n  locale.value = locale.value === \"ar\" ? \"en\" : \"ar\";\r\n};\r\n\r\nwatchEffect(() => {\r\n  if (locale.value) {\r\n    if (locale.value === \"ar\") {\r\n      useCookie(\"lang\").value = \"ar\";\r\n      useCookie(\"i18n_redirected\").value = \"ar\";\r\n    } else {\r\n      useCookie(\"lang\").value = \"en\";\r\n      useCookie(\"i18n_redirected\").value = \"en\";\r\n    }\r\n  }\r\n});\r\n</script>\r\n\r\n<style lang=\"scss\" scoped>\r\n.language-picker {\r\n  font-size: 14px;\r\n  margin-top: 8px;\r\n  @media (max-width: 991px) {\r\n    font-size: 12px;\r\n  }\r\n  font-family: alinma, \"Arial\", \"sans-serif\";\r\n  font-weight: bold;\r\n  &.ar-flex {\r\n    font-family: Poppins !important;\r\n    margin-top: 0px;\r\n  }\r\n}\r\n\r\n.switch {\r\n  position: relative;\r\n  display: inline-block;\r\n  margin: 0 5px;\r\n}\r\n\r\n.switch > span {\r\n  position: absolute;\r\n  top: 10px;\r\n  pointer-events: none;\r\n  font-family: \"Helvetica\", Arial, sans-serif;\r\n  font-weight: bold;\r\n  font-size: 12px;\r\n  text-transform: uppercase;\r\n  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);\r\n  width: 50%;\r\n  text-align: cENter;\r\n}\r\n\r\ninput.check-toggle-round-flat.EN ~ .off {\r\n  color: $main;\r\n}\r\n\r\ninput.check-toggle-round-flat.EN ~ .on {\r\n  color: #fff;\r\n}\r\n\r\n.switch > span.on {\r\n  left: 0;\r\n  padding-left: 2px;\r\n  color: $main;\r\n}\r\n\r\n.switch > span.off {\r\n  right: 0;\r\n  padding-right: 4px;\r\n  color: #fff;\r\n}\r\n\r\n.check-toggle {\r\n  position: absolute;\r\n  margin-left: -9999px;\r\n  visibility: hiddEN;\r\n}\r\n\r\n.check-toggle + label {\r\n  display: block;\r\n  position: relative;\r\n  cursor: pointer;\r\n  outline: none;\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n  user-select: none;\r\n}\r\n\r\ninput.check-toggle-round-flat + label {\r\n  padding: 2px;\r\n  width: 99px;\r\n  height: 35px;\r\n  background-color: $main;\r\n  -webkit-border-radius: 60px;\r\n  -moz-border-radius: 60px;\r\n  -ms-border-radius: 60px;\r\n  -o-border-radius: 60px;\r\n  border-radius: 60px;\r\n}\r\n\r\ninput.check-toggle-round-flat + label:before,\r\ninput.check-toggle-round-flat + label:after {\r\n  display: block;\r\n  position: absolute;\r\n  content: \"\";\r\n}\r\n\r\ninput.check-toggle-round-flat + label:before {\r\n  top: 2px;\r\n  left: 2px;\r\n  bottom: 2px;\r\n  right: 2px;\r\n  background-color: $main;\r\n  border-radius: 60px;\r\n}\r\n\r\ninput.check-toggle-round-flat + label:after {\r\n  top: 4px;\r\n  left: 4px;\r\n  bottom: 4px;\r\n  width: 48px;\r\n  background-color: #fff;\r\n  -webkit-border-radius: 52px;\r\n  -moz-border-radius: 52px;\r\n  -ms-border-radius: 52px;\r\n  -o-border-radius: 52px;\r\n  border-radius: 52px;\r\n  -webkit-transition: margin 0.2s;\r\n  -moz-transition: margin 0.2s;\r\n  -o-transition: margin 0.2s;\r\n  transition: margin 0.2s;\r\n}\r\n\r\ninput.check-toggle-round-flat.EN + label:after {\r\n  margin-left: 44px;\r\n}\r\n</style>\r\n",
+      "start": 1730750299886,
+      "end": 1730750299969,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1730750299969,
+      "end": 1730750299969,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1730750299969,
+      "end": 1730750299969,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1730750299969,
+      "end": 1730750299969,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1730750299969,
+      "end": 1730750299969,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1730750299969,
+      "end": 1730750299969,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1730750299969,
+      "end": 1730750299969,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1730750299969,
+      "end": 1730750299969,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1730750299969,
+      "end": 1730750299969,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, toDisplayString as _toDisplayString, normalizeStyle as _normalizeStyle, createElementVNode as _createElementVNode, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\n\nconst _sfc_main = {\n  __name: 'LanguageToggle',\n  props: {\r\n  color: {\r\n    type: String,\r\n    default: \"#fff\",\r\n    required: false,\r\n  },\r\n},\n  setup(__props) {\n\r\nconst { locale } = useI18n();\r\n\r\nconst props = __props;\r\n\r\nconst toggleLanguage = () => {\r\n  locale.value = locale.value === \"ar\" ? \"en\" : \"ar\";\r\n};\r\n\r\nwatchEffect(() => {\r\n  if (locale.value) {\r\n    if (locale.value === \"ar\") {\r\n      useCookie(\"lang\").value = \"ar\";\r\n      useCookie(\"i18n_redirected\").value = \"ar\";\r\n    } else {\r\n      useCookie(\"lang\").value = \"en\";\r\n      useCookie(\"i18n_redirected\").value = \"en\";\r\n    }\r\n  }\r\n});\r\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", {\n    class: _normalizeClass([\"language-picker fw-bold pointer\", _unref(locale) === 'ar' ? 'ar-flex' : ''])\n  }, [\n    _createElementVNode(\"span\", {\n      onClick: toggleLanguage,\n      style: _normalizeStyle(`color: ${__props.color};`)\n    }, _toDisplayString(_unref(locale) === \"ar\" ? \"English\" : \"العربية\"), 5)\n  ], 2))\n}\n}\n\n}\n\n\nimport \"D:/Projects/Nabtaty-dashboard/components/elements/LanguageToggle.vue?vue&type=style&index=0&scoped=e9588ef8&lang.scss\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['__scopeId',\"data-v-e9588ef8\"]])",
+      "start": 1730750299969,
+      "end": 1730750299972,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1730750299972,
+      "end": 1730750299972,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1730750299972,
+      "end": 1730750299972,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1730750299972,
+      "end": 1730750299972,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1730750299972,
+      "end": 1730750299972,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1730750299972,
+      "end": 1730750299972,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1730750299972,
+      "end": 1730750299972,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1730750299972,
+      "end": 1730750299972,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1730750299972,
+      "end": 1730750299972,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1730750299972,
+      "end": 1730750299972,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1730750299972,
+      "end": 1730750299972,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1730750299972,
+      "end": 1730750299972,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1730750299972,
+      "end": 1730750299972,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1730750299972,
+      "end": 1730750299972,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1730750299972,
+      "end": 1730750299972,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1730750299972,
+      "end": 1730750299972,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1730750299972,
+      "end": 1730750299972,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1730750299972,
+      "end": 1730750299972,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1730750299972,
+      "end": 1730750299972,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1730750299972,
+      "end": 1730750299972,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "result": "/* unplugin-vue-components disabled */import { unref as _unref, toDisplayString as _toDisplayString, normalizeStyle as _normalizeStyle, createElementVNode as _createElementVNode, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\n\nconst _sfc_main = {\n  __name: 'LanguageToggle',\n  props: {\r\n  color: {\r\n    type: String,\r\n    default: \"#fff\",\r\n    required: false,\r\n  },\r\n},\n  setup(__props) {\n\r\nconst { locale } = useI18n();\r\n\r\nconst props = __props;\r\n\r\nconst toggleLanguage = () => {\r\n  locale.value = locale.value === \"ar\" ? \"en\" : \"ar\";\r\n};\r\n\r\nwatchEffect(() => {\r\n  if (locale.value) {\r\n    if (locale.value === \"ar\") {\r\n      useCookie(\"lang\").value = \"ar\";\r\n      useCookie(\"i18n_redirected\").value = \"ar\";\r\n    } else {\r\n      useCookie(\"lang\").value = \"en\";\r\n      useCookie(\"i18n_redirected\").value = \"en\";\r\n    }\r\n  }\r\n});\r\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", {\n    class: _normalizeClass([\"language-picker fw-bold pointer\", _unref(locale) === 'ar' ? 'ar-flex' : ''])\n  }, [\n    _createElementVNode(\"span\", {\n      onClick: toggleLanguage,\n      style: _normalizeStyle(`color: ${__props.color};`)\n    }, _toDisplayString(_unref(locale) === \"ar\" ? \"English\" : \"العربية\"), 5)\n  ], 2))\n}\n}\n\n}\n\n\nimport \"D:/Projects/Nabtaty-dashboard/components/elements/LanguageToggle.vue?vue&type=style&index=0&scoped=e9588ef8&lang.scss\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['__scopeId',\"data-v-e9588ef8\"]])",
+      "start": 1730750299972,
+      "end": 1730750299972,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard/components/elements/LanguageToggle.vue"
+        ],
+        "sourcesContent": [
+          "import { unref as _unref, toDisplayString as _toDisplayString, normalizeStyle as _normalizeStyle, createElementVNode as _createElementVNode, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\n\nconst _sfc_main = {\n  __name: 'LanguageToggle',\n  props: {\r\n  color: {\r\n    type: String,\r\n    default: \"#fff\",\r\n    required: false,\r\n  },\r\n},\n  setup(__props) {\n\r\nconst { locale } = useI18n();\r\n\r\nconst props = __props;\r\n\r\nconst toggleLanguage = () => {\r\n  locale.value = locale.value === \"ar\" ? \"en\" : \"ar\";\r\n};\r\n\r\nwatchEffect(() => {\r\n  if (locale.value) {\r\n    if (locale.value === \"ar\") {\r\n      useCookie(\"lang\").value = \"ar\";\r\n      useCookie(\"i18n_redirected\").value = \"ar\";\r\n    } else {\r\n      useCookie(\"lang\").value = \"en\";\r\n      useCookie(\"i18n_redirected\").value = \"en\";\r\n    }\r\n  }\r\n});\r\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", {\n    class: _normalizeClass([\"language-picker fw-bold pointer\", _unref(locale) === 'ar' ? 'ar-flex' : ''])\n  }, [\n    _createElementVNode(\"span\", {\n      onClick: toggleLanguage,\n      style: _normalizeStyle(`color: ${__props.color};`)\n    }, _toDisplayString(_unref(locale) === \"ar\" ? \"English\" : \"العربية\"), 5)\n  ], 2))\n}\n}\n\n}\n\n\nimport \"D:/Projects/Nabtaty-dashboard/components/elements/LanguageToggle.vue?vue&type=style&index=0&scoped=e9588ef8&lang.scss\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['__scopeId',\"data-v-e9588ef8\"]])"
+        ],
+        "names": [],
+        "mappings": "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"
+      }
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useI18n } from 'D:/Projects/Nabtaty-dashboard/node_modules/vue-i18n/dist/vue-i18n.mjs';\nimport { watchEffect } from 'vue';\nimport { useCookie } from '#app/composables/cookie';\n/* unplugin-vue-components disabled */import { unref as _unref, toDisplayString as _toDisplayString, normalizeStyle as _normalizeStyle, createElementVNode as _createElementVNode, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\n\nconst _sfc_main = {\n  __name: 'LanguageToggle',\n  props: {\r\n  color: {\r\n    type: String,\r\n    default: \"#fff\",\r\n    required: false,\r\n  },\r\n},\n  setup(__props) {\n\r\nconst { locale } = useI18n();\r\n\r\nconst props = __props;\r\n\r\nconst toggleLanguage = () => {\r\n  locale.value = locale.value === \"ar\" ? \"en\" : \"ar\";\r\n};\r\n\r\nwatchEffect(() => {\r\n  if (locale.value) {\r\n    if (locale.value === \"ar\") {\r\n      useCookie(\"lang\").value = \"ar\";\r\n      useCookie(\"i18n_redirected\").value = \"ar\";\r\n    } else {\r\n      useCookie(\"lang\").value = \"en\";\r\n      useCookie(\"i18n_redirected\").value = \"en\";\r\n    }\r\n  }\r\n});\r\n\nreturn (_ctx, _cache) => {\n  return (_openBlock(), _createElementBlock(\"div\", {\n    class: _normalizeClass([\"language-picker fw-bold pointer\", _unref(locale) === 'ar' ? 'ar-flex' : ''])\n  }, [\n    _createElementVNode(\"span\", {\n      onClick: toggleLanguage,\n      style: _normalizeStyle(`color: ${__props.color};`)\n    }, _toDisplayString(_unref(locale) === \"ar\" ? \"English\" : \"العربية\"), 5)\n  ], 2))\n}\n}\n\n}\n\n\nimport \"D:/Projects/Nabtaty-dashboard/components/elements/LanguageToggle.vue?vue&type=style&index=0&scoped=e9588ef8&lang.scss\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['__scopeId',\"data-v-e9588ef8\"]])",
+      "start": 1730750299973,
+      "end": 1730750299974,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CA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C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC,CAAC;AACJ,CAAC,CAAC,CAAC,CAAC;AACJ;AACA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzG,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5E,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACR,CAAC;AACD,CAAC;AACD;AACA,CAAC;AACD;AACA;AACA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9H;AACA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1730750299974,
+      "end": 1730750299974,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1730750299974,
+      "end": 1730750299974,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1730750299974,
+      "end": 1730750299974,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1730750299974,
+      "end": 1730750299974,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1730750299974,
+      "end": 1730750299974,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1730750299974,
+      "end": 1730750299974,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1730750299974,
+      "end": 1730750299974,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1730750299974,
+      "end": 1730750299974,
+      "order": "normal"
+    }
+  ]
+}

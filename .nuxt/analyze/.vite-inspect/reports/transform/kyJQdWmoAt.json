@@ -1,0 +1,251 @@
+{
+  "resolvedId": "D:/Projects/Nabtaty-dashboard/middleware/auth.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "export default defineNuxtRouteMiddleware((to, from) => {\r\n  if (process.client) {\r\n    const auth = useAuth();\r\n    if (!auth.value.isAuthenticated) {\r\n      return navigateTo(\"/SignIn\", { redirectCode: 301 });\r\n    }\r\n  }\r\n});\r\n",
+      "start": 1730750295891,
+      "end": 1730750296716,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1730750296719,
+      "end": 1730750296719,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1730750296720,
+      "end": 1730750296720,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1730750296720,
+      "end": 1730750296720,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1730750296720,
+      "end": 1730750296720,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1730750296720,
+      "end": 1730750296720,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1730750296720,
+      "end": 1730750296720,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1730750296721,
+      "end": 1730750296721,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1730750296721,
+      "end": 1730750296721,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1730750296721,
+      "end": 1730750296721,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1730750296721,
+      "end": 1730750296721,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1730750296722,
+      "end": 1730750296722,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1730750296722,
+      "end": 1730750296722,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1730750296722,
+      "end": 1730750296722,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1730750296722,
+      "end": 1730750296722,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1730750296722,
+      "end": 1730750296722,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1730750296722,
+      "end": 1730750296722,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "export default defineNuxtRouteMiddleware((to, from) => {\n  if (true) {\n    const auth = useAuth();\n    if (!auth.value.isAuthenticated) {\n      return navigateTo(\"/SignIn\", { redirectCode: 301 });\n    }\n  }\n});\n",
+      "start": 1730750296722,
+      "end": 1730750297022,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1730750297022,
+      "end": 1730750297022,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1730750297022,
+      "end": 1730750297022,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1730750297022,
+      "end": 1730750297022,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1730750297022,
+      "end": 1730750297022,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1730750297022,
+      "end": 1730750297022,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1730750297022,
+      "end": 1730750297022,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1730750297022,
+      "end": 1730750297022,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1730750297022,
+      "end": 1730750297022,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1730750297022,
+      "end": 1730750297023,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1730750297023,
+      "end": 1730750297023,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1730750297023,
+      "end": 1730750297023,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "start": 1730750297023,
+      "end": 1730750297023,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineNuxtRouteMiddleware, navigateTo } from '#app/composables/router';\nimport { useAuth } from 'D:/Projects/Nabtaty-dashboard/composables/useState.js';\nexport default defineNuxtRouteMiddleware((to, from) => {\n  if (true) {\n    const auth = useAuth();\n    if (!auth.value.isAuthenticated) {\n      return navigateTo(\"/SignIn\", { redirectCode: 301 });\n    }\n  }\n});\n",
+      "start": 1730750297023,
+      "end": 1730750297025,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1D,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1730750297025,
+      "end": 1730750297027,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1730750297027,
+      "end": 1730750297028,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1730750297028,
+      "end": 1730750297028,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1730750297028,
+      "end": 1730750297028,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1730750297028,
+      "end": 1730750297028,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1730750297028,
+      "end": 1730750297028,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1730750297028,
+      "end": 1730750297028,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1730750297028,
+      "end": 1730750297028,
+      "order": "normal"
+    }
+  ]
+}

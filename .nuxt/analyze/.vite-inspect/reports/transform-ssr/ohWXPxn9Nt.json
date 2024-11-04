@@ -1,0 +1,379 @@
+{
+  "resolvedId": "D:/Projects/Nabtaty-dashboard/error.vue?vue&type=style&index=0&scoped=42f79be0&lang.scss",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\r\n.error-box {\r\n  height: 100%;\r\n  position: fixed;\r\n  // background: url(/images/error-bg.jpg) center center no-repeat #fff !important;\r\n  width: 100%;\r\n}\r\n\r\n.m-t-30 {\r\n  margin-top: 30px !important;\r\n}\r\n\r\n.m-b-30 {\r\n  margin-bottom: 30px !important;\r\n}\r\n\r\n.m-b-40 {\r\n  margin-bottom: 40px !important;\r\n}\r\n\r\n.waves-effect {\r\n  position: relative;\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  overflow: hidden;\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n  user-select: none;\r\n  -webkit-tap-highlight-color: transparent;\r\n}\r\n\r\n.btn-rounded {\r\n  border-radius: 60px;\r\n}\r\n\r\n.error-box .footer {\r\n  width: 100%;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  color: #58666e;\r\n  left: 0;\r\n  padding: 20px 30px;\r\n  position: absolute;\r\n  right: 0;\r\n  background: #fff;\r\n}\r\n\r\n.error-body {\r\n  padding-top: 5%;\r\n}\r\n\r\n.error-body h1 {\r\n  font-size: fluid(100px, 210px);\r\n  font-weight: 900;\r\n  line-height: 210px;\r\n}\r\nbutton {\r\n  background-color: $main !important;\r\n}\r\n",
+      "start": 1730750311801,
+      "end": 1730750311801,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard/error.vue"
+        ],
+        "names": [],
+        "mappings": "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",
+        "file": "D:/Projects/Nabtaty-dashboard/error.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<template>\r\n  <section id=\"wrapper\" class=\"error-page\">\r\n    <div class=\"error-box\">\r\n      <div class=\"error-body text-center\">\r\n        <h1 class=\"mb-2 mb-dmd-3 mb-xl-5 gradient-text\" style=\"\">\r\n          {{ error?.statusCode }}\r\n        </h1>\r\n        <h3 class=\"text-uppercase gradient-text\" style=\"\">{{ heading }}</h3>\r\n        <p class=\"text-black m-t-30 m-b-30\">{{ description }}</p>\r\n        <button\r\n          @click=\"handleError\"\r\n          class=\"btn background text-white px-15 btn-rounded waves-effect waves-light\"\r\n        >\r\n          {{\r\n            $i18n.locale === \"ar\" ? \"الرجوع للصفحة الرئيسية\" : \"Back To Home\"\r\n          }}\r\n        </button>\r\n      </div>\r\n      <footer class=\"footer text-center\">\r\n        Copyright @ {{ new Date().getFullYear() }}\r\n        <span class=\"fw-bold gradient-text\" style=\"\">\r\n          {{ $t(\"Baddar Furniture\") }}\r\n        </span>\r\n      </footer>\r\n    </div>\r\n  </section>\r\n</template>\r\n\r\n<script setup>\r\nconst error = useError();\r\nconst i18e = useI18n();\r\n// console.log('error : ', error.value.message, error.value.stack)\r\nconst heading = computed(() =>\r\n  error.value?.statusCode == \"404\"\r\n    ? i18e.t(\"page-not-found\")\r\n    : i18e.t(\"server-error\")\r\n);\r\nconst description = computed(() =>\r\n  error.value?.statusCode === \"404\"\r\n    ? i18e.t(\"could-not-find-page-msg\")\r\n    : i18e.t(\"error-occurred-msg\")\r\n);\r\nconst handleError = () => clearError({ redirect: \"/\" });\r\n</script>\r\n\r\n<style lang=\"scss\" scoped>\r\n.error-box {\r\n  height: 100%;\r\n  position: fixed;\r\n  // background: url(/images/error-bg.jpg) center center no-repeat #fff !important;\r\n  width: 100%;\r\n}\r\n\r\n.m-t-30 {\r\n  margin-top: 30px !important;\r\n}\r\n\r\n.m-b-30 {\r\n  margin-bottom: 30px !important;\r\n}\r\n\r\n.m-b-40 {\r\n  margin-bottom: 40px !important;\r\n}\r\n\r\n.waves-effect {\r\n  position: relative;\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  overflow: hidden;\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n  user-select: none;\r\n  -webkit-tap-highlight-color: transparent;\r\n}\r\n\r\n.btn-rounded {\r\n  border-radius: 60px;\r\n}\r\n\r\n.error-box .footer {\r\n  width: 100%;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  color: #58666e;\r\n  left: 0;\r\n  padding: 20px 30px;\r\n  position: absolute;\r\n  right: 0;\r\n  background: #fff;\r\n}\r\n\r\n.error-body {\r\n  padding-top: 5%;\r\n}\r\n\r\n.error-body h1 {\r\n  font-size: fluid(100px, 210px);\r\n  font-weight: 900;\r\n  line-height: 210px;\r\n}\r\nbutton {\r\n  background-color: $main !important;\r\n}\r\n</style>\r\n"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1730750311802,
+      "end": 1730750311802,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1730750311802,
+      "end": 1730750311802,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1730750311802,
+      "end": 1730750311802,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1730750311802,
+      "end": 1730750311802,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1730750311802,
+      "end": 1730750311802,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1730750311802,
+      "end": 1730750311802,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1730750311802,
+      "end": 1730750311802,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1730750311802,
+      "end": 1730750311803,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": ".error-box{height:100%;position:fixed;width:100%}.m-t-30{margin-top:30px!important}.m-b-30{margin-bottom:30px!important}.m-b-40{margin-bottom:40px!important}.waves-effect{cursor:pointer;display:inline-block;overflow:hidden;position:relative;-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}.btn-rounded{border-radius:60px}.error-box .footer{background:#fff;bottom:0;color:#58666e;left:0;padding:20px 30px;position:absolute;right:0;width:100%}.error-body{padding-top:5%}.error-body h1{font-size:fluid(100px,210px);font-weight:900;line-height:210px}button{background-color:rgba(0,61,46,.761)!important}",
+      "start": 1730750311803,
+      "end": 1730750312306,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "file": "D:/Projects/Nabtaty-dashboard/error.vue",
+        "mappings": "AACA,WACE,YACA,eAEA,WAGF,QACE,0BAGF,QACE,6BAGF,QACE,6BAGF,cAEE,eACA,qBACA,gBAHA,kBAIA,yBACA,sBAEA,iBACA,wCAGF,aACE,mBAGF,mBAUE,gBANA,SACA,cACA,OACA,kBACA,kBACA,QARA,WAYF,YACE,eAGF,eACE,6BACA,gBACA,kBAEF,OACE",
+        "names": [],
+        "ignoreList": [],
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard/error.vue"
+        ],
+        "sourcesContent": [
+          null
+        ]
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1730750312306,
+      "end": 1730750312306,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1730750312306,
+      "end": 1730750312306,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1730750312306,
+      "end": 1730750312306,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": ".error-box[data-v-42f79be0]{height:100%;position:fixed;width:100%}.m-t-30[data-v-42f79be0]{margin-top:30px!important}.m-b-30[data-v-42f79be0]{margin-bottom:30px!important}.m-b-40[data-v-42f79be0]{margin-bottom:40px!important}.waves-effect[data-v-42f79be0]{cursor:pointer;display:inline-block;overflow:hidden;position:relative;-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}.btn-rounded[data-v-42f79be0]{border-radius:60px}.error-box .footer[data-v-42f79be0]{background:#fff;bottom:0;color:#58666e;left:0;padding:20px 30px;position:absolute;right:0;width:100%}.error-body[data-v-42f79be0]{padding-top:5%}.error-body h1[data-v-42f79be0]{font-size:fluid(100px,210px);font-weight:900;line-height:210px}button[data-v-42f79be0]{background-color:rgba(0,61,46,.761)!important}",
+      "start": 1730750312307,
+      "end": 1730750312309,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "D:/Projects/Nabtaty-dashboard/error.vue",
+        "mappings": "AAAA,4BAAW,WAAW,CAAC,cAAc,CAAC,UAAU,CAAC,yBAAQ,yBAAyB,CAAC,yBAAQ,4BAA4B,CAAC,yBAAQ,4BAA4B,CAAC,+BAAc,cAAc,CAAC,oBAAoB,CAAC,eAAe,CAAC,iBAAiB,CAAC,wBAAwB,CAAC,qBAAqB,CAAC,gBAAgB,CAAC,uCAAuC,CAAC,8BAAa,kBAAkB,CAAC,oCAAmB,eAAe,CAAC,QAAQ,CAAC,aAAa,CAAC,MAAM,CAAC,iBAAiB,CAAC,iBAAiB,CAAC,OAAO,CAAC,UAAU,CAAC,6BAAY,cAAc,CAAC,gCAAe,4BAA4B,CAAC,eAAe,CAAC,iBAAiB,CAAC,wBAAO,6CAA6C",
+        "names": [],
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard/error.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1730750312309,
+      "end": 1730750312309,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1730750312309,
+      "end": 1730750312309,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1730750312309,
+      "end": 1730750312309,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1730750312309,
+      "end": 1730750312309,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1730750312309,
+      "end": 1730750312309,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1730750312309,
+      "end": 1730750312309,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1730750312309,
+      "end": 1730750312309,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1730750312309,
+      "end": 1730750312311,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1730750312311,
+      "end": 1730750312311,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "",
+      "start": 1730750312312,
+      "end": 1730750312312,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1730750312312,
+      "end": 1730750312312,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1730750312312,
+      "end": 1730750312312,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1730750312312,
+      "end": 1730750312312,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1730750312312,
+      "end": 1730750312312,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1730750312312,
+      "end": 1730750312312,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1730750312312,
+      "end": 1730750312312,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1730750312312,
+      "end": 1730750312312,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1730750312312,
+      "end": 1730750312312,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1730750312312,
+      "end": 1730750312312,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1730750312312,
+      "end": 1730750312312,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1730750312312,
+      "end": 1730750312312,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1730750312312,
+      "end": 1730750312312,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1730750312313,
+      "end": 1730750312313,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1730750312313,
+      "end": 1730750312313,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "result": "/* unplugin-vue-components disabled */",
+      "start": 1730750312313,
+      "end": 1730750312313,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard/error.vue?vue&type=style&index=0&scoped=42f79be0&lang.scss"
+        ],
+        "sourcesContent": [
+          ""
+        ],
+        "names": [],
+        "mappings": ""
+      }
+    },
+    {
+      "name": "unplugin-vue-components",
+      "result": "/* unplugin-vue-components disabled */",
+      "start": 1730750312313,
+      "end": 1730750312313,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard/error.vue?vue&type=style&index=0&scoped=42f79be0&lang.scss"
+        ],
+        "sourcesContent": [
+          ""
+        ],
+        "names": [],
+        "mappings": ""
+      }
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1730750312313,
+      "end": 1730750312313,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1730750312313,
+      "end": 1730750312313,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1730750312313,
+      "end": 1730750312313,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1730750312313,
+      "end": 1730750312313,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1730750312313,
+      "end": 1730750312313,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1730750312313,
+      "end": 1730750312313,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1730750312313,
+      "end": 1730750312313,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1730750312313,
+      "end": 1730750312313,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1730750312313,
+      "end": 1730750312313,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1730750312313,
+      "end": 1730750312313,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1730750312313,
+      "end": 1730750312313,
+      "order": "normal"
+    }
+  ]
+}

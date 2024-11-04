@@ -1,0 +1,251 @@
+{
+  "resolvedId": "D:/Projects/Nabtaty-dashboard/middleware/supplierCompany.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "const { $awn } = useNuxtApp();\r\n\r\nexport default defineNuxtRouteMiddleware((to, from) => {\r\n    if (process.client) {\r\n      const user = useUserInfo().value;\r\n      const auth = useAuth();\r\n      if(auth.value.isAuthenticated) {\r\n        if (useUserInfo().value.client.type != \"Person\" && useUserInfo().value.client.status != 'Accepted') {\r\n          $awn.alert(\"Your Company has been successfully registered, please wait for the administration's approval\", { durations: { global: 5000 } });\r\n          return navigateTo(\"/\", { redirectCode: 301 });\r\n        }\r\n      }\r\n    }\r\n  });",
+      "start": 1730750296082,
+      "end": 1730750296938,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1730750296938,
+      "end": 1730750296938,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1730750296938,
+      "end": 1730750296938,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1730750296938,
+      "end": 1730750296938,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1730750296938,
+      "end": 1730750296938,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1730750296938,
+      "end": 1730750296938,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1730750296938,
+      "end": 1730750296939,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1730750296939,
+      "end": 1730750296939,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1730750296939,
+      "end": 1730750296939,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1730750296939,
+      "end": 1730750296939,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1730750296939,
+      "end": 1730750296939,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1730750296939,
+      "end": 1730750296939,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1730750296939,
+      "end": 1730750296939,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1730750296939,
+      "end": 1730750296939,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1730750296939,
+      "end": 1730750296939,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1730750296940,
+      "end": 1730750296940,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1730750296940,
+      "end": 1730750296940,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "const { $awn } = useNuxtApp();\nexport default defineNuxtRouteMiddleware((to, from) => {\n  if (true) {\n    const user = useUserInfo().value;\n    const auth = useAuth();\n    if (auth.value.isAuthenticated) {\n      if (useUserInfo().value.client.type != \"Person\" && useUserInfo().value.client.status != \"Accepted\") {\n        $awn.alert(\"Your Company has been successfully registered, please wait for the administration's approval\", { durations: { global: 5e3 } });\n        return navigateTo(\"/\", { redirectCode: 301 });\n      }\n    }\n  }\n});\n",
+      "start": 1730750296940,
+      "end": 1730750297022,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1730750297022,
+      "end": 1730750297022,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1730750297022,
+      "end": 1730750297022,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1730750297022,
+      "end": 1730750297022,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1730750297022,
+      "end": 1730750297022,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1730750297022,
+      "end": 1730750297022,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1730750297022,
+      "end": 1730750297022,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1730750297022,
+      "end": 1730750297022,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1730750297022,
+      "end": 1730750297022,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1730750297022,
+      "end": 1730750297023,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1730750297023,
+      "end": 1730750297023,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1730750297023,
+      "end": 1730750297023,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "start": 1730750297023,
+      "end": 1730750297023,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useNuxtApp } from '#app/nuxt';\nimport { defineNuxtRouteMiddleware, navigateTo } from '#app/composables/router';\nimport { useUserInfo, useAuth } from 'D:/Projects/Nabtaty-dashboard/composables/useState.js';\nconst { $awn } = useNuxtApp();\nexport default defineNuxtRouteMiddleware((to, from) => {\n  if (true) {\n    const user = useUserInfo().value;\n    const auth = useAuth();\n    if (auth.value.isAuthenticated) {\n      if (useUserInfo().value.client.type != \"Person\" && useUserInfo().value.client.status != \"Accepted\") {\n        $awn.alert(\"Your Company has been successfully registered, please wait for the administration's approval\", { durations: { global: 5e3 } });\n        return navigateTo(\"/\", { redirectCode: 301 });\n      }\n    }\n  }\n});\n",
+      "start": 1730750297023,
+      "end": 1730750297025,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3G,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnJ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1730750297026,
+      "end": 1730750297027,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1730750297027,
+      "end": 1730750297028,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1730750297028,
+      "end": 1730750297028,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1730750297028,
+      "end": 1730750297028,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1730750297028,
+      "end": 1730750297028,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1730750297028,
+      "end": 1730750297028,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1730750297028,
+      "end": 1730750297028,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1730750297028,
+      "end": 1730750297028,
+      "order": "normal"
+    }
+  ]
+}
