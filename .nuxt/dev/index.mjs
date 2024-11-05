@@ -6006,6 +6006,61 @@ function publicAssetsURL(...path) {
   return path.length ? joinURL(publicBase, ...path) : publicBase;
 }
 
+var theme$1 = function theme(_ref) {
+  var dt = _ref.dt;
+  return "\n.p-fileupload input[type=\"file\"] {\n    display: none;\n}\n\n.p-fileupload-advanced {\n    border: 1px solid ".concat(dt('fileupload.border.color'), ";\n    border-radius: ").concat(dt('fileupload.border.radius'), ";\n    background: ").concat(dt('fileupload.background'), ";\n    color: ").concat(dt('fileupload.color'), ";\n}\n\n.p-fileupload-header {\n    display: flex;\n    align-items: center;\n    padding: ").concat(dt('fileupload.header.padding'), ";\n    background: ").concat(dt('fileupload.header.background'), ";\n    color: ").concat(dt('fileupload.header.color'), ";\n    border-style: solid;\n    border-width: ").concat(dt('fileupload.header.border.width'), ";\n    border-color: ").concat(dt('fileupload.header.border.color'), ";\n    border-radius: ").concat(dt('fileupload.header.border.radius'), ";\n    gap: ").concat(dt('fileupload.header.gap'), ";\n}\n\n.p-fileupload-content {\n    border: 1px solid transparent;\n    position: relative;\n    transition: border-color ").concat(dt('fileupload.transition.duration'), ";\n    padding: ").concat(dt('fileupload.content.padding'), ";\n}\n\n.p-fileupload-content .p-progressbar {\n    width: 100%;\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: ").concat(dt('fileupload.progressbar.height'), ";\n}\n\n.p-fileupload-file-list {\n    display: flex;\n    flex-direction: column;\n    gap: 0.5rem;\n    margin-top: 1.125rem;\n}\n\n.p-fileupload-file {\n    display: flex;\n    flex-wrap: wrap;\n    align-items: center;\n    padding: ").concat(dt('fileupload.file.padding'), ";\n    border-bottom: 1px solid ").concat(dt('fileupload.file.border.color'), ";\n    gap: ").concat(dt('fileupload.file.gap'), ";\n}\n\n.p-fileupload-file:last-child {\n    border-bottom: 0;\n}\n\n.p-fileupload-file-info {\n    display: flex;\n    flex-direction: column;\n    gap: ").concat(dt('fileupload.file.info.gap'), ";\n}\n\n.p-fileupload-file-thumbnail {\n    flex-shrink: 0;\n}\n\n.p-fileupload-file-actions {\n    margin-left: auto;\n}\n\n.p-fileupload-highlight {\n    border: 1px dashed ").concat(dt('fileupload.content.highlight.border.color'), ";\n}\n\n.p-fileupload-advanced .p-message {\n    margin-top: 0;\n}\n\n.p-fileupload-basic {\n    display: flex;\n    flex-wrap: wrap;\n    align-items: center;\n    justify-content: center;\n    gap: ").concat(dt('fileupload.basic.gap'), ";\n}\n");
+};
+var classes$1 = {
+  root: function root(_ref2) {
+    var props = _ref2.props;
+    return ["p-fileupload p-fileupload-".concat(props.mode, " p-component")];
+  },
+  header: 'p-fileupload-header',
+  pcChooseButton: 'p-fileupload-choose-button',
+  pcUploadButton: 'p-fileupload-upload-button',
+  pcCancelButton: 'p-fileupload-cancel-button',
+  content: 'p-fileupload-content',
+  fileList: 'p-fileupload-file-list',
+  file: 'p-fileupload-file',
+  fileThumbnail: 'p-fileupload-file-thumbnail',
+  fileInfo: 'p-fileupload-file-info',
+  fileName: 'p-fileupload-file-name',
+  fileSize: 'p-fileupload-file-size',
+  pcFileBadge: 'p-fileupload-file-badge',
+  fileActions: 'p-fileupload-file-actions',
+  pcFileRemoveButton: 'p-fileupload-file-remove-button'
+};
+var FileUploadStyle = BaseStyle.extend({
+  name: 'fileupload',
+  theme: theme$1,
+  classes: classes$1
+});
+
+var theme = function theme(_ref) {
+  var dt = _ref.dt;
+  return "\n.p-checkbox {\n    position: relative;\n    display: inline-flex;\n    user-select: none;\n    vertical-align: bottom;\n    width: ".concat(dt('checkbox.width'), ";\n    height: ").concat(dt('checkbox.height'), ";\n}\n\n.p-checkbox-input {\n    cursor: pointer;\n    appearance: none;\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    padding: 0;\n    margin: 0;\n    opacity: 0;\n    z-index: 1;\n    outline: 0 none;\n    border: 1px solid transparent;\n    border-radius: ").concat(dt('checkbox.border.radius'), ";\n}\n\n.p-checkbox-box {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    border-radius: ").concat(dt('checkbox.border.radius'), ";\n    border: 1px solid ").concat(dt('checkbox.border.color'), ";\n    background: ").concat(dt('checkbox.background'), ";\n    width: ").concat(dt('checkbox.width'), ";\n    height: ").concat(dt('checkbox.height'), ";\n    transition: background ").concat(dt('checkbox.transition.duration'), ", color ").concat(dt('checkbox.transition.duration'), ", border-color ").concat(dt('checkbox.transition.duration'), ", box-shadow ").concat(dt('checkbox.transition.duration'), ", outline-color ").concat(dt('checkbox.transition.duration'), ";\n    outline-color: transparent;\n    box-shadow: ").concat(dt('checkbox.shadow'), ";\n}\n\n.p-checkbox-icon {\n    transition-duration: ").concat(dt('checkbox.transition.duration'), ";\n    color: ").concat(dt('checkbox.icon.color'), ";\n    font-size: ").concat(dt('checkbox.icon.size'), ";\n    width: ").concat(dt('checkbox.icon.size'), ";\n    height: ").concat(dt('checkbox.icon.size'), ";\n}\n\n.p-checkbox:not(.p-disabled):has(.p-checkbox-input:hover) .p-checkbox-box {\n    border-color: ").concat(dt('checkbox.hover.border.color'), ";\n}\n\n.p-checkbox-checked .p-checkbox-box {\n    border-color: ").concat(dt('checkbox.checked.border.color'), ";\n    background: ").concat(dt('checkbox.checked.background'), ";\n}\n\n.p-checkbox-checked .p-checkbox-icon {\n    color: ").concat(dt('checkbox.icon.checked.color'), ";\n}\n\n.p-checkbox-checked:not(.p-disabled):has(.p-checkbox-input:hover) .p-checkbox-box {\n    background: ").concat(dt('checkbox.checked.hover.background'), ";\n    border-color: ").concat(dt('checkbox.checked.hover.border.color'), ";\n}\n\n.p-checkbox-checked:not(.p-disabled):has(.p-checkbox-input:hover) .p-checkbox-icon {\n    color: ").concat(dt('checkbox.icon.checked.hover.color'), ";\n}\n\n.p-checkbox:not(.p-disabled):has(.p-checkbox-input:focus-visible) .p-checkbox-box {\n    border-color: ").concat(dt('checkbox.focus.border.color'), ";\n    box-shadow: ").concat(dt('checkbox.focus.ring.shadow'), ";\n    outline: ").concat(dt('checkbox.focus.ring.width'), " ").concat(dt('checkbox.focus.ring.style'), " ").concat(dt('checkbox.focus.ring.color'), ";\n    outline-offset: ").concat(dt('checkbox.focus.ring.offset'), ";\n}\n\n.p-checkbox-checked:not(.p-disabled):has(.p-checkbox-input:focus-visible) .p-checkbox-box {\n    border-color: ").concat(dt('checkbox.checked.focus.border.color'), ";\n}\n\n.p-checkbox.p-invalid > .p-checkbox-box {\n    border-color: ").concat(dt('checkbox.invalid.border.color'), ";\n}\n\n.p-checkbox.p-variant-filled .p-checkbox-box {\n    background: ").concat(dt('checkbox.filled.background'), ";\n}\n\n.p-checkbox-checked.p-variant-filled .p-checkbox-box {\n    background: ").concat(dt('checkbox.checked.background'), ";\n}\n\n.p-checkbox-checked.p-variant-filled:not(.p-disabled):has(.p-checkbox-input:hover) .p-checkbox-box {\n    background: ").concat(dt('checkbox.checked.hover.background'), ";\n}\n\n.p-checkbox.p-disabled {\n    opacity: 1;\n}\n\n.p-checkbox.p-disabled .p-checkbox-box {\n    background: ").concat(dt('checkbox.disabled.background'), ";\n    border-color: ").concat(dt('checkbox.checked.disabled.border.color'), ";\n}\n\n.p-checkbox.p-disabled .p-checkbox-box .p-checkbox-icon {\n    color: ").concat(dt('checkbox.icon.disabled.color'), ";\n}\n");
+};
+var classes = {
+  root: function root(_ref2) {
+    var instance = _ref2.instance,
+      props = _ref2.props;
+    return ['p-checkbox p-component', {
+      'p-checkbox-checked': instance.checked,
+      'p-disabled': props.disabled,
+      'p-invalid': props.invalid,
+      'p-variant-filled': props.variant ? props.variant === 'filled' : instance.$primevue.config.inputStyle === 'filled' || instance.$primevue.config.inputVariant === 'filled'
+    }];
+  },
+  box: 'p-checkbox-box',
+  input: 'p-checkbox-input',
+  icon: 'p-checkbox-icon'
+};
+var CheckboxStyle = BaseStyle.extend({
+  name: 'checkbox',
+  theme: theme,
+  classes: classes
+});
+
 const runtimeConfig = useRuntimeConfig();
 const config = runtimeConfig?.public?.primevue ?? {};
 const { options = {} } = config;
@@ -6016,14 +6071,14 @@ const styleProps = {
 };
 const styles$2 = [
   ,
-  BaseStyle && BaseStyle.getStyleSheet ? BaseStyle.getStyleSheet(undefined, styleProps) : ''
+  BaseStyle && BaseStyle.getStyleSheet ? BaseStyle.getStyleSheet(undefined, styleProps) : '',FileUploadStyle && FileUploadStyle.getStyleSheet ? FileUploadStyle.getStyleSheet(undefined, styleProps) : '',CheckboxStyle && CheckboxStyle.getStyleSheet ? CheckboxStyle.getStyleSheet(undefined, styleProps) : ''
 ].join('');
 
 Theme.setTheme(options?.theme);
 
 const themes = [
     BaseStyle && BaseStyle.getCommonThemeStyleSheet ? BaseStyle.getCommonThemeStyleSheet(undefined, styleProps) : '',
-    BaseStyle && BaseStyle.getThemeStyleSheet ? BaseStyle.getThemeStyleSheet(undefined, styleProps) : ''
+    BaseStyle && BaseStyle.getThemeStyleSheet ? BaseStyle.getThemeStyleSheet(undefined, styleProps) : '',FileUploadStyle && FileUploadStyle.getThemeStyleSheet ? FileUploadStyle.getThemeStyleSheet(undefined, styleProps) : '',CheckboxStyle && CheckboxStyle.getThemeStyleSheet ? CheckboxStyle.getThemeStyleSheet(undefined, styleProps) : ''
 ].join('');
 
 const defineNitroPlugin = (def) => def;
