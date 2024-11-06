@@ -35,7 +35,8 @@ import {
   faLanguage as freeFasFaLanguage,
   faCheck as freeFasFaCheck,
   faPenToSquare as freeFasFaPenToSquare,
-  faTrash as freeFasFaTrash
+  faTrash as freeFasFaTrash,
+  faTruck as freeFasFaTruck
 } from '@fortawesome/free-solid-svg-icons'
 
 import {
@@ -52,4 +53,4 @@ import {
   faUser as freeFarFaUser
 } from '@fortawesome/free-regular-svg-icons'
 
-export default {freeFasFaMinus, freeFasFaPlus, freeFasFaAngleDown, freeFasFaAngleUp, freeFasFaLink, freeFasFaGlobe, freeFasFaArrowLeft, freeFasFaXmark, freeFasFaCaretDown, freeFasFaPhone, freeFasFaLocationDot, freeFasFaEnvelope, freeFasFaFax, freeFasFaBox, freeFasFaEye, freeFasFaHeart, freeFasFaMagnifyingGlass, freeFasFaPowerOff, freeFasFaCartShopping, freeFasFaFilePdf, freeFasFaSliders, freeFasFaSnowflake, freeFasFaCloudSun, freeFasFaDroplet, freeFasFaTemperatureHigh, freeFasFaSun, freeFasFaUpload, freeFasFaRotateRight, freeFasFaChartSimple, freeFasFaList, freeFasFaUsers, freeFasFaBoxesStacked, freeFasFaSeedling, freeFasFaLanguage, freeFasFaCheck, freeFasFaPenToSquare, freeFasFaTrash, freeFabFaFacebook, freeFabFaXTwitter, freeFabFaLinkedin, freeFabFaWhatsapp, freeFabFaInstagram, freeFabFaYoutube, freeFarFaHeart, freeFarFaUser}
+export default {freeFasFaMinus, freeFasFaPlus, freeFasFaAngleDown, freeFasFaAngleUp, freeFasFaLink, freeFasFaGlobe, freeFasFaArrowLeft, freeFasFaXmark, freeFasFaCaretDown, freeFasFaPhone, freeFasFaLocationDot, freeFasFaEnvelope, freeFasFaFax, freeFasFaBox, freeFasFaEye, freeFasFaHeart, freeFasFaMagnifyingGlass, freeFasFaPowerOff, freeFasFaCartShopping, freeFasFaFilePdf, freeFasFaSliders, freeFasFaSnowflake, freeFasFaCloudSun, freeFasFaDroplet, freeFasFaTemperatureHigh, freeFasFaSun, freeFasFaUpload, freeFasFaRotateRight, freeFasFaChartSimple, freeFasFaList, freeFasFaUsers, freeFasFaBoxesStacked, freeFasFaSeedling, freeFasFaLanguage, freeFasFaCheck, freeFasFaPenToSquare, freeFasFaTrash, freeFasFaTruck, freeFabFaFacebook, freeFabFaXTwitter, freeFabFaLinkedin, freeFabFaWhatsapp, freeFabFaInstagram, freeFabFaYoutube, freeFarFaHeart, freeFarFaUser}

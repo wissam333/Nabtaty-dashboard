@@ -5002,6 +5002,14 @@ const _inlineRuntimeConfig = {
           "global": true
         },
         {
+          "name": "Dialog",
+          "as": "Dialog",
+          "from": "primevue/dialog",
+          "export": "default",
+          "filePath": "primevue/dialog",
+          "global": true
+        },
+        {
           "name": "Popover",
           "as": "Popover",
           "from": "primevue/popover",
@@ -6006,11 +6014,11 @@ function publicAssetsURL(...path) {
   return path.length ? joinURL(publicBase, ...path) : publicBase;
 }
 
-var theme$1 = function theme(_ref) {
+var theme$3 = function theme(_ref) {
   var dt = _ref.dt;
   return "\n.p-fileupload input[type=\"file\"] {\n    display: none;\n}\n\n.p-fileupload-advanced {\n    border: 1px solid ".concat(dt('fileupload.border.color'), ";\n    border-radius: ").concat(dt('fileupload.border.radius'), ";\n    background: ").concat(dt('fileupload.background'), ";\n    color: ").concat(dt('fileupload.color'), ";\n}\n\n.p-fileupload-header {\n    display: flex;\n    align-items: center;\n    padding: ").concat(dt('fileupload.header.padding'), ";\n    background: ").concat(dt('fileupload.header.background'), ";\n    color: ").concat(dt('fileupload.header.color'), ";\n    border-style: solid;\n    border-width: ").concat(dt('fileupload.header.border.width'), ";\n    border-color: ").concat(dt('fileupload.header.border.color'), ";\n    border-radius: ").concat(dt('fileupload.header.border.radius'), ";\n    gap: ").concat(dt('fileupload.header.gap'), ";\n}\n\n.p-fileupload-content {\n    border: 1px solid transparent;\n    position: relative;\n    transition: border-color ").concat(dt('fileupload.transition.duration'), ";\n    padding: ").concat(dt('fileupload.content.padding'), ";\n}\n\n.p-fileupload-content .p-progressbar {\n    width: 100%;\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: ").concat(dt('fileupload.progressbar.height'), ";\n}\n\n.p-fileupload-file-list {\n    display: flex;\n    flex-direction: column;\n    gap: 0.5rem;\n    margin-top: 1.125rem;\n}\n\n.p-fileupload-file {\n    display: flex;\n    flex-wrap: wrap;\n    align-items: center;\n    padding: ").concat(dt('fileupload.file.padding'), ";\n    border-bottom: 1px solid ").concat(dt('fileupload.file.border.color'), ";\n    gap: ").concat(dt('fileupload.file.gap'), ";\n}\n\n.p-fileupload-file:last-child {\n    border-bottom: 0;\n}\n\n.p-fileupload-file-info {\n    display: flex;\n    flex-direction: column;\n    gap: ").concat(dt('fileupload.file.info.gap'), ";\n}\n\n.p-fileupload-file-thumbnail {\n    flex-shrink: 0;\n}\n\n.p-fileupload-file-actions {\n    margin-left: auto;\n}\n\n.p-fileupload-highlight {\n    border: 1px dashed ").concat(dt('fileupload.content.highlight.border.color'), ";\n}\n\n.p-fileupload-advanced .p-message {\n    margin-top: 0;\n}\n\n.p-fileupload-basic {\n    display: flex;\n    flex-wrap: wrap;\n    align-items: center;\n    justify-content: center;\n    gap: ").concat(dt('fileupload.basic.gap'), ";\n}\n");
 };
-var classes$1 = {
+var classes$3 = {
   root: function root(_ref2) {
     var props = _ref2.props;
     return ["p-fileupload p-fileupload-".concat(props.mode, " p-component")];
@@ -6032,15 +6040,15 @@ var classes$1 = {
 };
 var FileUploadStyle = BaseStyle.extend({
   name: 'fileupload',
-  theme: theme$1,
-  classes: classes$1
+  theme: theme$3,
+  classes: classes$3
 });
 
-var theme = function theme(_ref) {
+var theme$2 = function theme(_ref) {
   var dt = _ref.dt;
   return "\n.p-checkbox {\n    position: relative;\n    display: inline-flex;\n    user-select: none;\n    vertical-align: bottom;\n    width: ".concat(dt('checkbox.width'), ";\n    height: ").concat(dt('checkbox.height'), ";\n}\n\n.p-checkbox-input {\n    cursor: pointer;\n    appearance: none;\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    padding: 0;\n    margin: 0;\n    opacity: 0;\n    z-index: 1;\n    outline: 0 none;\n    border: 1px solid transparent;\n    border-radius: ").concat(dt('checkbox.border.radius'), ";\n}\n\n.p-checkbox-box {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    border-radius: ").concat(dt('checkbox.border.radius'), ";\n    border: 1px solid ").concat(dt('checkbox.border.color'), ";\n    background: ").concat(dt('checkbox.background'), ";\n    width: ").concat(dt('checkbox.width'), ";\n    height: ").concat(dt('checkbox.height'), ";\n    transition: background ").concat(dt('checkbox.transition.duration'), ", color ").concat(dt('checkbox.transition.duration'), ", border-color ").concat(dt('checkbox.transition.duration'), ", box-shadow ").concat(dt('checkbox.transition.duration'), ", outline-color ").concat(dt('checkbox.transition.duration'), ";\n    outline-color: transparent;\n    box-shadow: ").concat(dt('checkbox.shadow'), ";\n}\n\n.p-checkbox-icon {\n    transition-duration: ").concat(dt('checkbox.transition.duration'), ";\n    color: ").concat(dt('checkbox.icon.color'), ";\n    font-size: ").concat(dt('checkbox.icon.size'), ";\n    width: ").concat(dt('checkbox.icon.size'), ";\n    height: ").concat(dt('checkbox.icon.size'), ";\n}\n\n.p-checkbox:not(.p-disabled):has(.p-checkbox-input:hover) .p-checkbox-box {\n    border-color: ").concat(dt('checkbox.hover.border.color'), ";\n}\n\n.p-checkbox-checked .p-checkbox-box {\n    border-color: ").concat(dt('checkbox.checked.border.color'), ";\n    background: ").concat(dt('checkbox.checked.background'), ";\n}\n\n.p-checkbox-checked .p-checkbox-icon {\n    color: ").concat(dt('checkbox.icon.checked.color'), ";\n}\n\n.p-checkbox-checked:not(.p-disabled):has(.p-checkbox-input:hover) .p-checkbox-box {\n    background: ").concat(dt('checkbox.checked.hover.background'), ";\n    border-color: ").concat(dt('checkbox.checked.hover.border.color'), ";\n}\n\n.p-checkbox-checked:not(.p-disabled):has(.p-checkbox-input:hover) .p-checkbox-icon {\n    color: ").concat(dt('checkbox.icon.checked.hover.color'), ";\n}\n\n.p-checkbox:not(.p-disabled):has(.p-checkbox-input:focus-visible) .p-checkbox-box {\n    border-color: ").concat(dt('checkbox.focus.border.color'), ";\n    box-shadow: ").concat(dt('checkbox.focus.ring.shadow'), ";\n    outline: ").concat(dt('checkbox.focus.ring.width'), " ").concat(dt('checkbox.focus.ring.style'), " ").concat(dt('checkbox.focus.ring.color'), ";\n    outline-offset: ").concat(dt('checkbox.focus.ring.offset'), ";\n}\n\n.p-checkbox-checked:not(.p-disabled):has(.p-checkbox-input:focus-visible) .p-checkbox-box {\n    border-color: ").concat(dt('checkbox.checked.focus.border.color'), ";\n}\n\n.p-checkbox.p-invalid > .p-checkbox-box {\n    border-color: ").concat(dt('checkbox.invalid.border.color'), ";\n}\n\n.p-checkbox.p-variant-filled .p-checkbox-box {\n    background: ").concat(dt('checkbox.filled.background'), ";\n}\n\n.p-checkbox-checked.p-variant-filled .p-checkbox-box {\n    background: ").concat(dt('checkbox.checked.background'), ";\n}\n\n.p-checkbox-checked.p-variant-filled:not(.p-disabled):has(.p-checkbox-input:hover) .p-checkbox-box {\n    background: ").concat(dt('checkbox.checked.hover.background'), ";\n}\n\n.p-checkbox.p-disabled {\n    opacity: 1;\n}\n\n.p-checkbox.p-disabled .p-checkbox-box {\n    background: ").concat(dt('checkbox.disabled.background'), ";\n    border-color: ").concat(dt('checkbox.checked.disabled.border.color'), ";\n}\n\n.p-checkbox.p-disabled .p-checkbox-box .p-checkbox-icon {\n    color: ").concat(dt('checkbox.icon.disabled.color'), ";\n}\n");
 };
-var classes = {
+var classes$2 = {
   root: function root(_ref2) {
     var instance = _ref2.instance,
       props = _ref2.props;
@@ -6057,8 +6065,131 @@ var classes = {
 };
 var CheckboxStyle = BaseStyle.extend({
   name: 'checkbox',
+  theme: theme$2,
+  classes: classes$2
+});
+
+var theme$1 = function theme(_ref) {
+  var dt = _ref.dt;
+  return "\n.p-select {\n    display: inline-flex;\n    cursor: pointer;\n    position: relative;\n    user-select: none;\n    background: ".concat(dt('select.background'), ";\n    border: 1px solid ").concat(dt('select.border.color'), ";\n    transition: background ").concat(dt('select.transition.duration'), ", color ").concat(dt('select.transition.duration'), ", border-color ").concat(dt('select.transition.duration'), ",\n        outline-color ").concat(dt('select.transition.duration'), ", box-shadow ").concat(dt('select.transition.duration'), ";\n    border-radius: ").concat(dt('select.border.radius'), ";\n    outline-color: transparent;\n    box-shadow: ").concat(dt('select.shadow'), ";\n}\n\n.p-select:not(.p-disabled):hover {\n    border-color: ").concat(dt('select.hover.border.color'), ";\n}\n\n.p-select:not(.p-disabled).p-focus {\n    border-color: ").concat(dt('select.focus.border.color'), ";\n    box-shadow: ").concat(dt('select.focus.ring.shadow'), ";\n    outline: ").concat(dt('select.focus.ring.width'), " ").concat(dt('select.focus.ring.style'), " ").concat(dt('select.focus.ring.color'), ";\n    outline-offset: ").concat(dt('select.focus.ring.offset'), ";\n}\n\n.p-select.p-variant-filled {\n    background: ").concat(dt('select.filled.background'), ";\n}\n\n.p-select.p-variant-filled.p-focus {\n    background: ").concat(dt('select.filled.focus.background'), ";\n}\n\n.p-select.p-invalid {\n    border-color: ").concat(dt('select.invalid.border.color'), ";\n}\n\n.p-select.p-disabled {\n    opacity: 1;\n    background: ").concat(dt('select.disabled.background'), ";\n}\n\n.p-select-clear-icon {\n    position: absolute;\n    top: 50%;\n    margin-top: -0.5rem;\n    color: ").concat(dt('select.clear.icon.color'), ";\n    right: ").concat(dt('select.dropdown.width'), ";\n}\n\n.p-select-dropdown {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    flex-shrink: 0;\n    background: transparent;\n    color: ").concat(dt('select.dropdown.color'), ";\n    width: ").concat(dt('select.dropdown.width'), ";\n    border-top-right-radius: ").concat(dt('select.border.radius'), ";\n    border-bottom-right-radius: ").concat(dt('select.border.radius'), ";\n}\n\n.p-select-label {\n    display: block;\n    white-space: nowrap;\n    overflow: hidden;\n    flex: 1 1 auto;\n    width: 1%;\n    padding: ").concat(dt('select.padding.y'), " ").concat(dt('select.padding.x'), ";\n    text-overflow: ellipsis;\n    cursor: pointer;\n    color: ").concat(dt('select.color'), ";\n    background: transparent;\n    border: 0 none;\n    outline: 0 none;\n}\n\n.p-select-label.p-placeholder {\n    color: ").concat(dt('select.placeholder.color'), ";\n}\n\n.p-select:has(.p-select-clear-icon) .p-select-label {\n    padding-right: calc(1rem + ").concat(dt('select.padding.x'), ");\n}\n\n.p-select.p-disabled .p-select-label {\n    color: ").concat(dt('select.disabled.color'), ";\n}\n\n.p-select-label-empty {\n    overflow: hidden;\n    opacity: 0;\n}\n\ninput.p-select-label {\n    cursor: default;\n}\n\n.p-select .p-select-overlay {\n    min-width: 100%;\n}\n\n.p-select-overlay {\n    position: absolute;\n    top: 0;\n    left: 0;\n    background: ").concat(dt('select.overlay.background'), ";\n    color: ").concat(dt('select.overlay.color'), ";\n    border: 1px solid ").concat(dt('select.overlay.border.color'), ";\n    border-radius: ").concat(dt('select.overlay.border.radius'), ";\n    box-shadow: ").concat(dt('select.overlay.shadow'), ";\n}\n\n.p-select-header {\n    padding: ").concat(dt('select.list.header.padding'), ";\n}\n\n.p-select-filter {\n    width: 100%;\n}\n\n.p-select-list-container {\n    overflow: auto;\n}\n\n.p-select-option-group {\n    cursor: auto;\n    margin: 0;\n    padding: ").concat(dt('select.option.group.padding'), ";\n    background: ").concat(dt('select.option.group.background'), ";\n    color: ").concat(dt('select.option.group.color'), ";\n    font-weight: ").concat(dt('select.option.group.font.weight'), ";\n}\n\n.p-select-list {\n    margin: 0;\n    padding: 0;\n    list-style-type: none;\n    padding: ").concat(dt('select.list.padding'), ";\n    gap: ").concat(dt('select.list.gap'), ";\n    display: flex;\n    flex-direction: column;\n}\n\n.p-select-option {\n    cursor: pointer;\n    font-weight: normal;\n    white-space: nowrap;\n    position: relative;\n    overflow: hidden;\n    display: flex;\n    align-items: center;\n    padding: ").concat(dt('select.option.padding'), ";\n    border: 0 none;\n    color: ").concat(dt('select.option.color'), ";\n    background: transparent;\n    transition: background ").concat(dt('select.transition.duration'), ", color ").concat(dt('select.transition.duration'), ", border-color ").concat(dt('select.transition.duration'), ",\n            box-shadow ").concat(dt('select.transition.duration'), ", outline-color ").concat(dt('select.transition.duration'), ";\n    border-radius: ").concat(dt('select.option.border.radius'), ";\n}\n\n.p-select-option:not(.p-select-option-selected):not(.p-disabled).p-focus {\n    background: ").concat(dt('select.option.focus.background'), ";\n    color: ").concat(dt('select.option.focus.color'), ";\n}\n\n.p-select-option.p-select-option-selected {\n    background: ").concat(dt('select.option.selected.background'), ";\n    color: ").concat(dt('select.option.selected.color'), ";\n}\n\n.p-select-option.p-select-option-selected.p-focus {\n    background: ").concat(dt('select.option.selected.focus.background'), ";\n    color: ").concat(dt('select.option.selected.focus.color'), ";\n}\n\n.p-select-option-check-icon {\n    position: relative;\n    margin-inline-start: ").concat(dt('select.checkmark.gutter.start'), ";\n    margin-inline-end: ").concat(dt('select.checkmark.gutter.end'), ";\n    color: ").concat(dt('select.checkmark.color'), ";\n}\n\n.p-select-empty-message {\n    padding: ").concat(dt('select.empty.message.padding'), ";\n}\n\n.p-select-fluid {\n    display: flex;\n}\n");
+};
+var classes$1 = {
+  root: function root(_ref2) {
+    var instance = _ref2.instance,
+      props = _ref2.props,
+      state = _ref2.state;
+    return ['p-select p-component p-inputwrapper', {
+      'p-disabled': props.disabled,
+      'p-invalid': props.invalid,
+      'p-variant-filled': props.variant ? props.variant === 'filled' : instance.$primevue.config.inputStyle === 'filled' || instance.$primevue.config.inputVariant === 'filled',
+      'p-focus': state.focused,
+      'p-inputwrapper-filled': instance.hasSelectedOption,
+      'p-inputwrapper-focus': state.focused || state.overlayVisible,
+      'p-select-open': state.overlayVisible,
+      'p-select-fluid': instance.hasFluid
+    }];
+  },
+  label: function label(_ref3) {
+    var instance = _ref3.instance,
+      props = _ref3.props;
+    return ['p-select-label', {
+      'p-placeholder': !props.editable && instance.label === props.placeholder,
+      'p-select-label-empty': !props.editable && !instance.$slots['value'] && (instance.label === 'p-emptylabel' || instance.label.length === 0)
+    }];
+  },
+  clearIcon: 'p-select-clear-icon',
+  dropdown: 'p-select-dropdown',
+  loadingicon: 'p-select-loading-icon',
+  dropdownIcon: 'p-select-dropdown-icon',
+  overlay: 'p-select-overlay p-component',
+  header: 'p-select-header',
+  pcFilter: 'p-select-filter',
+  listContainer: 'p-select-list-container',
+  list: 'p-select-list',
+  optionGroup: 'p-select-option-group',
+  optionGroupLabel: 'p-select-option-group-label',
+  option: function option(_ref4) {
+    var instance = _ref4.instance,
+      props = _ref4.props,
+      state = _ref4.state,
+      _option = _ref4.option,
+      focusedOption = _ref4.focusedOption;
+    return ['p-select-option', {
+      'p-select-option-selected': instance.isSelected(_option) && props.highlightOnSelect,
+      'p-focus': state.focusedOptionIndex === focusedOption,
+      'p-disabled': instance.isOptionDisabled(_option)
+    }];
+  },
+  optionLabel: 'p-select-option-label',
+  optionCheckIcon: 'p-select-option-check-icon',
+  optionBlankIcon: 'p-select-option-blank-icon',
+  emptyMessage: 'p-select-empty-message'
+};
+var SelectStyle = BaseStyle.extend({
+  name: 'select',
+  theme: theme$1,
+  classes: classes$1
+});
+
+var theme = function theme(_ref) {
+  var dt = _ref.dt;
+  return "\n.p-dialog {\n    max-height: 90%;\n    transform: scale(1);\n    border-radius: ".concat(dt('dialog.border.radius'), ";\n    box-shadow: ").concat(dt('dialog.shadow'), ";\n    background: ").concat(dt('dialog.background'), ";\n    border: 1px solid ").concat(dt('dialog.border.color'), ";\n    color: ").concat(dt('dialog.color'), ";\n}\n\n.p-dialog-content {\n    overflow-y: auto;\n    padding: ").concat(dt('dialog.content.padding'), ";\n}\n\n.p-dialog-header {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    flex-shrink: 0;\n    padding: ").concat(dt('dialog.header.padding'), ";\n}\n\n.p-dialog-title {\n    font-weight: ").concat(dt('dialog.title.font.weight'), ";\n    font-size: ").concat(dt('dialog.title.font.size'), ";\n}\n\n.p-dialog-footer {\n    flex-shrink: 0;\n    padding: ").concat(dt('dialog.footer.padding'), ";\n    display: flex;\n    justify-content: flex-end;\n    gap: ").concat(dt('dialog.footer.gap'), ";\n}\n\n.p-dialog-header-actions {\n    display: flex;\n    align-items: center;\n    gap: ").concat(dt('dialog.header.gap'), ";\n}\n.p-dialog-enter-active {\n    transition: all 150ms cubic-bezier(0, 0, 0.2, 1);\n}\n\n.p-dialog-leave-active {\n    transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);\n}\n\n.p-dialog-enter-from,\n.p-dialog-leave-to {\n    opacity: 0;\n    transform: scale(0.7);\n}\n\n.p-dialog-top .p-dialog,\n.p-dialog-bottom .p-dialog,\n.p-dialog-left .p-dialog,\n.p-dialog-right .p-dialog,\n.p-dialog-topleft .p-dialog,\n.p-dialog-topright .p-dialog,\n.p-dialog-bottomleft .p-dialog,\n.p-dialog-bottomright .p-dialog {\n    margin: 0.75rem;\n    transform: translate3d(0px, 0px, 0px);\n}\n\n.p-dialog-top .p-dialog-enter-active,\n.p-dialog-top .p-dialog-leave-active,\n.p-dialog-bottom .p-dialog-enter-active,\n.p-dialog-bottom .p-dialog-leave-active,\n.p-dialog-left .p-dialog-enter-active,\n.p-dialog-left .p-dialog-leave-active,\n.p-dialog-right .p-dialog-enter-active,\n.p-dialog-right .p-dialog-leave-active,\n.p-dialog-topleft .p-dialog-enter-active,\n.p-dialog-topleft .p-dialog-leave-active,\n.p-dialog-topright .p-dialog-enter-active,\n.p-dialog-topright .p-dialog-leave-active,\n.p-dialog-bottomleft .p-dialog-enter-active,\n.p-dialog-bottomleft .p-dialog-leave-active,\n.p-dialog-bottomright .p-dialog-enter-active,\n.p-dialog-bottomright .p-dialog-leave-active {\n    transition: all 0.3s ease-out;\n}\n\n.p-dialog-top .p-dialog-enter-from,\n.p-dialog-top .p-dialog-leave-to {\n    transform: translate3d(0px, -100%, 0px);\n}\n\n.p-dialog-bottom .p-dialog-enter-from,\n.p-dialog-bottom .p-dialog-leave-to {\n    transform: translate3d(0px, 100%, 0px);\n}\n\n.p-dialog-left .p-dialog-enter-from,\n.p-dialog-left .p-dialog-leave-to,\n.p-dialog-topleft .p-dialog-enter-from,\n.p-dialog-topleft .p-dialog-leave-to,\n.p-dialog-bottomleft .p-dialog-enter-from,\n.p-dialog-bottomleft .p-dialog-leave-to {\n    transform: translate3d(-100%, 0px, 0px);\n}\n\n.p-dialog-right .p-dialog-enter-from,\n.p-dialog-right .p-dialog-leave-to,\n.p-dialog-topright .p-dialog-enter-from,\n.p-dialog-topright .p-dialog-leave-to,\n.p-dialog-bottomright .p-dialog-enter-from,\n.p-dialog-bottomright .p-dialog-leave-to {\n    transform: translate3d(100%, 0px, 0px);\n}\n\n.p-dialog-maximized {\n    width: 100vw !important;\n    height: 100vh !important;\n    top: 0px !important;\n    left: 0px !important;\n    max-height: 100%;\n    height: 100%;\n    border-radius: 0;\n}\n\n.p-dialog-maximized .p-dialog-content {\n    flex-grow: 1;\n}\n");
+};
+
+/* Position */
+var inlineStyles = {
+  mask: function mask(_ref2) {
+    var position = _ref2.position,
+      modal = _ref2.modal;
+    return {
+      position: 'fixed',
+      height: '100%',
+      width: '100%',
+      left: 0,
+      top: 0,
+      display: 'flex',
+      justifyContent: position === 'left' || position === 'topleft' || position === 'bottomleft' ? 'flex-start' : position === 'right' || position === 'topright' || position === 'bottomright' ? 'flex-end' : 'center',
+      alignItems: position === 'top' || position === 'topleft' || position === 'topright' ? 'flex-start' : position === 'bottom' || position === 'bottomleft' || position === 'bottomright' ? 'flex-end' : 'center',
+      pointerEvents: modal ? 'auto' : 'none'
+    };
+  },
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    pointerEvents: 'auto'
+  }
+};
+var classes = {
+  mask: function mask(_ref3) {
+    var props = _ref3.props;
+    var positions = ['left', 'right', 'top', 'topleft', 'topright', 'bottom', 'bottomleft', 'bottomright'];
+    var pos = positions.find(function (item) {
+      return item === props.position;
+    });
+    return ['p-dialog-mask', {
+      'p-overlay-mask p-overlay-mask-enter': props.modal
+    }, pos ? "p-dialog-".concat(pos) : ''];
+  },
+  root: function root(_ref4) {
+    var props = _ref4.props,
+      instance = _ref4.instance;
+    return ['p-dialog p-component', {
+      'p-dialog-maximized': props.maximizable && instance.maximized
+    }];
+  },
+  header: 'p-dialog-header',
+  title: 'p-dialog-title',
+  headerActions: 'p-dialog-header-actions',
+  pcMaximizeButton: 'p-dialog-maximize-button',
+  pcCloseButton: 'p-dialog-close-button',
+  content: 'p-dialog-content',
+  footer: 'p-dialog-footer'
+};
+var DialogStyle = BaseStyle.extend({
+  name: 'dialog',
   theme: theme,
-  classes: classes
+  classes: classes,
+  inlineStyles: inlineStyles
 });
 
 const runtimeConfig = useRuntimeConfig();
@@ -6071,14 +6202,14 @@ const styleProps = {
 };
 const styles$2 = [
   ,
-  BaseStyle && BaseStyle.getStyleSheet ? BaseStyle.getStyleSheet(undefined, styleProps) : '',FileUploadStyle && FileUploadStyle.getStyleSheet ? FileUploadStyle.getStyleSheet(undefined, styleProps) : '',CheckboxStyle && CheckboxStyle.getStyleSheet ? CheckboxStyle.getStyleSheet(undefined, styleProps) : ''
+  BaseStyle && BaseStyle.getStyleSheet ? BaseStyle.getStyleSheet(undefined, styleProps) : '',FileUploadStyle && FileUploadStyle.getStyleSheet ? FileUploadStyle.getStyleSheet(undefined, styleProps) : '',CheckboxStyle && CheckboxStyle.getStyleSheet ? CheckboxStyle.getStyleSheet(undefined, styleProps) : '',SelectStyle && SelectStyle.getStyleSheet ? SelectStyle.getStyleSheet(undefined, styleProps) : '',DialogStyle && DialogStyle.getStyleSheet ? DialogStyle.getStyleSheet(undefined, styleProps) : ''
 ].join('');
 
 Theme.setTheme(options?.theme);
 
 const themes = [
     BaseStyle && BaseStyle.getCommonThemeStyleSheet ? BaseStyle.getCommonThemeStyleSheet(undefined, styleProps) : '',
-    BaseStyle && BaseStyle.getThemeStyleSheet ? BaseStyle.getThemeStyleSheet(undefined, styleProps) : '',FileUploadStyle && FileUploadStyle.getThemeStyleSheet ? FileUploadStyle.getThemeStyleSheet(undefined, styleProps) : '',CheckboxStyle && CheckboxStyle.getThemeStyleSheet ? CheckboxStyle.getThemeStyleSheet(undefined, styleProps) : ''
+    BaseStyle && BaseStyle.getThemeStyleSheet ? BaseStyle.getThemeStyleSheet(undefined, styleProps) : '',FileUploadStyle && FileUploadStyle.getThemeStyleSheet ? FileUploadStyle.getThemeStyleSheet(undefined, styleProps) : '',CheckboxStyle && CheckboxStyle.getThemeStyleSheet ? CheckboxStyle.getThemeStyleSheet(undefined, styleProps) : '',SelectStyle && SelectStyle.getThemeStyleSheet ? SelectStyle.getThemeStyleSheet(undefined, styleProps) : '',DialogStyle && DialogStyle.getThemeStyleSheet ? DialogStyle.getThemeStyleSheet(undefined, styleProps) : ''
 ].join('');
 
 const defineNitroPlugin = (def) => def;
