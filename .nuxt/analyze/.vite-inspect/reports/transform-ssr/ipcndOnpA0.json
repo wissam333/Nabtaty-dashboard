@@ -1,0 +1,314 @@
+{
+  "resolvedId": "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/vuetify/lib/components/VStepper/VStepperWindow.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { createVNode as _createVNode, mergeProps as _mergeProps, resolveDirective as _resolveDirective } from \"vue\";\n// Components\nimport { makeVWindowProps, VWindow } from \"../VWindow/VWindow.mjs\"; // Composables\nimport { useProxiedModel } from \"../../composables/proxiedModel.mjs\"; // Utilities\nimport { computed, inject } from 'vue';\nimport { genericComponent, omit, propsFactory, useRender } from \"../../util/index.mjs\"; // Types\nexport const VStepperSymbol = Symbol.for('vuetify:v-stepper');\nexport const makeVStepperWindowProps = propsFactory({\n  ...omit(makeVWindowProps(), ['continuous', 'nextIcon', 'prevIcon', 'showArrows', 'touch', 'mandatory'])\n}, 'VStepperWindow');\nexport const VStepperWindow = genericComponent()({\n  name: 'VStepperWindow',\n  props: makeVStepperWindowProps(),\n  emits: {\n    'update:modelValue': v => true\n  },\n  setup(props, _ref) {\n    let {\n      slots\n    } = _ref;\n    const group = inject(VStepperSymbol, null);\n    const _model = useProxiedModel(props, 'modelValue');\n    const model = computed({\n      get() {\n        // Always return modelValue if defined\n        // or if not within a VStepper group\n        if (_model.value != null || !group) return _model.value;\n\n        // If inside of a VStepper, find the currently selected\n        // item by id. Item value may be assigned by its index\n        return group.items.value.find(item => group.selected.value.includes(item.id))?.value;\n      },\n      set(val) {\n        _model.value = val;\n      }\n    });\n    useRender(() => {\n      const windowProps = VWindow.filterProps(props);\n      return _createVNode(VWindow, _mergeProps({\n        \"_as\": \"VStepperWindow\"\n      }, windowProps, {\n        \"modelValue\": model.value,\n        \"onUpdate:modelValue\": $event => model.value = $event,\n        \"class\": \"v-stepper-window\",\n        \"mandatory\": false,\n        \"touch\": false\n      }), slots);\n    });\n    return {};\n  }\n});\n//# sourceMappingURL=VStepperWindow.mjs.map",
+      "start": 1731941048215,
+      "end": 1731941048487,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941048487,
+      "end": 1731941048487,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941048487,
+      "end": 1731941048487,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941048487,
+      "end": 1731941048487,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941048487,
+      "end": 1731941048487,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941048487,
+      "end": 1731941048487,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941048487,
+      "end": 1731941048487,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1731941048487,
+      "end": 1731941048487,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1731941048487,
+      "end": 1731941048487,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1731941048487,
+      "end": 1731941048487,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1731941048487,
+      "end": 1731941048487,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1731941048487,
+      "end": 1731941048487,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1731941048487,
+      "end": 1731941048487,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1731941048487,
+      "end": 1731941048487,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1731941048487,
+      "end": 1731941048487,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941048487,
+      "end": 1731941048487,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941048487,
+      "end": 1731941048487,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941048488,
+      "end": 1731941048488,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941048488,
+      "end": 1731941048488,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1731941048488,
+      "end": 1731941048488,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941048488,
+      "end": 1731941048488,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1731941048488,
+      "end": 1731941048488,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import { createVNode as _createVNode, mergeProps as _mergeProps, resolveDirective as _resolveDirective } from \"vue\";\nimport { makeVWindowProps, VWindow } from \"../VWindow/VWindow.mjs\";\nimport { useProxiedModel } from \"../../composables/proxiedModel.mjs\";\nimport { computed, inject } from \"vue\";\nimport { genericComponent, omit, propsFactory, useRender } from \"../../util/index.mjs\";\nexport const VStepperSymbol = Symbol.for(\"vuetify:v-stepper\");\nexport const makeVStepperWindowProps = propsFactory({\n  ...omit(makeVWindowProps(), [\"continuous\", \"nextIcon\", \"prevIcon\", \"showArrows\", \"touch\", \"mandatory\"])\n}, \"VStepperWindow\");\nexport const VStepperWindow = genericComponent()({\n  name: \"VStepperWindow\",\n  props: makeVStepperWindowProps(),\n  emits: {\n    \"update:modelValue\": (v) => true\n  },\n  setup(props, _ref) {\n    let {\n      slots\n    } = _ref;\n    const group = inject(VStepperSymbol, null);\n    const _model = useProxiedModel(props, \"modelValue\");\n    const model = computed({\n      get() {\n        if (_model.value != null || !group)\n          return _model.value;\n        return group.items.value.find((item) => group.selected.value.includes(item.id))?.value;\n      },\n      set(val) {\n        _model.value = val;\n      }\n    });\n    useRender(() => {\n      const windowProps = VWindow.filterProps(props);\n      return _createVNode(VWindow, _mergeProps({\n        \"_as\": \"VStepperWindow\"\n      }, windowProps, {\n        \"modelValue\": model.value,\n        \"onUpdate:modelValue\": ($event) => model.value = $event,\n        \"class\": \"v-stepper-window\",\n        \"mandatory\": false,\n        \"touch\": false\n      }), slots);\n    });\n    return {};\n  }\n});\n",
+      "start": 1731941048488,
+      "end": 1731941048690,
+      "order": "normal",
+      "sourcemaps": "{\n  \"version\": 3,\n  \"sources\": [\"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/vuetify/lib/components/VStepper/VStepperWindow.mjs\"],\n  \"sourcesContent\": [\"import { createVNode as _createVNode, mergeProps as _mergeProps, resolveDirective as _resolveDirective } from \\\"vue\\\";\\n// Components\\nimport { makeVWindowProps, VWindow } from \\\"../VWindow/VWindow.mjs\\\"; // Composables\\nimport { useProxiedModel } from \\\"../../composables/proxiedModel.mjs\\\"; // Utilities\\nimport { computed, inject } from 'vue';\\nimport { genericComponent, omit, propsFactory, useRender } from \\\"../../util/index.mjs\\\"; // Types\\nexport const VStepperSymbol = Symbol.for('vuetify:v-stepper');\\nexport const makeVStepperWindowProps = propsFactory({\\n  ...omit(makeVWindowProps(), ['continuous', 'nextIcon', 'prevIcon', 'showArrows', 'touch', 'mandatory'])\\n}, 'VStepperWindow');\\nexport const VStepperWindow = genericComponent()({\\n  name: 'VStepperWindow',\\n  props: makeVStepperWindowProps(),\\n  emits: {\\n    'update:modelValue': v => true\\n  },\\n  setup(props, _ref) {\\n    let {\\n      slots\\n    } = _ref;\\n    const group = inject(VStepperSymbol, null);\\n    const _model = useProxiedModel(props, 'modelValue');\\n    const model = computed({\\n      get() {\\n        // Always return modelValue if defined\\n        // or if not within a VStepper group\\n        if (_model.value != null || !group) return _model.value;\\n\\n        // If inside of a VStepper, find the currently selected\\n        // item by id. Item value may be assigned by its index\\n        return group.items.value.find(item => group.selected.value.includes(item.id))?.value;\\n      },\\n      set(val) {\\n        _model.value = val;\\n      }\\n    });\\n    useRender(() => {\\n      const windowProps = VWindow.filterProps(props);\\n      return _createVNode(VWindow, _mergeProps({\\n        \\\"_as\\\": \\\"VStepperWindow\\\"\\n      }, windowProps, {\\n        \\\"modelValue\\\": model.value,\\n        \\\"onUpdate:modelValue\\\": $event => model.value = $event,\\n        \\\"class\\\": \\\"v-stepper-window\\\",\\n        \\\"mandatory\\\": false,\\n        \\\"touch\\\": false\\n      }), slots);\\n    });\\n    return {};\\n  }\\n});\\n//# sourceMappingURL=VStepperWindow.mjs.map\"],\n  \"mappings\": \"AAAA,SAAS,eAAe,cAAc,cAAc,aAAa,oBAAoB,yBAAyB;AAE9G,SAAS,kBAAkB,eAAe;AAC1C,SAAS,uBAAuB;AAChC,SAAS,UAAU,cAAc;AACjC,SAAS,kBAAkB,MAAM,cAAc,iBAAiB;AACzD,aAAM,iBAAiB,OAAO,IAAI,mBAAmB;AACrD,aAAM,0BAA0B,aAAa;AAAA,EAClD,GAAG,KAAK,iBAAiB,GAAG,CAAC,cAAc,YAAY,YAAY,cAAc,SAAS,WAAW,CAAC;AACxG,GAAG,gBAAgB;AACZ,aAAM,iBAAiB,iBAAiB,EAAE;AAAA,EAC/C,MAAM;AAAA,EACN,OAAO,wBAAwB;AAAA,EAC/B,OAAO;AAAA,IACL,qBAAqB,OAAK;AAAA,EAC5B;AAAA,EACA,MAAM,OAAO,MAAM;AACjB,QAAI;AAAA,MACF;AAAA,IACF,IAAI;AACJ,UAAM,QAAQ,OAAO,gBAAgB,IAAI;AACzC,UAAM,SAAS,gBAAgB,OAAO,YAAY;AAClD,UAAM,QAAQ,SAAS;AAAA,MACrB,MAAM;AAGJ,YAAI,OAAO,SAAS,QAAQ,CAAC;AAAO,iBAAO,OAAO;AAIlD,eAAO,MAAM,MAAM,MAAM,KAAK,UAAQ,MAAM,SAAS,MAAM,SAAS,KAAK,EAAE,CAAC,GAAG;AAAA,MACjF;AAAA,MACA,IAAI,KAAK;AACP,eAAO,QAAQ;AAAA,MACjB;AAAA,IACF,CAAC;AACD,cAAU,MAAM;AACd,YAAM,cAAc,QAAQ,YAAY,KAAK;AAC7C,aAAO,aAAa,SAAS,YAAY;AAAA,QACvC,OAAO;AAAA,MACT,GAAG,aAAa;AAAA,QACd,cAAc,MAAM;AAAA,QACpB,uBAAuB,YAAU,MAAM,QAAQ;AAAA,QAC/C,SAAS;AAAA,QACT,aAAa;AAAA,QACb,SAAS;AAAA,MACX,CAAC,GAAG,KAAK;AAAA,IACX,CAAC;AACD,WAAO,CAAC;AAAA,EACV;AACF,CAAC;\",\n  \"names\": []\n}\n"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1731941048691,
+      "end": 1731941048691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1731941048691,
+      "end": 1731941048691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1731941048691,
+      "end": 1731941048691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1731941048691,
+      "end": 1731941048691,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1731941048691,
+      "end": 1731941048691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1731941048691,
+      "end": 1731941048691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1731941048691,
+      "end": 1731941048691,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941048691,
+      "end": 1731941048692,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941048691,
+      "end": 1731941048692,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941048692,
+      "end": 1731941048692,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941048692,
+      "end": 1731941048692,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941048692,
+      "end": 1731941048692,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941048692,
+      "end": 1731941048692,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941048692,
+      "end": 1731941048692,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941048692,
+      "end": 1731941048692,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "start": 1731941048692,
+      "end": 1731941048692,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "start": 1731941048692,
+      "end": 1731941048692,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941048692,
+      "end": 1731941048693,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941048692,
+      "end": 1731941048693,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941048693,
+      "end": 1731941048693,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941048693,
+      "end": 1731941048693,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941048693,
+      "end": 1731941048693,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941048693,
+      "end": 1731941048693,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1731941048693,
+      "end": 1731941048693,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1731941048694,
+      "end": 1731941048694,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1731941048694,
+      "end": 1731941048699,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1731941048699,
+      "end": 1731941048699,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1731941048699,
+      "end": 1731941048699,
+      "order": "normal"
+    }
+  ]
+}

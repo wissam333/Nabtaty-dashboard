@@ -1,0 +1,314 @@
+{
+  "resolvedId": "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/vuetify/lib/directives/scroll/index.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "// Types\n\nfunction mounted(el, binding) {\n  const {\n    self = false\n  } = binding.modifiers ?? {};\n  const value = binding.value;\n  const options = typeof value === 'object' && value.options || {\n    passive: true\n  };\n  const handler = typeof value === 'function' || 'handleEvent' in value ? value : value.handler;\n  const target = self ? el : binding.arg ? document.querySelector(binding.arg) : window;\n  if (!target) return;\n  target.addEventListener('scroll', handler, options);\n  el._onScroll = Object(el._onScroll);\n  el._onScroll[binding.instance.$.uid] = {\n    handler,\n    options,\n    // Don't reference self\n    target: self ? undefined : target\n  };\n}\nfunction unmounted(el, binding) {\n  if (!el._onScroll?.[binding.instance.$.uid]) return;\n  const {\n    handler,\n    options,\n    target = el\n  } = el._onScroll[binding.instance.$.uid];\n  target.removeEventListener('scroll', handler, options);\n  delete el._onScroll[binding.instance.$.uid];\n}\nfunction updated(el, binding) {\n  if (binding.value === binding.oldValue) return;\n  unmounted(el, binding);\n  mounted(el, binding);\n}\nexport const Scroll = {\n  mounted,\n  unmounted,\n  updated\n};\nexport default Scroll;\n//# sourceMappingURL=index.mjs.map",
+      "start": 1731941044485,
+      "end": 1731941044563,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941044563,
+      "end": 1731941044563,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941044563,
+      "end": 1731941044563,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941044563,
+      "end": 1731941044564,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941044563,
+      "end": 1731941044564,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941044564,
+      "end": 1731941044564,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941044564,
+      "end": 1731941044564,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1731941044564,
+      "end": 1731941044564,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1731941044564,
+      "end": 1731941044564,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1731941044564,
+      "end": 1731941044564,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1731941044564,
+      "end": 1731941044564,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1731941044564,
+      "end": 1731941044564,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1731941044564,
+      "end": 1731941044564,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1731941044564,
+      "end": 1731941044564,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1731941044564,
+      "end": 1731941044564,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941044564,
+      "end": 1731941044564,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941044564,
+      "end": 1731941044564,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941044565,
+      "end": 1731941044565,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941044565,
+      "end": 1731941044565,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1731941044565,
+      "end": 1731941044566,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941044574,
+      "end": 1731941044574,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1731941044574,
+      "end": 1731941044574,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "function mounted(el, binding) {\n  const {\n    self = false\n  } = binding.modifiers ?? {};\n  const value = binding.value;\n  const options = typeof value === \"object\" && value.options || {\n    passive: true\n  };\n  const handler = typeof value === \"function\" || \"handleEvent\" in value ? value : value.handler;\n  const target = self ? el : binding.arg ? (void 0).querySelector(binding.arg) : void 0;\n  if (!target)\n    return;\n  target.addEventListener(\"scroll\", handler, options);\n  el._onScroll = Object(el._onScroll);\n  el._onScroll[binding.instance.$.uid] = {\n    handler,\n    options,\n    // Don't reference self\n    target: self ? void 0 : target\n  };\n}\nfunction unmounted(el, binding) {\n  if (!el._onScroll?.[binding.instance.$.uid])\n    return;\n  const {\n    handler,\n    options,\n    target = el\n  } = el._onScroll[binding.instance.$.uid];\n  target.removeEventListener(\"scroll\", handler, options);\n  delete el._onScroll[binding.instance.$.uid];\n}\nfunction updated(el, binding) {\n  if (binding.value === binding.oldValue)\n    return;\n  unmounted(el, binding);\n  mounted(el, binding);\n}\nexport const Scroll = {\n  mounted,\n  unmounted,\n  updated\n};\nexport default Scroll;\n",
+      "start": 1731941044575,
+      "end": 1731941044730,
+      "order": "normal",
+      "sourcemaps": "{\n  \"version\": 3,\n  \"sources\": [\"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/vuetify/lib/directives/scroll/index.mjs\"],\n  \"sourcesContent\": [\"// Types\\n\\nfunction mounted(el, binding) {\\n  const {\\n    self = false\\n  } = binding.modifiers ?? {};\\n  const value = binding.value;\\n  const options = typeof value === 'object' && value.options || {\\n    passive: true\\n  };\\n  const handler = typeof value === 'function' || 'handleEvent' in value ? value : value.handler;\\n  const target = self ? el : binding.arg ? document.querySelector(binding.arg) : window;\\n  if (!target) return;\\n  target.addEventListener('scroll', handler, options);\\n  el._onScroll = Object(el._onScroll);\\n  el._onScroll[binding.instance.$.uid] = {\\n    handler,\\n    options,\\n    // Don't reference self\\n    target: self ? undefined : target\\n  };\\n}\\nfunction unmounted(el, binding) {\\n  if (!el._onScroll?.[binding.instance.$.uid]) return;\\n  const {\\n    handler,\\n    options,\\n    target = el\\n  } = el._onScroll[binding.instance.$.uid];\\n  target.removeEventListener('scroll', handler, options);\\n  delete el._onScroll[binding.instance.$.uid];\\n}\\nfunction updated(el, binding) {\\n  if (binding.value === binding.oldValue) return;\\n  unmounted(el, binding);\\n  mounted(el, binding);\\n}\\nexport const Scroll = {\\n  mounted,\\n  unmounted,\\n  updated\\n};\\nexport default Scroll;\\n//# sourceMappingURL=index.mjs.map\"],\n  \"mappings\": \"AAEA,SAAS,QAAQ,IAAI,SAAS;AAC5B,QAAM;AAAA,IACJ,OAAO;AAAA,EACT,IAAI,QAAQ,aAAa,CAAC;AAC1B,QAAM,QAAQ,QAAQ;AACtB,QAAM,UAAU,OAAO,UAAU,YAAY,MAAM,WAAW;AAAA,IAC5D,SAAS;AAAA,EACX;AACA,QAAM,UAAU,OAAO,UAAU,cAAc,iBAAiB,QAAQ,QAAQ,MAAM;AACtF,QAAM,SAAS,OAAO,KAAK,QAAQ,MAAM,SAAS,cAAc,QAAQ,GAAG,IAAI;AAC/E,MAAI,CAAC;AAAQ;AACb,SAAO,iBAAiB,UAAU,SAAS,OAAO;AAClD,KAAG,YAAY,OAAO,GAAG,SAAS;AAClC,KAAG,UAAU,QAAQ,SAAS,EAAE,GAAG,IAAI;AAAA,IACrC;AAAA,IACA;AAAA;AAAA,IAEA,QAAQ,OAAO,SAAY;AAAA,EAC7B;AACF;AACA,SAAS,UAAU,IAAI,SAAS;AAC9B,MAAI,CAAC,GAAG,YAAY,QAAQ,SAAS,EAAE,GAAG;AAAG;AAC7C,QAAM;AAAA,IACJ;AAAA,IACA;AAAA,IACA,SAAS;AAAA,EACX,IAAI,GAAG,UAAU,QAAQ,SAAS,EAAE,GAAG;AACvC,SAAO,oBAAoB,UAAU,SAAS,OAAO;AACrD,SAAO,GAAG,UAAU,QAAQ,SAAS,EAAE,GAAG;AAC5C;AACA,SAAS,QAAQ,IAAI,SAAS;AAC5B,MAAI,QAAQ,UAAU,QAAQ;AAAU;AACxC,YAAU,IAAI,OAAO;AACrB,UAAQ,IAAI,OAAO;AACrB;AACO,aAAM,SAAS;AAAA,EACpB;AAAA,EACA;AAAA,EACA;AACF;AACA,eAAe;\",\n  \"names\": []\n}\n"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1731941044730,
+      "end": 1731941044730,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1731941044730,
+      "end": 1731941044730,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1731941044730,
+      "end": 1731941044730,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1731941044730,
+      "end": 1731941044730,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1731941044730,
+      "end": 1731941044730,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1731941044730,
+      "end": 1731941044730,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1731941044730,
+      "end": 1731941044730,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941044730,
+      "end": 1731941044730,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941044730,
+      "end": 1731941044730,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941044731,
+      "end": 1731941044731,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941044731,
+      "end": 1731941044731,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941044731,
+      "end": 1731941044731,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941044731,
+      "end": 1731941044731,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941044731,
+      "end": 1731941044731,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941044731,
+      "end": 1731941044731,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "start": 1731941044731,
+      "end": 1731941044731,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "start": 1731941044731,
+      "end": 1731941044731,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941044731,
+      "end": 1731941044731,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941044731,
+      "end": 1731941044731,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941044731,
+      "end": 1731941044731,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941044731,
+      "end": 1731941044731,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941044731,
+      "end": 1731941044731,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941044731,
+      "end": 1731941044731,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1731941044732,
+      "end": 1731941044732,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1731941044732,
+      "end": 1731941044732,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1731941044732,
+      "end": 1731941044732,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1731941044732,
+      "end": 1731941044732,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1731941044732,
+      "end": 1731941044732,
+      "order": "normal"
+    }
+  ]
+}

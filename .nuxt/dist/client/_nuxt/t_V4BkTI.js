@@ -1,0 +1,1 @@
+import{aV as a,ak as d}from"./CEFpPj_H.js";const i=a((e,r)=>{if(e.params.id!==void 0&&!/^\d+$/.test(e.params.id))return d("/404",{redirectCode:301});if(e.params.productId!==void 0&&!/^\d+$/.test(e.params.productId))return d("/404",{redirectCode:301})});export{i as default};

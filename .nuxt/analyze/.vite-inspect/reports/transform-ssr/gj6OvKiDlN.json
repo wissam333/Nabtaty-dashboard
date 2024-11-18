@@ -1,0 +1,312 @@
+{
+  "resolvedId": "virtual:nuxt:D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/.nuxt/routes.mjs",
+  "transforms": [
+    {
+      "name": "virtual",
+      "result": "import { default as AboutuVy1uPNV2lMeta } from \"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/About.vue?macro=true\";\nimport { default as AddProductE53EAhcQxmMeta } from \"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/AddProduct.vue?macro=true\";\nimport { default as callbacknaHOOIG9jSMeta } from \"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/auth/callback.vue?macro=true\";\nimport { default as CategoryWMv2oNhlP2Meta } from \"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/Category.vue?macro=true\";\nimport { default as ContactInfoH4O0iilO2sMeta } from \"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/ContactInfo.vue?macro=true\";\nimport { default as CustomersBc2L2hUbkiMeta } from \"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/Customers.vue?macro=true\";\nimport { default as _91id_9352nk1VDB1oMeta } from \"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/EditProduct/[id].vue?macro=true\";\nimport { default as indexSvN8QNQR48Meta } from \"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/index.vue?macro=true\";\nimport { default as ListProductSLa2kBkFDrMeta } from \"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/ListProduct.vue?macro=true\";\nimport { default as LocationsLi2C4IqIUuMeta } from \"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/Locations.vue?macro=true\";\nimport { default as MessagesLEpV7I0nnbMeta } from \"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/Messages.vue?macro=true\";\nimport { default as OrdersQpaRKNOismMeta } from \"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/Orders.vue?macro=true\";\nimport { default as SignInE8qc5qcLm5Meta } from \"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/SignIn.vue?macro=true\";\nimport { default as WebsiteZ2G8QmjNY4Meta } from \"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/Website.vue?macro=true\";\nexport default [\n  {\n    name: AboutuVy1uPNV2lMeta?.name ?? \"About\",\n    path: AboutuVy1uPNV2lMeta?.path ?? \"/About\",\n    meta: AboutuVy1uPNV2lMeta || {},\n    alias: AboutuVy1uPNV2lMeta?.alias || [],\n    redirect: AboutuVy1uPNV2lMeta?.redirect,\n    component: () => import(\"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/About.vue\").then(m => m.default || m)\n  },\n  {\n    name: AddProductE53EAhcQxmMeta?.name ?? \"AddProduct\",\n    path: AddProductE53EAhcQxmMeta?.path ?? \"/AddProduct\",\n    meta: AddProductE53EAhcQxmMeta || {},\n    alias: AddProductE53EAhcQxmMeta?.alias || [],\n    redirect: AddProductE53EAhcQxmMeta?.redirect,\n    component: () => import(\"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/AddProduct.vue\").then(m => m.default || m)\n  },\n  {\n    name: callbacknaHOOIG9jSMeta?.name ?? \"auth-callback\",\n    path: callbacknaHOOIG9jSMeta?.path ?? \"/auth/callback\",\n    meta: callbacknaHOOIG9jSMeta || {},\n    alias: callbacknaHOOIG9jSMeta?.alias || [],\n    redirect: callbacknaHOOIG9jSMeta?.redirect,\n    component: () => import(\"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/auth/callback.vue\").then(m => m.default || m)\n  },\n  {\n    name: CategoryWMv2oNhlP2Meta?.name ?? \"Category\",\n    path: CategoryWMv2oNhlP2Meta?.path ?? \"/Category\",\n    meta: CategoryWMv2oNhlP2Meta || {},\n    alias: CategoryWMv2oNhlP2Meta?.alias || [],\n    redirect: CategoryWMv2oNhlP2Meta?.redirect,\n    component: () => import(\"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/Category.vue\").then(m => m.default || m)\n  },\n  {\n    name: ContactInfoH4O0iilO2sMeta?.name ?? \"ContactInfo\",\n    path: ContactInfoH4O0iilO2sMeta?.path ?? \"/ContactInfo\",\n    meta: ContactInfoH4O0iilO2sMeta || {},\n    alias: ContactInfoH4O0iilO2sMeta?.alias || [],\n    redirect: ContactInfoH4O0iilO2sMeta?.redirect,\n    component: () => import(\"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/ContactInfo.vue\").then(m => m.default || m)\n  },\n  {\n    name: CustomersBc2L2hUbkiMeta?.name ?? \"Customers\",\n    path: CustomersBc2L2hUbkiMeta?.path ?? \"/Customers\",\n    meta: CustomersBc2L2hUbkiMeta || {},\n    alias: CustomersBc2L2hUbkiMeta?.alias || [],\n    redirect: CustomersBc2L2hUbkiMeta?.redirect,\n    component: () => import(\"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/Customers.vue\").then(m => m.default || m)\n  },\n  {\n    name: _91id_9352nk1VDB1oMeta?.name ?? \"EditProduct-id\",\n    path: _91id_9352nk1VDB1oMeta?.path ?? \"/EditProduct/:id()\",\n    meta: _91id_9352nk1VDB1oMeta || {},\n    alias: _91id_9352nk1VDB1oMeta?.alias || [],\n    redirect: _91id_9352nk1VDB1oMeta?.redirect,\n    component: () => import(\"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/EditProduct/[id].vue\").then(m => m.default || m)\n  },\n  {\n    name: indexSvN8QNQR48Meta?.name ?? \"index\",\n    path: indexSvN8QNQR48Meta?.path ?? \"/\",\n    meta: indexSvN8QNQR48Meta || {},\n    alias: indexSvN8QNQR48Meta?.alias || [],\n    redirect: indexSvN8QNQR48Meta?.redirect,\n    component: () => import(\"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/index.vue\").then(m => m.default || m)\n  },\n  {\n    name: ListProductSLa2kBkFDrMeta?.name ?? \"ListProduct\",\n    path: ListProductSLa2kBkFDrMeta?.path ?? \"/ListProduct\",\n    meta: ListProductSLa2kBkFDrMeta || {},\n    alias: ListProductSLa2kBkFDrMeta?.alias || [],\n    redirect: ListProductSLa2kBkFDrMeta?.redirect,\n    component: () => import(\"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/ListProduct.vue\").then(m => m.default || m)\n  },\n  {\n    name: LocationsLi2C4IqIUuMeta?.name ?? \"Locations\",\n    path: LocationsLi2C4IqIUuMeta?.path ?? \"/Locations\",\n    meta: LocationsLi2C4IqIUuMeta || {},\n    alias: LocationsLi2C4IqIUuMeta?.alias || [],\n    redirect: LocationsLi2C4IqIUuMeta?.redirect,\n    component: () => import(\"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/Locations.vue\").then(m => m.default || m)\n  },\n  {\n    name: MessagesLEpV7I0nnbMeta?.name ?? \"Messages\",\n    path: MessagesLEpV7I0nnbMeta?.path ?? \"/Messages\",\n    meta: MessagesLEpV7I0nnbMeta || {},\n    alias: MessagesLEpV7I0nnbMeta?.alias || [],\n    redirect: MessagesLEpV7I0nnbMeta?.redirect,\n    component: () => import(\"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/Messages.vue\").then(m => m.default || m)\n  },\n  {\n    name: OrdersQpaRKNOismMeta?.name ?? \"Orders\",\n    path: OrdersQpaRKNOismMeta?.path ?? \"/Orders\",\n    meta: OrdersQpaRKNOismMeta || {},\n    alias: OrdersQpaRKNOismMeta?.alias || [],\n    redirect: OrdersQpaRKNOismMeta?.redirect,\n    component: () => import(\"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/Orders.vue\").then(m => m.default || m)\n  },\n  {\n    name: SignInE8qc5qcLm5Meta?.name ?? \"SignIn\",\n    path: SignInE8qc5qcLm5Meta?.path ?? \"/SignIn\",\n    meta: SignInE8qc5qcLm5Meta || {},\n    alias: SignInE8qc5qcLm5Meta?.alias || [],\n    redirect: SignInE8qc5qcLm5Meta?.redirect,\n    component: () => import(\"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/SignIn.vue\").then(m => m.default || m)\n  },\n  {\n    name: WebsiteZ2G8QmjNY4Meta?.name ?? \"Website\",\n    path: WebsiteZ2G8QmjNY4Meta?.path ?? \"/Website\",\n    meta: WebsiteZ2G8QmjNY4Meta || {},\n    alias: WebsiteZ2G8QmjNY4Meta?.alias || [],\n    redirect: WebsiteZ2G8QmjNY4Meta?.redirect,\n    component: () => import(\"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/Website.vue\").then(m => m.default || m)\n  }\n]",
+      "start": 1731941040807,
+      "end": 1731941040807,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941040807,
+      "end": 1731941040807,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941040807,
+      "end": 1731941040807,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941040807,
+      "end": 1731941040807,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941040807,
+      "end": 1731941040807,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941040807,
+      "end": 1731941040807,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941040807,
+      "end": 1731941040807,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1731941040808,
+      "end": 1731941040808,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1731941040808,
+      "end": 1731941040808,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1731941040808,
+      "end": 1731941040808,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1731941040808,
+      "end": 1731941040808,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1731941040808,
+      "end": 1731941040808,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1731941040808,
+      "end": 1731941040808,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1731941040808,
+      "end": 1731941040808,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1731941040808,
+      "end": 1731941040808,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941040808,
+      "end": 1731941040808,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941040808,
+      "end": 1731941040808,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941040808,
+      "end": 1731941040808,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941040808,
+      "end": 1731941040809,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1731941040809,
+      "end": 1731941040809,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941040809,
+      "end": 1731941040809,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1731941040809,
+      "end": 1731941040810,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1731941040811,
+      "end": 1731941040811,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1731941040811,
+      "end": 1731941040811,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1731941040811,
+      "end": 1731941040811,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1731941040811,
+      "end": 1731941040811,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1731941040812,
+      "end": 1731941040812,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1731941040812,
+      "end": 1731941040812,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1731941040812,
+      "end": 1731941040813,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1731941040813,
+      "end": 1731941040813,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941040813,
+      "end": 1731941040813,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941040813,
+      "end": 1731941040813,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941040813,
+      "end": 1731941040813,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941040813,
+      "end": 1731941040813,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941040814,
+      "end": 1731941040814,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941040814,
+      "end": 1731941040814,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941040814,
+      "end": 1731941040814,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941040814,
+      "end": 1731941040814,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "start": 1731941040814,
+      "end": 1731941040814,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "start": 1731941040814,
+      "end": 1731941040814,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941040814,
+      "end": 1731941040819,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941040814,
+      "end": 1731941040819,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941040819,
+      "end": 1731941040819,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941040819,
+      "end": 1731941040819,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941040819,
+      "end": 1731941040819,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941040819,
+      "end": 1731941040819,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1731941040819,
+      "end": 1731941040820,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1731941040820,
+      "end": 1731941040820,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1731941040820,
+      "end": 1731941040820,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1731941040820,
+      "end": 1731941040821,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1731941040821,
+      "end": 1731941040821,
+      "order": "normal"
+    }
+  ]
+}

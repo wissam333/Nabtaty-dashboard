@@ -1,0 +1,251 @@
+{
+  "resolvedId": "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/nuxt-vue3-google-signin/dist/runtime/plugin.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineNuxtPlugin, useRuntimeConfig } from \"#app\";\nexport default defineNuxtPlugin(async (nuxtApp) => {\n  const { googleSignIn } = useRuntimeConfig().public;\n  if (googleSignIn) {\n    const plugin = await import(\"vue3-google-signin\");\n    nuxtApp.vueApp.use(plugin.default, { clientId: googleSignIn.clientId });\n  }\n});\n",
+      "start": 1731941006396,
+      "end": 1731941006654,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941006654,
+      "end": 1731941006654,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941006654,
+      "end": 1731941006655,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941006655,
+      "end": 1731941006655,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1731941006655,
+      "end": 1731941006655,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1731941006655,
+      "end": 1731941006655,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1731941006655,
+      "end": 1731941006655,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1731941006655,
+      "end": 1731941006655,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1731941006655,
+      "end": 1731941006655,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1731941006655,
+      "end": 1731941006655,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1731941006655,
+      "end": 1731941006655,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941006655,
+      "end": 1731941006655,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941006655,
+      "end": 1731941006656,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1731941006656,
+      "end": 1731941006656,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1731941006656,
+      "end": 1731941006656,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941006656,
+      "end": 1731941006657,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1731941006657,
+      "end": 1731941006657,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1731941006657,
+      "end": 1731941006657,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1731941006657,
+      "end": 1731941006657,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1731941006657,
+      "end": 1731941006657,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1731941006657,
+      "end": 1731941006657,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1731941006657,
+      "end": 1731941006657,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1731941006657,
+      "end": 1731941006657,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1731941006657,
+      "end": 1731941006657,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1731941006657,
+      "end": 1731941006657,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941006657,
+      "end": 1731941006657,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941006657,
+      "end": 1731941006657,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941006657,
+      "end": 1731941006657,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941006657,
+      "end": 1731941006657,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "start": 1731941006657,
+      "end": 1731941006657,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941006657,
+      "end": 1731941006657,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "result": "/* _processed_nuxt_unctx_transform */\nimport { executeAsync as __executeAsync } from \"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/unctx/dist/index.mjs\";import { defineNuxtPlugin, useRuntimeConfig } from \"#app\";\nexport default defineNuxtPlugin(async (nuxtApp) => {let __temp, __restore;\n  const { googleSignIn } = useRuntimeConfig().public;\n  if (googleSignIn) {\n    const plugin = (([__temp,__restore]=__executeAsync(()=>import(\"vue3-google-signin\"))),__temp=await __temp,__restore(),__temp);\n    nuxtApp.vueApp.use(plugin.default, { clientId: googleSignIn.clientId });\n  }\n},1);\n",
+      "start": 1731941006657,
+      "end": 1731941006658,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "0JAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,uBAAC;AACpD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,yCAAO,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,2CAAC,CAAC;AACtD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5E,CAAC,CAAC,CAAC;AACH,GAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941006658,
+      "end": 1731941006658,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1731941006658,
+      "end": 1731941006659,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1731941006659,
+      "end": 1731941006659,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1731941006659,
+      "end": 1731941006659,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1731941006659,
+      "end": 1731941006659,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";/* _processed_nuxt_unctx_transform */\nimport { executeAsync as __executeAsync } from \"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/unctx/dist/index.mjs\";import { defineNuxtPlugin, useRuntimeConfig } from \"#app\";\nexport default defineNuxtPlugin(async (nuxtApp) => {let __temp, __restore;\n  const { googleSignIn } = useRuntimeConfig().public;\n  if (googleSignIn) {\n    const plugin = (([__temp,__restore]=__executeAsync(()=>__vitePreload(() => import(\"vue3-google-signin\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url))),__temp=await __temp,__restore(),__temp);\n    nuxtApp.vueApp.use(plugin.default, { clientId: googleSignIn.clientId });\n  }\n},1);\n",
+      "start": 1731941006659,
+      "end": 1731941006661,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1731941006661,
+      "end": 1731941006661,
+      "order": "normal"
+    }
+  ]
+}

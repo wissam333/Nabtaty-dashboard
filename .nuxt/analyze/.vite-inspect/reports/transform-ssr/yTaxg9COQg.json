@@ -1,0 +1,323 @@
+{
+  "resolvedId": "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/vuetify/lib/composables/ssrBoot.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "// Utilities\nimport { computed, onMounted, readonly, shallowRef } from 'vue';\n\n// Composables\nexport function useSsrBoot() {\n  const isBooted = shallowRef(false);\n  onMounted(() => {\n    window.requestAnimationFrame(() => {\n      isBooted.value = true;\n    });\n  });\n  const ssrBootStyles = computed(() => !isBooted.value ? {\n    transition: 'none !important'\n  } : undefined);\n  return {\n    ssrBootStyles,\n    isBooted: readonly(isBooted)\n  };\n}\n//# sourceMappingURL=ssrBoot.mjs.map",
+      "start": 1731941049430,
+      "end": 1731941049658,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941049658,
+      "end": 1731941049658,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941049658,
+      "end": 1731941049658,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941049658,
+      "end": 1731941049658,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941049658,
+      "end": 1731941049658,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941049666,
+      "end": 1731941049666,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941049665,
+      "end": 1731941049666,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1731941049666,
+      "end": 1731941049666,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1731941049666,
+      "end": 1731941049666,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1731941049666,
+      "end": 1731941049666,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1731941049666,
+      "end": 1731941049666,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1731941049666,
+      "end": 1731941049666,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1731941049666,
+      "end": 1731941049666,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1731941049666,
+      "end": 1731941049666,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1731941049666,
+      "end": 1731941049666,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941049666,
+      "end": 1731941049666,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941049666,
+      "end": 1731941049666,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941049666,
+      "end": 1731941049666,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941049666,
+      "end": 1731941049666,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1731941049666,
+      "end": 1731941049667,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941049667,
+      "end": 1731941049667,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1731941049667,
+      "end": 1731941049667,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import { computed, onMounted, readonly, shallowRef } from \"vue\";\nexport function useSsrBoot() {\n  const isBooted = shallowRef(false);\n  onMounted(() => {\n    (void 0).requestAnimationFrame(() => {\n      isBooted.value = true;\n    });\n  });\n  const ssrBootStyles = computed(() => !isBooted.value ? {\n    transition: \"none !important\"\n  } : void 0);\n  return {\n    ssrBootStyles,\n    isBooted: readonly(isBooted)\n  };\n}\n",
+      "start": 1731941049667,
+      "end": 1731941049705,
+      "order": "normal",
+      "sourcemaps": "{\n  \"version\": 3,\n  \"sources\": [\"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/vuetify/lib/composables/ssrBoot.mjs\"],\n  \"sourcesContent\": [\"// Utilities\\nimport { computed, onMounted, readonly, shallowRef } from 'vue';\\n\\n// Composables\\nexport function useSsrBoot() {\\n  const isBooted = shallowRef(false);\\n  onMounted(() => {\\n    window.requestAnimationFrame(() => {\\n      isBooted.value = true;\\n    });\\n  });\\n  const ssrBootStyles = computed(() => !isBooted.value ? {\\n    transition: 'none !important'\\n  } : undefined);\\n  return {\\n    ssrBootStyles,\\n    isBooted: readonly(isBooted)\\n  };\\n}\\n//# sourceMappingURL=ssrBoot.mjs.map\"],\n  \"mappings\": \"AACA,SAAS,UAAU,WAAW,UAAU,kBAAkB;AAGnD,gBAAS,aAAa;AAC3B,QAAM,WAAW,WAAW,KAAK;AACjC,YAAU,MAAM;AACd,aAAO,sBAAsB,MAAM;AACjC,eAAS,QAAQ;AAAA,IACnB,CAAC;AAAA,EACH,CAAC;AACD,QAAM,gBAAgB,SAAS,MAAM,CAAC,SAAS,QAAQ;AAAA,IACrD,YAAY;AAAA,EACd,IAAI,MAAS;AACb,SAAO;AAAA,IACL;AAAA,IACA,UAAU,SAAS,QAAQ;AAAA,EAC7B;AACF;\",\n  \"names\": []\n}\n"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1731941049705,
+      "end": 1731941049705,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1731941049705,
+      "end": 1731941049705,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1731941049705,
+      "end": 1731941049705,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1731941049705,
+      "end": 1731941049705,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1731941049705,
+      "end": 1731941049705,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1731941049705,
+      "end": 1731941049705,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1731941049705,
+      "end": 1731941049705,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941049705,
+      "end": 1731941049706,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941049705,
+      "end": 1731941049706,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941049706,
+      "end": 1731941049706,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941049706,
+      "end": 1731941049706,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941049706,
+      "end": 1731941049706,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941049706,
+      "end": 1731941049706,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941049706,
+      "end": 1731941049706,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941049706,
+      "end": 1731941049706,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "start": 1731941049706,
+      "end": 1731941049706,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "start": 1731941049706,
+      "end": 1731941049706,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941049706,
+      "end": 1731941049706,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941049706,
+      "end": 1731941049706,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941049706,
+      "end": 1731941049706,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941049706,
+      "end": 1731941049706,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941049706,
+      "end": 1731941049706,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941049706,
+      "end": 1731941049706,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1731941049706,
+      "end": 1731941049706,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1731941049706,
+      "end": 1731941049706,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "result": "import { computed, onMounted, readonly, shallowRef } from \"vue\";\nexport function useSsrBoot() {\n  const isBooted = shallowRef(false);\n   false && /*@__PURE__*/ onMounted(() => {\n    (void 0).requestAnimationFrame(() => {\n      isBooted.value = true;\n    });\n  });\n  const ssrBootStyles = computed(() => !isBooted.value ? {\n    transition: \"none !important\"\n  } : void 0);\n  return {\n    ssrBootStyles,\n    isBooted: readonly(isBooted)\n  };\n}\n",
+      "start": 1731941049706,
+      "end": 1731941049707,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrC,mCAAW,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChC,CAAC,CAAC,CAAC,CAAC;AACJ,CAAC;"
+      }
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1731941049707,
+      "end": 1731941049707,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1731941049707,
+      "end": 1731941049707,
+      "order": "normal"
+    }
+  ]
+}

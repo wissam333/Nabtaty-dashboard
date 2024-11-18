@@ -1,0 +1,240 @@
+{
+  "resolvedId": "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/vuetify/lib/composables/nested/activeStrategies.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/* eslint-disable sonarjs/no-identical-functions */\n// Utilities\nimport { toRaw } from 'vue';\nexport const independentActiveStrategy = mandatory => {\n  const strategy = {\n    activate: _ref => {\n      let {\n        id,\n        value,\n        activated\n      } = _ref;\n      id = toRaw(id);\n\n      // When mandatory and we're trying to deselect when id\n      // is the only currently selected item then do nothing\n      if (mandatory && !value && activated.size === 1 && activated.has(id)) return activated;\n      if (value) {\n        activated.add(id);\n      } else {\n        activated.delete(id);\n      }\n      return activated;\n    },\n    in: (v, children, parents) => {\n      let set = new Set();\n      for (const id of v || []) {\n        set = strategy.activate({\n          id,\n          value: true,\n          activated: new Set(set),\n          children,\n          parents\n        });\n      }\n      return set;\n    },\n    out: v => {\n      return Array.from(v);\n    }\n  };\n  return strategy;\n};\nexport const independentSingleActiveStrategy = mandatory => {\n  const parentStrategy = independentActiveStrategy(mandatory);\n  const strategy = {\n    activate: _ref2 => {\n      let {\n        activated,\n        id,\n        ...rest\n      } = _ref2;\n      id = toRaw(id);\n      const singleSelected = activated.has(id) ? new Set([id]) : new Set();\n      return parentStrategy.activate({\n        ...rest,\n        id,\n        activated: singleSelected\n      });\n    },\n    in: (v, children, parents) => {\n      let set = new Set();\n      if (v?.length) {\n        set = parentStrategy.in(v.slice(0, 1), children, parents);\n      }\n      return set;\n    },\n    out: (v, children, parents) => {\n      return parentStrategy.out(v, children, parents);\n    }\n  };\n  return strategy;\n};\nexport const leafActiveStrategy = mandatory => {\n  const parentStrategy = independentActiveStrategy(mandatory);\n  const strategy = {\n    activate: _ref3 => {\n      let {\n        id,\n        activated,\n        children,\n        ...rest\n      } = _ref3;\n      id = toRaw(id);\n      if (children.has(id)) return activated;\n      return parentStrategy.activate({\n        id,\n        activated,\n        children,\n        ...rest\n      });\n    },\n    in: parentStrategy.in,\n    out: parentStrategy.out\n  };\n  return strategy;\n};\nexport const leafSingleActiveStrategy = mandatory => {\n  const parentStrategy = independentSingleActiveStrategy(mandatory);\n  const strategy = {\n    activate: _ref4 => {\n      let {\n        id,\n        activated,\n        children,\n        ...rest\n      } = _ref4;\n      id = toRaw(id);\n      if (children.has(id)) return activated;\n      return parentStrategy.activate({\n        id,\n        activated,\n        children,\n        ...rest\n      });\n    },\n    in: parentStrategy.in,\n    out: parentStrategy.out\n  };\n  return strategy;\n};\n//# sourceMappingURL=activeStrategies.mjs.map",
+      "start": 1731941022551,
+      "end": 1731941022752,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941022753,
+      "end": 1731941022753,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941022753,
+      "end": 1731941022753,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941022753,
+      "end": 1731941022753,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1731941022753,
+      "end": 1731941022753,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1731941022753,
+      "end": 1731941022753,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1731941022753,
+      "end": 1731941022753,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1731941022753,
+      "end": 1731941022753,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1731941022753,
+      "end": 1731941022753,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1731941022753,
+      "end": 1731941022753,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1731941022753,
+      "end": 1731941022753,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941022753,
+      "end": 1731941022753,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941022753,
+      "end": 1731941022753,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1731941022753,
+      "end": 1731941022753,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1731941022753,
+      "end": 1731941022753,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941022753,
+      "end": 1731941022753,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1731941022753,
+      "end": 1731941022753,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1731941022753,
+      "end": 1731941022753,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1731941022753,
+      "end": 1731941022753,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1731941022753,
+      "end": 1731941022753,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1731941022753,
+      "end": 1731941022753,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1731941022753,
+      "end": 1731941022753,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1731941022753,
+      "end": 1731941022753,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1731941022753,
+      "end": 1731941022753,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1731941022753,
+      "end": 1731941022753,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941022753,
+      "end": 1731941022753,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941022754,
+      "end": 1731941022754,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941022754,
+      "end": 1731941022754,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941022754,
+      "end": 1731941022754,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "start": 1731941022754,
+      "end": 1731941022754,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941022754,
+      "end": 1731941022754,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941022754,
+      "end": 1731941022754,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941022754,
+      "end": 1731941022754,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1731941022754,
+      "end": 1731941022754,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1731941022754,
+      "end": 1731941022754,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1731941022754,
+      "end": 1731941022754,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1731941022754,
+      "end": 1731941022754,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1731941022754,
+      "end": 1731941022754,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1731941022754,
+      "end": 1731941022754,
+      "order": "normal"
+    }
+  ]
+}

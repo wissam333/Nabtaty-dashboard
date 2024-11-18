@@ -1,0 +1,323 @@
+{
+  "resolvedId": "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/vuetify/lib/components/VNavigationDrawer/touch.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "// Composables\nimport { useVelocity } from \"../../composables/touch.mjs\"; // Utilities\nimport { computed, onBeforeUnmount, onMounted, shallowRef } from 'vue';\n\n// Types\n\nexport function useTouch(_ref) {\n  let {\n    isActive,\n    isTemporary,\n    width,\n    touchless,\n    position\n  } = _ref;\n  onMounted(() => {\n    window.addEventListener('touchstart', onTouchstart, {\n      passive: true\n    });\n    window.addEventListener('touchmove', onTouchmove, {\n      passive: false\n    });\n    window.addEventListener('touchend', onTouchend, {\n      passive: true\n    });\n  });\n  onBeforeUnmount(() => {\n    window.removeEventListener('touchstart', onTouchstart);\n    window.removeEventListener('touchmove', onTouchmove);\n    window.removeEventListener('touchend', onTouchend);\n  });\n  const isHorizontal = computed(() => ['left', 'right'].includes(position.value));\n  const {\n    addMovement,\n    endTouch,\n    getVelocity\n  } = useVelocity();\n  let maybeDragging = false;\n  const isDragging = shallowRef(false);\n  const dragProgress = shallowRef(0);\n  const offset = shallowRef(0);\n  let start;\n  function getOffset(pos, active) {\n    return (position.value === 'left' ? pos : position.value === 'right' ? document.documentElement.clientWidth - pos : position.value === 'top' ? pos : position.value === 'bottom' ? document.documentElement.clientHeight - pos : oops()) - (active ? width.value : 0);\n  }\n  function getProgress(pos) {\n    let limit = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;\n    const progress = position.value === 'left' ? (pos - offset.value) / width.value : position.value === 'right' ? (document.documentElement.clientWidth - pos - offset.value) / width.value : position.value === 'top' ? (pos - offset.value) / width.value : position.value === 'bottom' ? (document.documentElement.clientHeight - pos - offset.value) / width.value : oops();\n    return limit ? Math.max(0, Math.min(1, progress)) : progress;\n  }\n  function onTouchstart(e) {\n    if (touchless.value) return;\n    const touchX = e.changedTouches[0].clientX;\n    const touchY = e.changedTouches[0].clientY;\n    const touchZone = 25;\n    const inTouchZone = position.value === 'left' ? touchX < touchZone : position.value === 'right' ? touchX > document.documentElement.clientWidth - touchZone : position.value === 'top' ? touchY < touchZone : position.value === 'bottom' ? touchY > document.documentElement.clientHeight - touchZone : oops();\n    const inElement = isActive.value && (position.value === 'left' ? touchX < width.value : position.value === 'right' ? touchX > document.documentElement.clientWidth - width.value : position.value === 'top' ? touchY < width.value : position.value === 'bottom' ? touchY > document.documentElement.clientHeight - width.value : oops());\n    if (inTouchZone || inElement || isActive.value && isTemporary.value) {\n      maybeDragging = true;\n      start = [touchX, touchY];\n      offset.value = getOffset(isHorizontal.value ? touchX : touchY, isActive.value);\n      dragProgress.value = getProgress(isHorizontal.value ? touchX : touchY);\n      endTouch(e);\n      addMovement(e);\n    }\n  }\n  function onTouchmove(e) {\n    const touchX = e.changedTouches[0].clientX;\n    const touchY = e.changedTouches[0].clientY;\n    if (maybeDragging) {\n      if (!e.cancelable) {\n        maybeDragging = false;\n        return;\n      }\n      const dx = Math.abs(touchX - start[0]);\n      const dy = Math.abs(touchY - start[1]);\n      const thresholdMet = isHorizontal.value ? dx > dy && dx > 3 : dy > dx && dy > 3;\n      if (thresholdMet) {\n        isDragging.value = true;\n        maybeDragging = false;\n      } else if ((isHorizontal.value ? dy : dx) > 3) {\n        maybeDragging = false;\n      }\n    }\n    if (!isDragging.value) return;\n    e.preventDefault();\n    addMovement(e);\n    const progress = getProgress(isHorizontal.value ? touchX : touchY, false);\n    dragProgress.value = Math.max(0, Math.min(1, progress));\n    if (progress > 1) {\n      offset.value = getOffset(isHorizontal.value ? touchX : touchY, true);\n    } else if (progress < 0) {\n      offset.value = getOffset(isHorizontal.value ? touchX : touchY, false);\n    }\n  }\n  function onTouchend(e) {\n    maybeDragging = false;\n    if (!isDragging.value) return;\n    addMovement(e);\n    isDragging.value = false;\n    const velocity = getVelocity(e.changedTouches[0].identifier);\n    const vx = Math.abs(velocity.x);\n    const vy = Math.abs(velocity.y);\n    const thresholdMet = isHorizontal.value ? vx > vy && vx > 400 : vy > vx && vy > 3;\n    if (thresholdMet) {\n      isActive.value = velocity.direction === ({\n        left: 'right',\n        right: 'left',\n        top: 'down',\n        bottom: 'up'\n      }[position.value] || oops());\n    } else {\n      isActive.value = dragProgress.value > 0.5;\n    }\n  }\n  const dragStyles = computed(() => {\n    return isDragging.value ? {\n      transform: position.value === 'left' ? `translateX(calc(-100% + ${dragProgress.value * width.value}px))` : position.value === 'right' ? `translateX(calc(100% - ${dragProgress.value * width.value}px))` : position.value === 'top' ? `translateY(calc(-100% + ${dragProgress.value * width.value}px))` : position.value === 'bottom' ? `translateY(calc(100% - ${dragProgress.value * width.value}px))` : oops(),\n      transition: 'none'\n    } : undefined;\n  });\n  return {\n    isDragging,\n    dragProgress,\n    dragStyles\n  };\n}\nfunction oops() {\n  throw new Error();\n}\n//# sourceMappingURL=touch.mjs.map",
+      "start": 1731941050877,
+      "end": 1731941051096,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941051096,
+      "end": 1731941051096,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941051096,
+      "end": 1731941051096,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941051096,
+      "end": 1731941051096,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941051096,
+      "end": 1731941051096,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941051096,
+      "end": 1731941051097,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941051096,
+      "end": 1731941051097,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1731941051097,
+      "end": 1731941051097,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1731941051097,
+      "end": 1731941051097,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1731941051097,
+      "end": 1731941051097,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1731941051097,
+      "end": 1731941051097,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1731941051097,
+      "end": 1731941051097,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1731941051097,
+      "end": 1731941051097,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1731941051097,
+      "end": 1731941051097,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1731941051097,
+      "end": 1731941051097,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941051097,
+      "end": 1731941051097,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941051097,
+      "end": 1731941051097,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941051097,
+      "end": 1731941051097,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941051097,
+      "end": 1731941051097,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1731941051097,
+      "end": 1731941051097,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941051097,
+      "end": 1731941051097,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1731941051097,
+      "end": 1731941051098,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import { useVelocity } from \"../../composables/touch.mjs\";\nimport { computed, onBeforeUnmount, onMounted, shallowRef } from \"vue\";\nexport function useTouch(_ref) {\n  let {\n    isActive,\n    isTemporary,\n    width,\n    touchless,\n    position\n  } = _ref;\n  onMounted(() => {\n    (void 0).addEventListener(\"touchstart\", onTouchstart, {\n      passive: true\n    });\n    (void 0).addEventListener(\"touchmove\", onTouchmove, {\n      passive: false\n    });\n    (void 0).addEventListener(\"touchend\", onTouchend, {\n      passive: true\n    });\n  });\n  onBeforeUnmount(() => {\n    (void 0).removeEventListener(\"touchstart\", onTouchstart);\n    (void 0).removeEventListener(\"touchmove\", onTouchmove);\n    (void 0).removeEventListener(\"touchend\", onTouchend);\n  });\n  const isHorizontal = computed(() => [\"left\", \"right\"].includes(position.value));\n  const {\n    addMovement,\n    endTouch,\n    getVelocity\n  } = useVelocity();\n  let maybeDragging = false;\n  const isDragging = shallowRef(false);\n  const dragProgress = shallowRef(0);\n  const offset = shallowRef(0);\n  let start;\n  function getOffset(pos, active) {\n    return (position.value === \"left\" ? pos : position.value === \"right\" ? (void 0).documentElement.clientWidth - pos : position.value === \"top\" ? pos : position.value === \"bottom\" ? (void 0).documentElement.clientHeight - pos : oops()) - (active ? width.value : 0);\n  }\n  function getProgress(pos) {\n    let limit = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : true;\n    const progress = position.value === \"left\" ? (pos - offset.value) / width.value : position.value === \"right\" ? ((void 0).documentElement.clientWidth - pos - offset.value) / width.value : position.value === \"top\" ? (pos - offset.value) / width.value : position.value === \"bottom\" ? ((void 0).documentElement.clientHeight - pos - offset.value) / width.value : oops();\n    return limit ? Math.max(0, Math.min(1, progress)) : progress;\n  }\n  function onTouchstart(e) {\n    if (touchless.value)\n      return;\n    const touchX = e.changedTouches[0].clientX;\n    const touchY = e.changedTouches[0].clientY;\n    const touchZone = 25;\n    const inTouchZone = position.value === \"left\" ? touchX < touchZone : position.value === \"right\" ? touchX > (void 0).documentElement.clientWidth - touchZone : position.value === \"top\" ? touchY < touchZone : position.value === \"bottom\" ? touchY > (void 0).documentElement.clientHeight - touchZone : oops();\n    const inElement = isActive.value && (position.value === \"left\" ? touchX < width.value : position.value === \"right\" ? touchX > (void 0).documentElement.clientWidth - width.value : position.value === \"top\" ? touchY < width.value : position.value === \"bottom\" ? touchY > (void 0).documentElement.clientHeight - width.value : oops());\n    if (inTouchZone || inElement || isActive.value && isTemporary.value) {\n      maybeDragging = true;\n      start = [touchX, touchY];\n      offset.value = getOffset(isHorizontal.value ? touchX : touchY, isActive.value);\n      dragProgress.value = getProgress(isHorizontal.value ? touchX : touchY);\n      endTouch(e);\n      addMovement(e);\n    }\n  }\n  function onTouchmove(e) {\n    const touchX = e.changedTouches[0].clientX;\n    const touchY = e.changedTouches[0].clientY;\n    if (maybeDragging) {\n      if (!e.cancelable) {\n        maybeDragging = false;\n        return;\n      }\n      const dx = Math.abs(touchX - start[0]);\n      const dy = Math.abs(touchY - start[1]);\n      const thresholdMet = isHorizontal.value ? dx > dy && dx > 3 : dy > dx && dy > 3;\n      if (thresholdMet) {\n        isDragging.value = true;\n        maybeDragging = false;\n      } else if ((isHorizontal.value ? dy : dx) > 3) {\n        maybeDragging = false;\n      }\n    }\n    if (!isDragging.value)\n      return;\n    e.preventDefault();\n    addMovement(e);\n    const progress = getProgress(isHorizontal.value ? touchX : touchY, false);\n    dragProgress.value = Math.max(0, Math.min(1, progress));\n    if (progress > 1) {\n      offset.value = getOffset(isHorizontal.value ? touchX : touchY, true);\n    } else if (progress < 0) {\n      offset.value = getOffset(isHorizontal.value ? touchX : touchY, false);\n    }\n  }\n  function onTouchend(e) {\n    maybeDragging = false;\n    if (!isDragging.value)\n      return;\n    addMovement(e);\n    isDragging.value = false;\n    const velocity = getVelocity(e.changedTouches[0].identifier);\n    const vx = Math.abs(velocity.x);\n    const vy = Math.abs(velocity.y);\n    const thresholdMet = isHorizontal.value ? vx > vy && vx > 400 : vy > vx && vy > 3;\n    if (thresholdMet) {\n      isActive.value = velocity.direction === ({\n        left: \"right\",\n        right: \"left\",\n        top: \"down\",\n        bottom: \"up\"\n      }[position.value] || oops());\n    } else {\n      isActive.value = dragProgress.value > 0.5;\n    }\n  }\n  const dragStyles = computed(() => {\n    return isDragging.value ? {\n      transform: position.value === \"left\" ? `translateX(calc(-100% + ${dragProgress.value * width.value}px))` : position.value === \"right\" ? `translateX(calc(100% - ${dragProgress.value * width.value}px))` : position.value === \"top\" ? `translateY(calc(-100% + ${dragProgress.value * width.value}px))` : position.value === \"bottom\" ? `translateY(calc(100% - ${dragProgress.value * width.value}px))` : oops(),\n      transition: \"none\"\n    } : void 0;\n  });\n  return {\n    isDragging,\n    dragProgress,\n    dragStyles\n  };\n}\nfunction oops() {\n  throw new Error();\n}\n",
+      "start": 1731941051098,
+      "end": 1731941051226,
+      "order": "normal",
+      "sourcemaps": "{\n  \"version\": 3,\n  \"sources\": [\"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/vuetify/lib/components/VNavigationDrawer/touch.mjs\"],\n  \"sourcesContent\": [\"// Composables\\nimport { useVelocity } from \\\"../../composables/touch.mjs\\\"; // Utilities\\nimport { computed, onBeforeUnmount, onMounted, shallowRef } from 'vue';\\n\\n// Types\\n\\nexport function useTouch(_ref) {\\n  let {\\n    isActive,\\n    isTemporary,\\n    width,\\n    touchless,\\n    position\\n  } = _ref;\\n  onMounted(() => {\\n    window.addEventListener('touchstart', onTouchstart, {\\n      passive: true\\n    });\\n    window.addEventListener('touchmove', onTouchmove, {\\n      passive: false\\n    });\\n    window.addEventListener('touchend', onTouchend, {\\n      passive: true\\n    });\\n  });\\n  onBeforeUnmount(() => {\\n    window.removeEventListener('touchstart', onTouchstart);\\n    window.removeEventListener('touchmove', onTouchmove);\\n    window.removeEventListener('touchend', onTouchend);\\n  });\\n  const isHorizontal = computed(() => ['left', 'right'].includes(position.value));\\n  const {\\n    addMovement,\\n    endTouch,\\n    getVelocity\\n  } = useVelocity();\\n  let maybeDragging = false;\\n  const isDragging = shallowRef(false);\\n  const dragProgress = shallowRef(0);\\n  const offset = shallowRef(0);\\n  let start;\\n  function getOffset(pos, active) {\\n    return (position.value === 'left' ? pos : position.value === 'right' ? document.documentElement.clientWidth - pos : position.value === 'top' ? pos : position.value === 'bottom' ? document.documentElement.clientHeight - pos : oops()) - (active ? width.value : 0);\\n  }\\n  function getProgress(pos) {\\n    let limit = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;\\n    const progress = position.value === 'left' ? (pos - offset.value) / width.value : position.value === 'right' ? (document.documentElement.clientWidth - pos - offset.value) / width.value : position.value === 'top' ? (pos - offset.value) / width.value : position.value === 'bottom' ? (document.documentElement.clientHeight - pos - offset.value) / width.value : oops();\\n    return limit ? Math.max(0, Math.min(1, progress)) : progress;\\n  }\\n  function onTouchstart(e) {\\n    if (touchless.value) return;\\n    const touchX = e.changedTouches[0].clientX;\\n    const touchY = e.changedTouches[0].clientY;\\n    const touchZone = 25;\\n    const inTouchZone = position.value === 'left' ? touchX < touchZone : position.value === 'right' ? touchX > document.documentElement.clientWidth - touchZone : position.value === 'top' ? touchY < touchZone : position.value === 'bottom' ? touchY > document.documentElement.clientHeight - touchZone : oops();\\n    const inElement = isActive.value && (position.value === 'left' ? touchX < width.value : position.value === 'right' ? touchX > document.documentElement.clientWidth - width.value : position.value === 'top' ? touchY < width.value : position.value === 'bottom' ? touchY > document.documentElement.clientHeight - width.value : oops());\\n    if (inTouchZone || inElement || isActive.value && isTemporary.value) {\\n      maybeDragging = true;\\n      start = [touchX, touchY];\\n      offset.value = getOffset(isHorizontal.value ? touchX : touchY, isActive.value);\\n      dragProgress.value = getProgress(isHorizontal.value ? touchX : touchY);\\n      endTouch(e);\\n      addMovement(e);\\n    }\\n  }\\n  function onTouchmove(e) {\\n    const touchX = e.changedTouches[0].clientX;\\n    const touchY = e.changedTouches[0].clientY;\\n    if (maybeDragging) {\\n      if (!e.cancelable) {\\n        maybeDragging = false;\\n        return;\\n      }\\n      const dx = Math.abs(touchX - start[0]);\\n      const dy = Math.abs(touchY - start[1]);\\n      const thresholdMet = isHorizontal.value ? dx > dy && dx > 3 : dy > dx && dy > 3;\\n      if (thresholdMet) {\\n        isDragging.value = true;\\n        maybeDragging = false;\\n      } else if ((isHorizontal.value ? dy : dx) > 3) {\\n        maybeDragging = false;\\n      }\\n    }\\n    if (!isDragging.value) return;\\n    e.preventDefault();\\n    addMovement(e);\\n    const progress = getProgress(isHorizontal.value ? touchX : touchY, false);\\n    dragProgress.value = Math.max(0, Math.min(1, progress));\\n    if (progress > 1) {\\n      offset.value = getOffset(isHorizontal.value ? touchX : touchY, true);\\n    } else if (progress < 0) {\\n      offset.value = getOffset(isHorizontal.value ? touchX : touchY, false);\\n    }\\n  }\\n  function onTouchend(e) {\\n    maybeDragging = false;\\n    if (!isDragging.value) return;\\n    addMovement(e);\\n    isDragging.value = false;\\n    const velocity = getVelocity(e.changedTouches[0].identifier);\\n    const vx = Math.abs(velocity.x);\\n    const vy = Math.abs(velocity.y);\\n    const thresholdMet = isHorizontal.value ? vx > vy && vx > 400 : vy > vx && vy > 3;\\n    if (thresholdMet) {\\n      isActive.value = velocity.direction === ({\\n        left: 'right',\\n        right: 'left',\\n        top: 'down',\\n        bottom: 'up'\\n      }[position.value] || oops());\\n    } else {\\n      isActive.value = dragProgress.value > 0.5;\\n    }\\n  }\\n  const dragStyles = computed(() => {\\n    return isDragging.value ? {\\n      transform: position.value === 'left' ? `translateX(calc(-100% + ${dragProgress.value * width.value}px))` : position.value === 'right' ? `translateX(calc(100% - ${dragProgress.value * width.value}px))` : position.value === 'top' ? `translateY(calc(-100% + ${dragProgress.value * width.value}px))` : position.value === 'bottom' ? `translateY(calc(100% - ${dragProgress.value * width.value}px))` : oops(),\\n      transition: 'none'\\n    } : undefined;\\n  });\\n  return {\\n    isDragging,\\n    dragProgress,\\n    dragStyles\\n  };\\n}\\nfunction oops() {\\n  throw new Error();\\n}\\n//# sourceMappingURL=touch.mjs.map\"],\n  \"mappings\": \"AACA,SAAS,mBAAmB;AAC5B,SAAS,UAAU,iBAAiB,WAAW,kBAAkB;AAI1D,gBAAS,SAAS,MAAM;AAC7B,MAAI;AAAA,IACF;AAAA,IACA;AAAA,IACA;AAAA,IACA;AAAA,IACA;AAAA,EACF,IAAI;AACJ,YAAU,MAAM;AACd,aAAO,iBAAiB,cAAc,cAAc;AAAA,MAClD,SAAS;AAAA,IACX,CAAC;AACD,aAAO,iBAAiB,aAAa,aAAa;AAAA,MAChD,SAAS;AAAA,IACX,CAAC;AACD,aAAO,iBAAiB,YAAY,YAAY;AAAA,MAC9C,SAAS;AAAA,IACX,CAAC;AAAA,EACH,CAAC;AACD,kBAAgB,MAAM;AACpB,aAAO,oBAAoB,cAAc,YAAY;AACrD,aAAO,oBAAoB,aAAa,WAAW;AACnD,aAAO,oBAAoB,YAAY,UAAU;AAAA,EACnD,CAAC;AACD,QAAM,eAAe,SAAS,MAAM,CAAC,QAAQ,OAAO,EAAE,SAAS,SAAS,KAAK,CAAC;AAC9E,QAAM;AAAA,IACJ;AAAA,IACA;AAAA,IACA;AAAA,EACF,IAAI,YAAY;AAChB,MAAI,gBAAgB;AACpB,QAAM,aAAa,WAAW,KAAK;AACnC,QAAM,eAAe,WAAW,CAAC;AACjC,QAAM,SAAS,WAAW,CAAC;AAC3B,MAAI;AACJ,WAAS,UAAU,KAAK,QAAQ;AAC9B,YAAQ,SAAS,UAAU,SAAS,MAAM,SAAS,UAAU,UAAU,SAAS,gBAAgB,cAAc,MAAM,SAAS,UAAU,QAAQ,MAAM,SAAS,UAAU,WAAW,SAAS,gBAAgB,eAAe,MAAM,KAAK,MAAM,SAAS,MAAM,QAAQ;AAAA,EACrQ;AACA,WAAS,YAAY,KAAK;AACxB,QAAI,QAAQ,UAAU,SAAS,KAAK,UAAU,CAAC,MAAM,SAAY,UAAU,CAAC,IAAI;AAChF,UAAM,WAAW,SAAS,UAAU,UAAU,MAAM,OAAO,SAAS,MAAM,QAAQ,SAAS,UAAU,WAAW,SAAS,gBAAgB,cAAc,MAAM,OAAO,SAAS,MAAM,QAAQ,SAAS,UAAU,SAAS,MAAM,OAAO,SAAS,MAAM,QAAQ,SAAS,UAAU,YAAY,SAAS,gBAAgB,eAAe,MAAM,OAAO,SAAS,MAAM,QAAQ,KAAK;AAC3W,WAAO,QAAQ,KAAK,IAAI,GAAG,KAAK,IAAI,GAAG,QAAQ,CAAC,IAAI;AAAA,EACtD;AACA,WAAS,aAAa,GAAG;AACvB,QAAI,UAAU;AAAO;AACrB,UAAM,SAAS,EAAE,eAAe,CAAC,EAAE;AACnC,UAAM,SAAS,EAAE,eAAe,CAAC,EAAE;AACnC,UAAM,YAAY;AAClB,UAAM,cAAc,SAAS,UAAU,SAAS,SAAS,YAAY,SAAS,UAAU,UAAU,SAAS,SAAS,gBAAgB,cAAc,YAAY,SAAS,UAAU,QAAQ,SAAS,YAAY,SAAS,UAAU,WAAW,SAAS,SAAS,gBAAgB,eAAe,YAAY,KAAK;AAC9S,UAAM,YAAY,SAAS,UAAU,SAAS,UAAU,SAAS,SAAS,MAAM,QAAQ,SAAS,UAAU,UAAU,SAAS,SAAS,gBAAgB,cAAc,MAAM,QAAQ,SAAS,UAAU,QAAQ,SAAS,MAAM,QAAQ,SAAS,UAAU,WAAW,SAAS,SAAS,gBAAgB,eAAe,MAAM,QAAQ,KAAK;AACvU,QAAI,eAAe,aAAa,SAAS,SAAS,YAAY,OAAO;AACnE,sBAAgB;AAChB,cAAQ,CAAC,QAAQ,MAAM;AACvB,aAAO,QAAQ,UAAU,aAAa,QAAQ,SAAS,QAAQ,SAAS,KAAK;AAC7E,mBAAa,QAAQ,YAAY,aAAa,QAAQ,SAAS,MAAM;AACrE,eAAS,CAAC;AACV,kBAAY,CAAC;AAAA,IACf;AAAA,EACF;AACA,WAAS,YAAY,GAAG;AACtB,UAAM,SAAS,EAAE,eAAe,CAAC,EAAE;AACnC,UAAM,SAAS,EAAE,eAAe,CAAC,EAAE;AACnC,QAAI,eAAe;AACjB,UAAI,CAAC,EAAE,YAAY;AACjB,wBAAgB;AAChB;AAAA,MACF;AACA,YAAM,KAAK,KAAK,IAAI,SAAS,MAAM,CAAC,CAAC;AACrC,YAAM,KAAK,KAAK,IAAI,SAAS,MAAM,CAAC,CAAC;AACrC,YAAM,eAAe,aAAa,QAAQ,KAAK,MAAM,KAAK,IAAI,KAAK,MAAM,KAAK;AAC9E,UAAI,cAAc;AAChB,mBAAW,QAAQ;AACnB,wBAAgB;AAAA,MAClB,YAAY,aAAa,QAAQ,KAAK,MAAM,GAAG;AAC7C,wBAAgB;AAAA,MAClB;AAAA,IACF;AACA,QAAI,CAAC,WAAW;AAAO;AACvB,MAAE,eAAe;AACjB,gBAAY,CAAC;AACb,UAAM,WAAW,YAAY,aAAa,QAAQ,SAAS,QAAQ,KAAK;AACxE,iBAAa,QAAQ,KAAK,IAAI,GAAG,KAAK,IAAI,GAAG,QAAQ,CAAC;AACtD,QAAI,WAAW,GAAG;AAChB,aAAO,QAAQ,UAAU,aAAa,QAAQ,SAAS,QAAQ,IAAI;AAAA,IACrE,WAAW,WAAW,GAAG;AACvB,aAAO,QAAQ,UAAU,aAAa,QAAQ,SAAS,QAAQ,KAAK;AAAA,IACtE;AAAA,EACF;AACA,WAAS,WAAW,GAAG;AACrB,oBAAgB;AAChB,QAAI,CAAC,WAAW;AAAO;AACvB,gBAAY,CAAC;AACb,eAAW,QAAQ;AACnB,UAAM,WAAW,YAAY,EAAE,eAAe,CAAC,EAAE,UAAU;AAC3D,UAAM,KAAK,KAAK,IAAI,SAAS,CAAC;AAC9B,UAAM,KAAK,KAAK,IAAI,SAAS,CAAC;AAC9B,UAAM,eAAe,aAAa,QAAQ,KAAK,MAAM,KAAK,MAAM,KAAK,MAAM,KAAK;AAChF,QAAI,cAAc;AAChB,eAAS,QAAQ,SAAS,eAAe;AAAA,QACvC,MAAM;AAAA,QACN,OAAO;AAAA,QACP,KAAK;AAAA,QACL,QAAQ;AAAA,MACV,EAAE,SAAS,KAAK,KAAK,KAAK;AAAA,IAC5B,OAAO;AACL,eAAS,QAAQ,aAAa,QAAQ;AAAA,IACxC;AAAA,EACF;AACA,QAAM,aAAa,SAAS,MAAM;AAChC,WAAO,WAAW,QAAQ;AAAA,MACxB,WAAW,SAAS,UAAU,SAAS,2BAA2B,aAAa,QAAQ,MAAM,KAAK,SAAS,SAAS,UAAU,UAAU,0BAA0B,aAAa,QAAQ,MAAM,KAAK,SAAS,SAAS,UAAU,QAAQ,2BAA2B,aAAa,QAAQ,MAAM,KAAK,SAAS,SAAS,UAAU,WAAW,0BAA0B,aAAa,QAAQ,MAAM,KAAK,SAAS,KAAK;AAAA,MAChZ,YAAY;AAAA,IACd,IAAI;AAAA,EACN,CAAC;AACD,SAAO;AAAA,IACL;AAAA,IACA;AAAA,IACA;AAAA,EACF;AACF;AACA,SAAS,OAAO;AACd,QAAM,IAAI,MAAM;AAClB;\",\n  \"names\": []\n}\n"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1731941051226,
+      "end": 1731941051226,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1731941051226,
+      "end": 1731941051226,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1731941051226,
+      "end": 1731941051226,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1731941051226,
+      "end": 1731941051226,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1731941051226,
+      "end": 1731941051226,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1731941051227,
+      "end": 1731941051227,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1731941051227,
+      "end": 1731941051227,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941051227,
+      "end": 1731941051227,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941051227,
+      "end": 1731941051227,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941051227,
+      "end": 1731941051227,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941051227,
+      "end": 1731941051227,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941051227,
+      "end": 1731941051227,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941051227,
+      "end": 1731941051227,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941051227,
+      "end": 1731941051227,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941051227,
+      "end": 1731941051227,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "start": 1731941051227,
+      "end": 1731941051227,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "start": 1731941051227,
+      "end": 1731941051227,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941051227,
+      "end": 1731941051227,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941051227,
+      "end": 1731941051227,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941051227,
+      "end": 1731941051227,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941051227,
+      "end": 1731941051227,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941051227,
+      "end": 1731941051227,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941051227,
+      "end": 1731941051227,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1731941051227,
+      "end": 1731941051227,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1731941051227,
+      "end": 1731941051228,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "result": "import { useVelocity } from \"../../composables/touch.mjs\";\nimport { computed, onBeforeUnmount, onMounted, shallowRef } from \"vue\";\nexport function useTouch(_ref) {\n  let {\n    isActive,\n    isTemporary,\n    width,\n    touchless,\n    position\n  } = _ref;\n   false && /*@__PURE__*/ onMounted(() => {\n    (void 0).addEventListener(\"touchstart\", onTouchstart, {\n      passive: true\n    });\n    (void 0).addEventListener(\"touchmove\", onTouchmove, {\n      passive: false\n    });\n    (void 0).addEventListener(\"touchend\", onTouchend, {\n      passive: true\n    });\n  });\n   false && /*@__PURE__*/ onBeforeUnmount(() => {\n    (void 0).removeEventListener(\"touchstart\", onTouchstart);\n    (void 0).removeEventListener(\"touchmove\", onTouchmove);\n    (void 0).removeEventListener(\"touchend\", onTouchend);\n  });\n  const isHorizontal = computed(() => [\"left\", \"right\"].includes(position.value));\n  const {\n    addMovement,\n    endTouch,\n    getVelocity\n  } = useVelocity();\n  let maybeDragging = false;\n  const isDragging = shallowRef(false);\n  const dragProgress = shallowRef(0);\n  const offset = shallowRef(0);\n  let start;\n  function getOffset(pos, active) {\n    return (position.value === \"left\" ? pos : position.value === \"right\" ? (void 0).documentElement.clientWidth - pos : position.value === \"top\" ? pos : position.value === \"bottom\" ? (void 0).documentElement.clientHeight - pos : oops()) - (active ? width.value : 0);\n  }\n  function getProgress(pos) {\n    let limit = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : true;\n    const progress = position.value === \"left\" ? (pos - offset.value) / width.value : position.value === \"right\" ? ((void 0).documentElement.clientWidth - pos - offset.value) / width.value : position.value === \"top\" ? (pos - offset.value) / width.value : position.value === \"bottom\" ? ((void 0).documentElement.clientHeight - pos - offset.value) / width.value : oops();\n    return limit ? Math.max(0, Math.min(1, progress)) : progress;\n  }\n  function onTouchstart(e) {\n    if (touchless.value)\n      return;\n    const touchX = e.changedTouches[0].clientX;\n    const touchY = e.changedTouches[0].clientY;\n    const touchZone = 25;\n    const inTouchZone = position.value === \"left\" ? touchX < touchZone : position.value === \"right\" ? touchX > (void 0).documentElement.clientWidth - touchZone : position.value === \"top\" ? touchY < touchZone : position.value === \"bottom\" ? touchY > (void 0).documentElement.clientHeight - touchZone : oops();\n    const inElement = isActive.value && (position.value === \"left\" ? touchX < width.value : position.value === \"right\" ? touchX > (void 0).documentElement.clientWidth - width.value : position.value === \"top\" ? touchY < width.value : position.value === \"bottom\" ? touchY > (void 0).documentElement.clientHeight - width.value : oops());\n    if (inTouchZone || inElement || isActive.value && isTemporary.value) {\n      maybeDragging = true;\n      start = [touchX, touchY];\n      offset.value = getOffset(isHorizontal.value ? touchX : touchY, isActive.value);\n      dragProgress.value = getProgress(isHorizontal.value ? touchX : touchY);\n      endTouch(e);\n      addMovement(e);\n    }\n  }\n  function onTouchmove(e) {\n    const touchX = e.changedTouches[0].clientX;\n    const touchY = e.changedTouches[0].clientY;\n    if (maybeDragging) {\n      if (!e.cancelable) {\n        maybeDragging = false;\n        return;\n      }\n      const dx = Math.abs(touchX - start[0]);\n      const dy = Math.abs(touchY - start[1]);\n      const thresholdMet = isHorizontal.value ? dx > dy && dx > 3 : dy > dx && dy > 3;\n      if (thresholdMet) {\n        isDragging.value = true;\n        maybeDragging = false;\n      } else if ((isHorizontal.value ? dy : dx) > 3) {\n        maybeDragging = false;\n      }\n    }\n    if (!isDragging.value)\n      return;\n    e.preventDefault();\n    addMovement(e);\n    const progress = getProgress(isHorizontal.value ? touchX : touchY, false);\n    dragProgress.value = Math.max(0, Math.min(1, progress));\n    if (progress > 1) {\n      offset.value = getOffset(isHorizontal.value ? touchX : touchY, true);\n    } else if (progress < 0) {\n      offset.value = getOffset(isHorizontal.value ? touchX : touchY, false);\n    }\n  }\n  function onTouchend(e) {\n    maybeDragging = false;\n    if (!isDragging.value)\n      return;\n    addMovement(e);\n    isDragging.value = false;\n    const velocity = getVelocity(e.changedTouches[0].identifier);\n    const vx = Math.abs(velocity.x);\n    const vy = Math.abs(velocity.y);\n    const thresholdMet = isHorizontal.value ? vx > vy && vx > 400 : vy > vx && vy > 3;\n    if (thresholdMet) {\n      isActive.value = velocity.direction === ({\n        left: \"right\",\n        right: \"left\",\n        top: \"down\",\n        bottom: \"up\"\n      }[position.value] || oops());\n    } else {\n      isActive.value = dragProgress.value > 0.5;\n    }\n  }\n  const dragStyles = computed(() => {\n    return isDragging.value ? {\n      transform: position.value === \"left\" ? `translateX(calc(-100% + ${dragProgress.value * width.value}px))` : position.value === \"right\" ? `translateX(calc(100% - ${dragProgress.value * width.value}px))` : position.value === \"top\" ? `translateY(calc(-100% + ${dragProgress.value * width.value}px))` : position.value === \"bottom\" ? `translateY(calc(100% - ${dragProgress.value * width.value}px))` : oops(),\n      transition: \"none\"\n    } : void 0;\n  });\n  return {\n    isDragging,\n    dragProgress,\n    dragStyles\n  };\n}\nfunction oops() {\n  throw new Error();\n}\n",
+      "start": 1731941051228,
+      "end": 1731941051230,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACX,mCAAW,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,yCAAiB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzD,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACf,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1Q,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjE,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9U,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1E,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7E,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACf,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9E,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3E,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5E,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChD,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACf,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACf,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC;AACJ,CAAC;AACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC;"
+      }
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1731941051230,
+      "end": 1731941051230,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1731941051230,
+      "end": 1731941051230,
+      "order": "normal"
+    }
+  ]
+}

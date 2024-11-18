@@ -1,0 +1,244 @@
+{
+  "resolvedId": "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/@vesp/nuxt-fontawesome/dist/runtime/components/icon.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <svg v-if=\"parsedIcon && symbol\" style=\"display: none\">\n    <symbol v-bind=\"properties\" v-html=\"htmlTag\" />\n  </svg>\n  <svg v-else-if=\"parsedIcon\" v-bind=\"properties\" v-html=\"htmlTag\" />\n</template>\n\n<script setup lang=\"ts\">\nimport {\n  icon as faIcon,\n  parse as faParse,\n  config as faConfig,\n  type IconDefinition,\n  type IconLookup,\n  type Transform,\n} from '@fortawesome/fontawesome-svg-core'\nimport {computed} from 'vue'\nimport type {IconName} from '@fortawesome/fontawesome-common-types'\nimport {transformIsMeaningful} from '../utils'\n\nconst props = defineProps({\n  border: {\n    type: Boolean,\n    default: false,\n  },\n  fixedWidth: {\n    type: Boolean,\n    default: false,\n  },\n  flip: {\n    type: [Boolean, String],\n    default: false,\n    validator: (value: any) => [true, false, 'horizontal', 'vertical', 'both'].includes(value),\n  },\n  icon: {\n    type: [Object, Array, String],\n    required: true,\n  },\n  mask: {\n    type: [Object, Array, String],\n    default: null,\n  },\n  maskId: {\n    type: String,\n    default: undefined,\n  },\n  listItem: {\n    type: Boolean,\n    default: false,\n  },\n  pull: {\n    type: String,\n    default: undefined,\n    validator: (value: any) => ['right', 'left'].includes(value),\n  },\n  pulse: {\n    type: Boolean,\n    default: false,\n  },\n  rotation: {\n    type: [String, Number],\n    default: undefined,\n    validator: (value: any) => [90, 180, 270].includes(Number.parseInt(value, 10)),\n  },\n  swapOpacity: {\n    type: Boolean,\n    default: false,\n  },\n  size: {\n    type: String,\n    default: undefined,\n    validator: (value: any) =>\n      ['2xs', 'xs', 'sm', 'lg', 'xl', '2xl', '1x', '2x', '3x', '4x', '5x', '6x', '7x', '8x', '9x', '10x'].includes(\n        value,\n      ),\n  },\n  spin: {\n    type: Boolean,\n    default: false,\n  },\n  transform: {\n    type: [String, Object],\n    default: undefined,\n  },\n  symbol: {\n    type: [Boolean, String],\n    default: false,\n  },\n  title: {\n    type: String,\n    default: undefined,\n  },\n  titleId: {\n    type: String,\n    default: undefined,\n  },\n  inverse: {\n    type: Boolean,\n    default: false,\n  },\n  bounce: {\n    type: Boolean,\n    default: false,\n  },\n  shake: {\n    type: Boolean,\n    default: false,\n  },\n  beat: {\n    type: Boolean,\n    default: false,\n  },\n  fade: {\n    type: Boolean,\n    default: false,\n  },\n  beatFade: {\n    type: Boolean,\n    default: false,\n  },\n  spinPulse: {\n    type: Boolean,\n    default: false,\n  },\n  spinReverse: {\n    type: Boolean,\n    default: false,\n  },\n})\n\nconst icon = computed(() => normalizeIconArgs(props.icon))\nconst mask = computed(() => normalizeIconArgs(props.mask))\nconst transform = computed(() => {\n  if (props.transform) {\n    const transform = typeof props.transform !== 'object' ? faParse.transform(props.transform) : props.transform\n    if (transform && transformIsMeaningful(transform)) {\n      return transformForSvg(transform)\n    }\n  }\n  return undefined\n})\nconst parsedIcon = computed(() => {\n  return faIcon(icon.value as IconLookup, {\n    classes: classes.value,\n    title: props.title,\n    titleId: props.titleId,\n  })\n})\nconst parsedMask = computed(() => faIcon(mask.value as IconLookup))\nconst properties = computed(() => {\n  const properties: Record<string, any> = {\n    'aria-hidden': true,\n    'data-prefix': parsedIcon.value?.prefix,\n    'data-icon': parsedIcon.value?.iconName,\n    class: classes.value,\n    focusable: false,\n    role: 'img',\n    xmlns: 'http://www.w3.org/2000/svg',\n    viewBox: `0 0 ${parsedIcon.value?.icon[0]} ${parsedIcon.value?.icon[1]}`,\n  }\n  if (props.symbol) {\n    properties.id = [parsedIcon.value?.prefix, 'fa', parsedIcon.value?.iconName].join('-')\n  }\n  if (props.title) {\n    properties['aria-labelledby'] = uniqueId.value\n  }\n\n  return properties\n})\nconst htmlTag = computed(() => {\n  const svg = getSVG()\n  if (parsedMask.value) {\n    const id = props.maskId || parsedMask.value.iconName\n    return `<defs>\n      <clipPath id=\"clip-${id}\">\n        <path fill=\"currentColor\" d=\"${parsedMask.value.icon[4]}\"></path>\n      </clipPath>\n      <mask id=\"mask-${id}\" x=\"0\" y=\"0\" width=\"100%\" height=\"100%\" maskUnits=\"userSpaceOnUse\" maskContentUnits=\"userSpaceOnUse\">\n        <rect x=\"0\" y=\"0\" width=\"100%\" height=\"100%\" fill=\"white\"></rect>\n        ${svg}\n      </mask>\n    </defs>\n    <rect fill=\"currentColor\" clip-path=\"url(#clip-${id})\" mask=\"url(#mask-${id})\" x=\"0\" y=\"0\" width=\"100%\" height=\"100%\"></rect>`\n  }\n  return svg\n})\nconst classes = computed(() => {\n  const classes = {\n    'fa-spin': props.spin,\n    'fa-pulse': props.pulse,\n    'fa-fw': props.fixedWidth,\n    'fa-border': props.border,\n    'fa-li': props.listItem,\n    'fa-inverse': props.inverse,\n    'fa-flip': props.flip === true,\n    'fa-flip-horizontal': props.flip === 'horizontal' || props.flip === 'both',\n    'fa-flip-vertical': props.flip === 'vertical' || props.flip === 'both',\n    [`fa-${props.size}`]: props.size !== undefined,\n    [`fa-rotate-${props.rotation}`]: props.rotation !== undefined,\n    [`fa-pull-${props.pull}`]: props.pull !== undefined,\n    'fa-swap-opacity': props.swapOpacity,\n    'fa-bounce': props.bounce,\n    'fa-shake': props.shake,\n    'fa-beat': props.beat,\n    'fa-fade': props.fade,\n    'fa-beat-fade': props.beatFade,\n    'fa-spin-pulse': props.spinPulse,\n    'fa-spin-reverse': props.spinReverse,\n  }\n\n  const active = Object.keys(classes)\n    .map((key) => (classes[key] ? key : null))\n    .filter((key) => key)\n\n  return [faConfig.replacementClass, ...active] as string[]\n})\n\nconst uniqueId = computed(() => {\n  return faConfig.replacementClass + '-title-' + (props.titleId || nextUniqueId())\n})\n\nfunction normalizeIconArgs(icon: Record<string, any> | string | string[] | null) {\n  if (icon) {\n    if (typeof icon === 'string') {\n      const styles: Record<string, string> = {\n        solid: 'fas',\n        regular: 'far',\n        light: 'fal',\n        thin: 'fat',\n        duotone: 'fad',\n        brands: 'fab',\n      }\n      let prefix = styles[faConfig.styleDefault] || 'fas'\n      let iconName = icon.replace(/\\bfa-/g, '')\n      if (iconName.includes(' ')) {\n        const tmp: string[] = iconName.split(/\\s+/)\n        if (tmp[0] in styles) {\n          prefix = styles[tmp[0]]\n        }\n        iconName = tmp[1]\n      }\n\n      return {prefix, iconName}\n    }\n\n    if (Array.isArray(icon) && icon.length === 2) {\n      return {prefix: icon[0], iconName: icon[1]}\n    }\n\n    if (typeof icon === 'object' && 'prefix' in icon && 'iconName' in icon) {\n      return icon as IconDefinition\n    }\n  }\n\n  return undefined\n}\n\nfunction transformForSvg(transform: Transform) {\n  const containerWidth = 512\n  const iconWidth = parsedIcon.value?.icon[0] || 512\n  const x = transform.x || 0\n  const y = transform.y || 0\n  const size = transform.size || 0\n  const rotate = transform.rotate || 0\n  const flipX = transform.flipX || 0\n  const flipY = transform.flipY || 0\n\n  const outer = 'translate('.concat(String(containerWidth / 2), ' 256)')\n  const innerTranslate = 'translate('.concat(String(x * 32), ', ').concat(String(y * 32), ') ')\n  const innerScale = 'scale('\n    .concat(String((size / 16) * (flipX ? -1 : 1)), ', ')\n    .concat(String((size / 16) * (flipY ? -1 : 1)), ') ')\n  const innerRotate = 'rotate('.concat(String(rotate), ' 0 0)')\n  const inner = ''.concat(innerTranslate, ' ').concat(innerScale, ' ').concat(innerRotate)\n  const path = 'translate('.concat(String((iconWidth / 2) * -1), ' -256)')\n\n  return {outer, inner, path}\n}\n\nfunction nextUniqueId() {\n  const idPool = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'\n\n  let size = 12\n  let id = ''\n  while (size-- > 0) {\n    id += idPool[(Math.random() * 62) | 0]\n  }\n\n  return id\n}\n\nfunction getSVG() {\n  const fill = parsedMask.value ? 'black' : 'currentColor'\n  const svg = []\n\n  let path = parsedIcon.value.icon[4]\n  if (!Array.isArray(path)) {\n    path = [path]\n  }\n  path.forEach((i: string) => {\n    svg.push(\n      `<path fill=\"${fill}\"${transform.value ? ' transform=\"' + transform.value.path + '\"' : ''} d=\"${i}\"></path>`,\n    )\n  })\n\n  if (transform.value) {\n    svg.unshift(`<g transform=\"${transform.value.outer}\">`, `<g transform=\"${transform.value.inner}\">`)\n    svg.push('</g>', '</g>')\n  }\n  if (props.title) {\n    svg.unshift(`<title id=\"${uniqueId.value}\">${props.title}</title>`)\n  }\n\n  return svg.join('')\n}\n\nif (props.icon && !parsedIcon.value) {\n  console.info('Could not find main icon', icon.value)\n}\nif (props.mask && !parsedMask.value) {\n  console.info('Could not find mask icon', mask.value)\n}\n</script>\n",
+      "start": 1731941016108,
+      "end": 1731941016322,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941016322,
+      "end": 1731941016322,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941016322,
+      "end": 1731941016322,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941016322,
+      "end": 1731941016322,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1731941016323,
+      "end": 1731941016323,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1731941016323,
+      "end": 1731941016323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1731941016323,
+      "end": 1731941016323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1731941016323,
+      "end": 1731941016323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1731941016323,
+      "end": 1731941016323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/@vesp/nuxt-fontawesome/dist/runtime/components/icon.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/@vesp/nuxt-fontawesome/dist/runtime/components/icon.vue?vue&type=script&setup=true&lang.ts\";\nexport default _sfc_main;\n",
+      "start": 1731941016323,
+      "end": 1731941017078,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1731941017078,
+      "end": 1731941017078,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941017078,
+      "end": 1731941017078,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941017078,
+      "end": 1731941017079,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1731941017079,
+      "end": 1731941017079,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1731941017079,
+      "end": 1731941017079,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941017079,
+      "end": 1731941017079,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1731941017079,
+      "end": 1731941017079,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1731941017079,
+      "end": 1731941017079,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1731941017079,
+      "end": 1731941017079,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1731941017080,
+      "end": 1731941017080,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1731941017080,
+      "end": 1731941017080,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1731941017080,
+      "end": 1731941017080,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1731941017080,
+      "end": 1731941017080,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1731941017080,
+      "end": 1731941017080,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1731941017080,
+      "end": 1731941017080,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941017080,
+      "end": 1731941017080,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941017080,
+      "end": 1731941017080,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941017080,
+      "end": 1731941017080,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941017080,
+      "end": 1731941017080,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "start": 1731941017085,
+      "end": 1731941017085,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941017085,
+      "end": 1731941017085,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941017085,
+      "end": 1731941017085,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941017086,
+      "end": 1731941017086,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1731941017086,
+      "end": 1731941017086,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1731941017093,
+      "end": 1731941017093,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1731941017095,
+      "end": 1731941017095,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1731941017096,
+      "end": 1731941017096,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1731941017096,
+      "end": 1731941017096,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1731941017096,
+      "end": 1731941017096,
+      "order": "normal"
+    }
+  ]
+}

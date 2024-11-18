@@ -1,0 +1,256 @@
+{
+  "resolvedId": "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/@vesp/nuxt-fontawesome/dist/runtime/components/icon.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { mergeProps as _mergeProps, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  style: {\"display\":\"none\"}\n}\nconst _hoisted_2 = [\"innerHTML\"]\nconst _hoisted_3 = [\"innerHTML\"]\n\nimport {\n  icon as faIcon,\n  parse as faParse,\n  config as faConfig,\n  type IconDefinition,\n  type IconLookup,\n  type Transform,\n} from '@fortawesome/fontawesome-svg-core'\nimport {computed} from 'vue'\nimport type {IconName} from '@fortawesome/fontawesome-common-types'\nimport {transformIsMeaningful} from '../utils'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'icon',\n  props: {\n  border: {\n    type: Boolean,\n    default: false,\n  },\n  fixedWidth: {\n    type: Boolean,\n    default: false,\n  },\n  flip: {\n    type: [Boolean, String],\n    default: false,\n    validator: (value: any) => [true, false, 'horizontal', 'vertical', 'both'].includes(value),\n  },\n  icon: {\n    type: [Object, Array, String],\n    required: true,\n  },\n  mask: {\n    type: [Object, Array, String],\n    default: null,\n  },\n  maskId: {\n    type: String,\n    default: undefined,\n  },\n  listItem: {\n    type: Boolean,\n    default: false,\n  },\n  pull: {\n    type: String,\n    default: undefined,\n    validator: (value: any) => ['right', 'left'].includes(value),\n  },\n  pulse: {\n    type: Boolean,\n    default: false,\n  },\n  rotation: {\n    type: [String, Number],\n    default: undefined,\n    validator: (value: any) => [90, 180, 270].includes(Number.parseInt(value, 10)),\n  },\n  swapOpacity: {\n    type: Boolean,\n    default: false,\n  },\n  size: {\n    type: String,\n    default: undefined,\n    validator: (value: any) =>\n      ['2xs', 'xs', 'sm', 'lg', 'xl', '2xl', '1x', '2x', '3x', '4x', '5x', '6x', '7x', '8x', '9x', '10x'].includes(\n        value,\n      ),\n  },\n  spin: {\n    type: Boolean,\n    default: false,\n  },\n  transform: {\n    type: [String, Object],\n    default: undefined,\n  },\n  symbol: {\n    type: [Boolean, String],\n    default: false,\n  },\n  title: {\n    type: String,\n    default: undefined,\n  },\n  titleId: {\n    type: String,\n    default: undefined,\n  },\n  inverse: {\n    type: Boolean,\n    default: false,\n  },\n  bounce: {\n    type: Boolean,\n    default: false,\n  },\n  shake: {\n    type: Boolean,\n    default: false,\n  },\n  beat: {\n    type: Boolean,\n    default: false,\n  },\n  fade: {\n    type: Boolean,\n    default: false,\n  },\n  beatFade: {\n    type: Boolean,\n    default: false,\n  },\n  spinPulse: {\n    type: Boolean,\n    default: false,\n  },\n  spinReverse: {\n    type: Boolean,\n    default: false,\n  },\n},\n  setup(__props) {\n\nconst props = __props\n\nconst icon = computed(() => normalizeIconArgs(props.icon))\nconst mask = computed(() => normalizeIconArgs(props.mask))\nconst transform = computed(() => {\n  if (props.transform) {\n    const transform = typeof props.transform !== 'object' ? faParse.transform(props.transform) : props.transform\n    if (transform && transformIsMeaningful(transform)) {\n      return transformForSvg(transform)\n    }\n  }\n  return undefined\n})\nconst parsedIcon = computed(() => {\n  return faIcon(icon.value as IconLookup, {\n    classes: classes.value,\n    title: props.title,\n    titleId: props.titleId,\n  })\n})\nconst parsedMask = computed(() => faIcon(mask.value as IconLookup))\nconst properties = computed(() => {\n  const properties: Record<string, any> = {\n    'aria-hidden': true,\n    'data-prefix': parsedIcon.value?.prefix,\n    'data-icon': parsedIcon.value?.iconName,\n    class: classes.value,\n    focusable: false,\n    role: 'img',\n    xmlns: 'http://www.w3.org/2000/svg',\n    viewBox: `0 0 ${parsedIcon.value?.icon[0]} ${parsedIcon.value?.icon[1]}`,\n  }\n  if (props.symbol) {\n    properties.id = [parsedIcon.value?.prefix, 'fa', parsedIcon.value?.iconName].join('-')\n  }\n  if (props.title) {\n    properties['aria-labelledby'] = uniqueId.value\n  }\n\n  return properties\n})\nconst htmlTag = computed(() => {\n  const svg = getSVG()\n  if (parsedMask.value) {\n    const id = props.maskId || parsedMask.value.iconName\n    return `<defs>\n      <clipPath id=\"clip-${id}\">\n        <path fill=\"currentColor\" d=\"${parsedMask.value.icon[4]}\"></path>\n      </clipPath>\n      <mask id=\"mask-${id}\" x=\"0\" y=\"0\" width=\"100%\" height=\"100%\" maskUnits=\"userSpaceOnUse\" maskContentUnits=\"userSpaceOnUse\">\n        <rect x=\"0\" y=\"0\" width=\"100%\" height=\"100%\" fill=\"white\"></rect>\n        ${svg}\n      </mask>\n    </defs>\n    <rect fill=\"currentColor\" clip-path=\"url(#clip-${id})\" mask=\"url(#mask-${id})\" x=\"0\" y=\"0\" width=\"100%\" height=\"100%\"></rect>`\n  }\n  return svg\n})\nconst classes = computed(() => {\n  const classes = {\n    'fa-spin': props.spin,\n    'fa-pulse': props.pulse,\n    'fa-fw': props.fixedWidth,\n    'fa-border': props.border,\n    'fa-li': props.listItem,\n    'fa-inverse': props.inverse,\n    'fa-flip': props.flip === true,\n    'fa-flip-horizontal': props.flip === 'horizontal' || props.flip === 'both',\n    'fa-flip-vertical': props.flip === 'vertical' || props.flip === 'both',\n    [`fa-${props.size}`]: props.size !== undefined,\n    [`fa-rotate-${props.rotation}`]: props.rotation !== undefined,\n    [`fa-pull-${props.pull}`]: props.pull !== undefined,\n    'fa-swap-opacity': props.swapOpacity,\n    'fa-bounce': props.bounce,\n    'fa-shake': props.shake,\n    'fa-beat': props.beat,\n    'fa-fade': props.fade,\n    'fa-beat-fade': props.beatFade,\n    'fa-spin-pulse': props.spinPulse,\n    'fa-spin-reverse': props.spinReverse,\n  }\n\n  const active = Object.keys(classes)\n    .map((key) => (classes[key] ? key : null))\n    .filter((key) => key)\n\n  return [faConfig.replacementClass, ...active] as string[]\n})\n\nconst uniqueId = computed(() => {\n  return faConfig.replacementClass + '-title-' + (props.titleId || nextUniqueId())\n})\n\nfunction normalizeIconArgs(icon: Record<string, any> | string | string[] | null) {\n  if (icon) {\n    if (typeof icon === 'string') {\n      const styles: Record<string, string> = {\n        solid: 'fas',\n        regular: 'far',\n        light: 'fal',\n        thin: 'fat',\n        duotone: 'fad',\n        brands: 'fab',\n      }\n      let prefix = styles[faConfig.styleDefault] || 'fas'\n      let iconName = icon.replace(/\\bfa-/g, '')\n      if (iconName.includes(' ')) {\n        const tmp: string[] = iconName.split(/\\s+/)\n        if (tmp[0] in styles) {\n          prefix = styles[tmp[0]]\n        }\n        iconName = tmp[1]\n      }\n\n      return {prefix, iconName}\n    }\n\n    if (Array.isArray(icon) && icon.length === 2) {\n      return {prefix: icon[0], iconName: icon[1]}\n    }\n\n    if (typeof icon === 'object' && 'prefix' in icon && 'iconName' in icon) {\n      return icon as IconDefinition\n    }\n  }\n\n  return undefined\n}\n\nfunction transformForSvg(transform: Transform) {\n  const containerWidth = 512\n  const iconWidth = parsedIcon.value?.icon[0] || 512\n  const x = transform.x || 0\n  const y = transform.y || 0\n  const size = transform.size || 0\n  const rotate = transform.rotate || 0\n  const flipX = transform.flipX || 0\n  const flipY = transform.flipY || 0\n\n  const outer = 'translate('.concat(String(containerWidth / 2), ' 256)')\n  const innerTranslate = 'translate('.concat(String(x * 32), ', ').concat(String(y * 32), ') ')\n  const innerScale = 'scale('\n    .concat(String((size / 16) * (flipX ? -1 : 1)), ', ')\n    .concat(String((size / 16) * (flipY ? -1 : 1)), ') ')\n  const innerRotate = 'rotate('.concat(String(rotate), ' 0 0)')\n  const inner = ''.concat(innerTranslate, ' ').concat(innerScale, ' ').concat(innerRotate)\n  const path = 'translate('.concat(String((iconWidth / 2) * -1), ' -256)')\n\n  return {outer, inner, path}\n}\n\nfunction nextUniqueId() {\n  const idPool = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'\n\n  let size = 12\n  let id = ''\n  while (size-- > 0) {\n    id += idPool[(Math.random() * 62) | 0]\n  }\n\n  return id\n}\n\nfunction getSVG() {\n  const fill = parsedMask.value ? 'black' : 'currentColor'\n  const svg = []\n\n  let path = parsedIcon.value.icon[4]\n  if (!Array.isArray(path)) {\n    path = [path]\n  }\n  path.forEach((i: string) => {\n    svg.push(\n      `<path fill=\"${fill}\"${transform.value ? ' transform=\"' + transform.value.path + '\"' : ''} d=\"${i}\"></path>`,\n    )\n  })\n\n  if (transform.value) {\n    svg.unshift(`<g transform=\"${transform.value.outer}\">`, `<g transform=\"${transform.value.inner}\">`)\n    svg.push('</g>', '</g>')\n  }\n  if (props.title) {\n    svg.unshift(`<title id=\"${uniqueId.value}\">${props.title}</title>`)\n  }\n\n  return svg.join('')\n}\n\nif (props.icon && !parsedIcon.value) {\n  console.info('Could not find main icon', icon.value)\n}\nif (props.mask && !parsedMask.value) {\n  console.info('Could not find mask icon', mask.value)\n}\n\nreturn (_ctx: any,_cache: any) => {\n  return (parsedIcon.value && __props.symbol)\n    ? (_openBlock(), _createElementBlock(\"svg\", _hoisted_1, [\n        _createElementVNode(\"symbol\", _mergeProps(properties.value, { innerHTML: htmlTag.value }), null, 16, _hoisted_2)\n      ]))\n    : (parsedIcon.value)\n      ? (_openBlock(), _createElementBlock(\"svg\", _mergeProps({ key: 1 }, properties.value, { innerHTML: htmlTag.value }), null, 16, _hoisted_3))\n      : _createCommentVNode(\"\", true)\n}\n}\n\n})",
+      "start": 1731941019867,
+      "end": 1731941019867
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941019867,
+      "end": 1731941019867,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941019867,
+      "end": 1731941019867,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941019867,
+      "end": 1731941019867,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1731941019867,
+      "end": 1731941019867,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1731941019868,
+      "end": 1731941019868,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { mergeProps as _mergeProps, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\";\nconst _hoisted_1 = {\n  key: 0,\n  style: { \"display\": \"none\" }\n};\nconst _hoisted_2 = [\"innerHTML\"];\nconst _hoisted_3 = [\"innerHTML\"];\nimport {\n  icon as faIcon,\n  parse as faParse,\n  config as faConfig\n} from \"@fortawesome/fontawesome-svg-core\";\nimport { computed } from \"vue\";\nimport { transformIsMeaningful } from \"../utils\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"icon\",\n  props: {\n    border: {\n      type: Boolean,\n      default: false\n    },\n    fixedWidth: {\n      type: Boolean,\n      default: false\n    },\n    flip: {\n      type: [Boolean, String],\n      default: false,\n      validator: (value) => [true, false, \"horizontal\", \"vertical\", \"both\"].includes(value)\n    },\n    icon: {\n      type: [Object, Array, String],\n      required: true\n    },\n    mask: {\n      type: [Object, Array, String],\n      default: null\n    },\n    maskId: {\n      type: String,\n      default: void 0\n    },\n    listItem: {\n      type: Boolean,\n      default: false\n    },\n    pull: {\n      type: String,\n      default: void 0,\n      validator: (value) => [\"right\", \"left\"].includes(value)\n    },\n    pulse: {\n      type: Boolean,\n      default: false\n    },\n    rotation: {\n      type: [String, Number],\n      default: void 0,\n      validator: (value) => [90, 180, 270].includes(Number.parseInt(value, 10))\n    },\n    swapOpacity: {\n      type: Boolean,\n      default: false\n    },\n    size: {\n      type: String,\n      default: void 0,\n      validator: (value) => [\"2xs\", \"xs\", \"sm\", \"lg\", \"xl\", \"2xl\", \"1x\", \"2x\", \"3x\", \"4x\", \"5x\", \"6x\", \"7x\", \"8x\", \"9x\", \"10x\"].includes(\n        value\n      )\n    },\n    spin: {\n      type: Boolean,\n      default: false\n    },\n    transform: {\n      type: [String, Object],\n      default: void 0\n    },\n    symbol: {\n      type: [Boolean, String],\n      default: false\n    },\n    title: {\n      type: String,\n      default: void 0\n    },\n    titleId: {\n      type: String,\n      default: void 0\n    },\n    inverse: {\n      type: Boolean,\n      default: false\n    },\n    bounce: {\n      type: Boolean,\n      default: false\n    },\n    shake: {\n      type: Boolean,\n      default: false\n    },\n    beat: {\n      type: Boolean,\n      default: false\n    },\n    fade: {\n      type: Boolean,\n      default: false\n    },\n    beatFade: {\n      type: Boolean,\n      default: false\n    },\n    spinPulse: {\n      type: Boolean,\n      default: false\n    },\n    spinReverse: {\n      type: Boolean,\n      default: false\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const icon = computed(() => normalizeIconArgs(props.icon));\n    const mask = computed(() => normalizeIconArgs(props.mask));\n    const transform = computed(() => {\n      if (props.transform) {\n        const transform2 = typeof props.transform !== \"object\" ? faParse.transform(props.transform) : props.transform;\n        if (transform2 && transformIsMeaningful(transform2)) {\n          return transformForSvg(transform2);\n        }\n      }\n      return void 0;\n    });\n    const parsedIcon = computed(() => {\n      return faIcon(icon.value, {\n        classes: classes.value,\n        title: props.title,\n        titleId: props.titleId\n      });\n    });\n    const parsedMask = computed(() => faIcon(mask.value));\n    const properties = computed(() => {\n      const properties2 = {\n        \"aria-hidden\": true,\n        \"data-prefix\": parsedIcon.value?.prefix,\n        \"data-icon\": parsedIcon.value?.iconName,\n        class: classes.value,\n        focusable: false,\n        role: \"img\",\n        xmlns: \"http://www.w3.org/2000/svg\",\n        viewBox: `0 0 ${parsedIcon.value?.icon[0]} ${parsedIcon.value?.icon[1]}`\n      };\n      if (props.symbol) {\n        properties2.id = [parsedIcon.value?.prefix, \"fa\", parsedIcon.value?.iconName].join(\"-\");\n      }\n      if (props.title) {\n        properties2[\"aria-labelledby\"] = uniqueId.value;\n      }\n      return properties2;\n    });\n    const htmlTag = computed(() => {\n      const svg = getSVG();\n      if (parsedMask.value) {\n        const id = props.maskId || parsedMask.value.iconName;\n        return `<defs>\n      <clipPath id=\"clip-${id}\">\n        <path fill=\"currentColor\" d=\"${parsedMask.value.icon[4]}\"></path>\n      </clipPath>\n      <mask id=\"mask-${id}\" x=\"0\" y=\"0\" width=\"100%\" height=\"100%\" maskUnits=\"userSpaceOnUse\" maskContentUnits=\"userSpaceOnUse\">\n        <rect x=\"0\" y=\"0\" width=\"100%\" height=\"100%\" fill=\"white\"></rect>\n        ${svg}\n      </mask>\n    </defs>\n    <rect fill=\"currentColor\" clip-path=\"url(#clip-${id})\" mask=\"url(#mask-${id})\" x=\"0\" y=\"0\" width=\"100%\" height=\"100%\"></rect>`;\n      }\n      return svg;\n    });\n    const classes = computed(() => {\n      const classes2 = {\n        \"fa-spin\": props.spin,\n        \"fa-pulse\": props.pulse,\n        \"fa-fw\": props.fixedWidth,\n        \"fa-border\": props.border,\n        \"fa-li\": props.listItem,\n        \"fa-inverse\": props.inverse,\n        \"fa-flip\": props.flip === true,\n        \"fa-flip-horizontal\": props.flip === \"horizontal\" || props.flip === \"both\",\n        \"fa-flip-vertical\": props.flip === \"vertical\" || props.flip === \"both\",\n        [`fa-${props.size}`]: props.size !== void 0,\n        [`fa-rotate-${props.rotation}`]: props.rotation !== void 0,\n        [`fa-pull-${props.pull}`]: props.pull !== void 0,\n        \"fa-swap-opacity\": props.swapOpacity,\n        \"fa-bounce\": props.bounce,\n        \"fa-shake\": props.shake,\n        \"fa-beat\": props.beat,\n        \"fa-fade\": props.fade,\n        \"fa-beat-fade\": props.beatFade,\n        \"fa-spin-pulse\": props.spinPulse,\n        \"fa-spin-reverse\": props.spinReverse\n      };\n      const active = Object.keys(classes2).map((key) => classes2[key] ? key : null).filter((key) => key);\n      return [faConfig.replacementClass, ...active];\n    });\n    const uniqueId = computed(() => {\n      return faConfig.replacementClass + \"-title-\" + (props.titleId || nextUniqueId());\n    });\n    function normalizeIconArgs(icon2) {\n      if (icon2) {\n        if (typeof icon2 === \"string\") {\n          const styles = {\n            solid: \"fas\",\n            regular: \"far\",\n            light: \"fal\",\n            thin: \"fat\",\n            duotone: \"fad\",\n            brands: \"fab\"\n          };\n          let prefix = styles[faConfig.styleDefault] || \"fas\";\n          let iconName = icon2.replace(/\\bfa-/g, \"\");\n          if (iconName.includes(\" \")) {\n            const tmp = iconName.split(/\\s+/);\n            if (tmp[0] in styles) {\n              prefix = styles[tmp[0]];\n            }\n            iconName = tmp[1];\n          }\n          return { prefix, iconName };\n        }\n        if (Array.isArray(icon2) && icon2.length === 2) {\n          return { prefix: icon2[0], iconName: icon2[1] };\n        }\n        if (typeof icon2 === \"object\" && \"prefix\" in icon2 && \"iconName\" in icon2) {\n          return icon2;\n        }\n      }\n      return void 0;\n    }\n    function transformForSvg(transform2) {\n      const containerWidth = 512;\n      const iconWidth = parsedIcon.value?.icon[0] || 512;\n      const x = transform2.x || 0;\n      const y = transform2.y || 0;\n      const size = transform2.size || 0;\n      const rotate = transform2.rotate || 0;\n      const flipX = transform2.flipX || 0;\n      const flipY = transform2.flipY || 0;\n      const outer = \"translate(\".concat(String(containerWidth / 2), \" 256)\");\n      const innerTranslate = \"translate(\".concat(String(x * 32), \", \").concat(String(y * 32), \") \");\n      const innerScale = \"scale(\".concat(String(size / 16 * (flipX ? -1 : 1)), \", \").concat(String(size / 16 * (flipY ? -1 : 1)), \") \");\n      const innerRotate = \"rotate(\".concat(String(rotate), \" 0 0)\");\n      const inner = \"\".concat(innerTranslate, \" \").concat(innerScale, \" \").concat(innerRotate);\n      const path = \"translate(\".concat(String(iconWidth / 2 * -1), \" -256)\");\n      return { outer, inner, path };\n    }\n    function nextUniqueId() {\n      const idPool = \"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ\";\n      let size = 12;\n      let id = \"\";\n      while (size-- > 0) {\n        id += idPool[Math.random() * 62 | 0];\n      }\n      return id;\n    }\n    function getSVG() {\n      const fill = parsedMask.value ? \"black\" : \"currentColor\";\n      const svg = [];\n      let path = parsedIcon.value.icon[4];\n      if (!Array.isArray(path)) {\n        path = [path];\n      }\n      path.forEach((i) => {\n        svg.push(\n          `<path fill=\"${fill}\"${transform.value ? ' transform=\"' + transform.value.path + '\"' : \"\"} d=\"${i}\"></path>`\n        );\n      });\n      if (transform.value) {\n        svg.unshift(`<g transform=\"${transform.value.outer}\">`, `<g transform=\"${transform.value.inner}\">`);\n        svg.push(\"</g>\", \"</g>\");\n      }\n      if (props.title) {\n        svg.unshift(`<title id=\"${uniqueId.value}\">${props.title}</title>`);\n      }\n      return svg.join(\"\");\n    }\n    if (props.icon && !parsedIcon.value) {\n      console.info(\"Could not find main icon\", icon.value);\n    }\n    if (props.mask && !parsedMask.value) {\n      console.info(\"Could not find mask icon\", mask.value);\n    }\n    return (_ctx, _cache) => {\n      return parsedIcon.value && __props.symbol ? (_openBlock(), _createElementBlock(\"svg\", _hoisted_1, [\n        _createElementVNode(\"symbol\", _mergeProps(properties.value, { innerHTML: htmlTag.value }), null, 16, _hoisted_2)\n      ])) : parsedIcon.value ? (_openBlock(), _createElementBlock(\"svg\", _mergeProps({ key: 1 }, properties.value, { innerHTML: htmlTag.value }), null, 16, _hoisted_3)) : _createCommentVNode(\"\", true);\n    };\n  }\n});\n",
+      "start": 1731941019868,
+      "end": 1731941019952,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/@vesp/nuxt-fontawesome/dist/runtime/components/icon.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { mergeProps as _mergeProps, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  key: 0,\n  style: {\"display\":\"none\"}\n}\nconst _hoisted_2 = [\"innerHTML\"]\nconst _hoisted_3 = [\"innerHTML\"]\n\nimport {\n  icon as faIcon,\n  parse as faParse,\n  config as faConfig,\n  type IconDefinition,\n  type IconLookup,\n  type Transform,\n} from '@fortawesome/fontawesome-svg-core'\nimport {computed} from 'vue'\nimport type {IconName} from '@fortawesome/fontawesome-common-types'\nimport {transformIsMeaningful} from '../utils'\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'icon',\n  props: {\n  border: {\n    type: Boolean,\n    default: false,\n  },\n  fixedWidth: {\n    type: Boolean,\n    default: false,\n  },\n  flip: {\n    type: [Boolean, String],\n    default: false,\n    validator: (value: any) => [true, false, 'horizontal', 'vertical', 'both'].includes(value),\n  },\n  icon: {\n    type: [Object, Array, String],\n    required: true,\n  },\n  mask: {\n    type: [Object, Array, String],\n    default: null,\n  },\n  maskId: {\n    type: String,\n    default: undefined,\n  },\n  listItem: {\n    type: Boolean,\n    default: false,\n  },\n  pull: {\n    type: String,\n    default: undefined,\n    validator: (value: any) => ['right', 'left'].includes(value),\n  },\n  pulse: {\n    type: Boolean,\n    default: false,\n  },\n  rotation: {\n    type: [String, Number],\n    default: undefined,\n    validator: (value: any) => [90, 180, 270].includes(Number.parseInt(value, 10)),\n  },\n  swapOpacity: {\n    type: Boolean,\n    default: false,\n  },\n  size: {\n    type: String,\n    default: undefined,\n    validator: (value: any) =>\n      ['2xs', 'xs', 'sm', 'lg', 'xl', '2xl', '1x', '2x', '3x', '4x', '5x', '6x', '7x', '8x', '9x', '10x'].includes(\n        value,\n      ),\n  },\n  spin: {\n    type: Boolean,\n    default: false,\n  },\n  transform: {\n    type: [String, Object],\n    default: undefined,\n  },\n  symbol: {\n    type: [Boolean, String],\n    default: false,\n  },\n  title: {\n    type: String,\n    default: undefined,\n  },\n  titleId: {\n    type: String,\n    default: undefined,\n  },\n  inverse: {\n    type: Boolean,\n    default: false,\n  },\n  bounce: {\n    type: Boolean,\n    default: false,\n  },\n  shake: {\n    type: Boolean,\n    default: false,\n  },\n  beat: {\n    type: Boolean,\n    default: false,\n  },\n  fade: {\n    type: Boolean,\n    default: false,\n  },\n  beatFade: {\n    type: Boolean,\n    default: false,\n  },\n  spinPulse: {\n    type: Boolean,\n    default: false,\n  },\n  spinReverse: {\n    type: Boolean,\n    default: false,\n  },\n},\n  setup(__props) {\n\nconst props = __props\n\nconst icon = computed(() => normalizeIconArgs(props.icon))\nconst mask = computed(() => normalizeIconArgs(props.mask))\nconst transform = computed(() => {\n  if (props.transform) {\n    const transform = typeof props.transform !== 'object' ? faParse.transform(props.transform) : props.transform\n    if (transform && transformIsMeaningful(transform)) {\n      return transformForSvg(transform)\n    }\n  }\n  return undefined\n})\nconst parsedIcon = computed(() => {\n  return faIcon(icon.value as IconLookup, {\n    classes: classes.value,\n    title: props.title,\n    titleId: props.titleId,\n  })\n})\nconst parsedMask = computed(() => faIcon(mask.value as IconLookup))\nconst properties = computed(() => {\n  const properties: Record<string, any> = {\n    'aria-hidden': true,\n    'data-prefix': parsedIcon.value?.prefix,\n    'data-icon': parsedIcon.value?.iconName,\n    class: classes.value,\n    focusable: false,\n    role: 'img',\n    xmlns: 'http://www.w3.org/2000/svg',\n    viewBox: `0 0 ${parsedIcon.value?.icon[0]} ${parsedIcon.value?.icon[1]}`,\n  }\n  if (props.symbol) {\n    properties.id = [parsedIcon.value?.prefix, 'fa', parsedIcon.value?.iconName].join('-')\n  }\n  if (props.title) {\n    properties['aria-labelledby'] = uniqueId.value\n  }\n\n  return properties\n})\nconst htmlTag = computed(() => {\n  const svg = getSVG()\n  if (parsedMask.value) {\n    const id = props.maskId || parsedMask.value.iconName\n    return `<defs>\n      <clipPath id=\"clip-${id}\">\n        <path fill=\"currentColor\" d=\"${parsedMask.value.icon[4]}\"></path>\n      </clipPath>\n      <mask id=\"mask-${id}\" x=\"0\" y=\"0\" width=\"100%\" height=\"100%\" maskUnits=\"userSpaceOnUse\" maskContentUnits=\"userSpaceOnUse\">\n        <rect x=\"0\" y=\"0\" width=\"100%\" height=\"100%\" fill=\"white\"></rect>\n        ${svg}\n      </mask>\n    </defs>\n    <rect fill=\"currentColor\" clip-path=\"url(#clip-${id})\" mask=\"url(#mask-${id})\" x=\"0\" y=\"0\" width=\"100%\" height=\"100%\"></rect>`\n  }\n  return svg\n})\nconst classes = computed(() => {\n  const classes = {\n    'fa-spin': props.spin,\n    'fa-pulse': props.pulse,\n    'fa-fw': props.fixedWidth,\n    'fa-border': props.border,\n    'fa-li': props.listItem,\n    'fa-inverse': props.inverse,\n    'fa-flip': props.flip === true,\n    'fa-flip-horizontal': props.flip === 'horizontal' || props.flip === 'both',\n    'fa-flip-vertical': props.flip === 'vertical' || props.flip === 'both',\n    [`fa-${props.size}`]: props.size !== undefined,\n    [`fa-rotate-${props.rotation}`]: props.rotation !== undefined,\n    [`fa-pull-${props.pull}`]: props.pull !== undefined,\n    'fa-swap-opacity': props.swapOpacity,\n    'fa-bounce': props.bounce,\n    'fa-shake': props.shake,\n    'fa-beat': props.beat,\n    'fa-fade': props.fade,\n    'fa-beat-fade': props.beatFade,\n    'fa-spin-pulse': props.spinPulse,\n    'fa-spin-reverse': props.spinReverse,\n  }\n\n  const active = Object.keys(classes)\n    .map((key) => (classes[key] ? key : null))\n    .filter((key) => key)\n\n  return [faConfig.replacementClass, ...active] as string[]\n})\n\nconst uniqueId = computed(() => {\n  return faConfig.replacementClass + '-title-' + (props.titleId || nextUniqueId())\n})\n\nfunction normalizeIconArgs(icon: Record<string, any> | string | string[] | null) {\n  if (icon) {\n    if (typeof icon === 'string') {\n      const styles: Record<string, string> = {\n        solid: 'fas',\n        regular: 'far',\n        light: 'fal',\n        thin: 'fat',\n        duotone: 'fad',\n        brands: 'fab',\n      }\n      let prefix = styles[faConfig.styleDefault] || 'fas'\n      let iconName = icon.replace(/\\bfa-/g, '')\n      if (iconName.includes(' ')) {\n        const tmp: string[] = iconName.split(/\\s+/)\n        if (tmp[0] in styles) {\n          prefix = styles[tmp[0]]\n        }\n        iconName = tmp[1]\n      }\n\n      return {prefix, iconName}\n    }\n\n    if (Array.isArray(icon) && icon.length === 2) {\n      return {prefix: icon[0], iconName: icon[1]}\n    }\n\n    if (typeof icon === 'object' && 'prefix' in icon && 'iconName' in icon) {\n      return icon as IconDefinition\n    }\n  }\n\n  return undefined\n}\n\nfunction transformForSvg(transform: Transform) {\n  const containerWidth = 512\n  const iconWidth = parsedIcon.value?.icon[0] || 512\n  const x = transform.x || 0\n  const y = transform.y || 0\n  const size = transform.size || 0\n  const rotate = transform.rotate || 0\n  const flipX = transform.flipX || 0\n  const flipY = transform.flipY || 0\n\n  const outer = 'translate('.concat(String(containerWidth / 2), ' 256)')\n  const innerTranslate = 'translate('.concat(String(x * 32), ', ').concat(String(y * 32), ') ')\n  const innerScale = 'scale('\n    .concat(String((size / 16) * (flipX ? -1 : 1)), ', ')\n    .concat(String((size / 16) * (flipY ? -1 : 1)), ') ')\n  const innerRotate = 'rotate('.concat(String(rotate), ' 0 0)')\n  const inner = ''.concat(innerTranslate, ' ').concat(innerScale, ' ').concat(innerRotate)\n  const path = 'translate('.concat(String((iconWidth / 2) * -1), ' -256)')\n\n  return {outer, inner, path}\n}\n\nfunction nextUniqueId() {\n  const idPool = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'\n\n  let size = 12\n  let id = ''\n  while (size-- > 0) {\n    id += idPool[(Math.random() * 62) | 0]\n  }\n\n  return id\n}\n\nfunction getSVG() {\n  const fill = parsedMask.value ? 'black' : 'currentColor'\n  const svg = []\n\n  let path = parsedIcon.value.icon[4]\n  if (!Array.isArray(path)) {\n    path = [path]\n  }\n  path.forEach((i: string) => {\n    svg.push(\n      `<path fill=\"${fill}\"${transform.value ? ' transform=\"' + transform.value.path + '\"' : ''} d=\"${i}\"></path>`,\n    )\n  })\n\n  if (transform.value) {\n    svg.unshift(`<g transform=\"${transform.value.outer}\">`, `<g transform=\"${transform.value.inner}\">`)\n    svg.push('</g>', '</g>')\n  }\n  if (props.title) {\n    svg.unshift(`<title id=\"${uniqueId.value}\">${props.title}</title>`)\n  }\n\n  return svg.join('')\n}\n\nif (props.icon && !parsedIcon.value) {\n  console.info('Could not find main icon', icon.value)\n}\nif (props.mask && !parsedMask.value) {\n  console.info('Could not find mask icon', mask.value)\n}\n\nreturn (_ctx: any,_cache: any) => {\n  return (parsedIcon.value && __props.symbol)\n    ? (_openBlock(), _createElementBlock(\"svg\", _hoisted_1, [\n        _createElementVNode(\"symbol\", _mergeProps(properties.value, { innerHTML: htmlTag.value }), null, 16, _hoisted_2)\n      ]))\n    : (parsedIcon.value)\n      ? (_openBlock(), _createElementBlock(\"svg\", _mergeProps({ key: 1 }, properties.value, { innerHTML: htmlTag.value }), null, 16, _hoisted_3))\n      : _createCommentVNode(\"\", true)\n}\n}\n\n})"
+        ],
+        "mappings": "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",
+        "names": [
+          "transform",
+          "properties",
+          "classes",
+          "icon"
+        ]
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1731941019952,
+      "end": 1731941019952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1731941019952,
+      "end": 1731941019952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1731941019952,
+      "end": 1731941019952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1731941019952,
+      "end": 1731941019952,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941019952,
+      "end": 1731941019952,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941019952,
+      "end": 1731941019952,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1731941019952,
+      "end": 1731941019952,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1731941019952,
+      "end": 1731941019952,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941019952,
+      "end": 1731941019952,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1731941019952,
+      "end": 1731941019952,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1731941019952,
+      "end": 1731941019953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1731941019953,
+      "end": 1731941019953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1731941019953,
+      "end": 1731941019953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1731941019953,
+      "end": 1731941019953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1731941019953,
+      "end": 1731941019953,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1731941019953,
+      "end": 1731941019953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1731941019953,
+      "end": 1731941019953,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1731941019953,
+      "end": 1731941019953,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941019953,
+      "end": 1731941019953,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941019953,
+      "end": 1731941019953,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941019953,
+      "end": 1731941019953,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941019953,
+      "end": 1731941019953,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "start": 1731941019953,
+      "end": 1731941019953,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941019953,
+      "end": 1731941019953,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941019953,
+      "end": 1731941019953,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941019953,
+      "end": 1731941019954,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1731941019954,
+      "end": 1731941019954,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1731941019954,
+      "end": 1731941019954,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1731941019954,
+      "end": 1731941019954,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1731941019954,
+      "end": 1731941019954,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1731941019954,
+      "end": 1731941019954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1731941019954,
+      "end": 1731941019954,
+      "order": "normal"
+    }
+  ]
+}

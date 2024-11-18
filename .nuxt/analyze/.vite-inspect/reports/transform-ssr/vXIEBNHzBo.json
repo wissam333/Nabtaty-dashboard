@@ -1,0 +1,323 @@
+{
+  "resolvedId": "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/vuetify/lib/components/VParallax/VParallax.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { createVNode as _createVNode, resolveDirective as _resolveDirective } from \"vue\";\n// Styles\nimport \"./VParallax.css\";\n\n// Components\nimport { VImg } from \"../VImg/index.mjs\"; // Composables\nimport { useDisplay } from \"../../composables/index.mjs\";\nimport { makeComponentProps } from \"../../composables/component.mjs\";\nimport { useIntersectionObserver } from \"../../composables/intersectionObserver.mjs\";\nimport { useResizeObserver } from \"../../composables/resizeObserver.mjs\"; // Utilities\nimport { computed, onBeforeUnmount, ref, watch, watchEffect } from 'vue';\nimport { clamp, genericComponent, getScrollParent, propsFactory, useRender } from \"../../util/index.mjs\"; // Types\nfunction floor(val) {\n  return Math.floor(Math.abs(val)) * Math.sign(val);\n}\nexport const makeVParallaxProps = propsFactory({\n  scale: {\n    type: [Number, String],\n    default: 0.5\n  },\n  ...makeComponentProps()\n}, 'VParallax');\nexport const VParallax = genericComponent()({\n  name: 'VParallax',\n  props: makeVParallaxProps(),\n  setup(props, _ref) {\n    let {\n      slots\n    } = _ref;\n    const {\n      intersectionRef,\n      isIntersecting\n    } = useIntersectionObserver();\n    const {\n      resizeRef,\n      contentRect\n    } = useResizeObserver();\n    const {\n      height: displayHeight\n    } = useDisplay();\n    const root = ref();\n    watchEffect(() => {\n      intersectionRef.value = resizeRef.value = root.value?.$el;\n    });\n    let scrollParent;\n    watch(isIntersecting, val => {\n      if (val) {\n        scrollParent = getScrollParent(intersectionRef.value);\n        scrollParent = scrollParent === document.scrollingElement ? document : scrollParent;\n        scrollParent.addEventListener('scroll', onScroll, {\n          passive: true\n        });\n        onScroll();\n      } else {\n        scrollParent.removeEventListener('scroll', onScroll);\n      }\n    });\n    onBeforeUnmount(() => {\n      scrollParent?.removeEventListener('scroll', onScroll);\n    });\n    watch(displayHeight, onScroll);\n    watch(() => contentRect.value?.height, onScroll);\n    const scale = computed(() => {\n      return 1 - clamp(+props.scale);\n    });\n    let frame = -1;\n    function onScroll() {\n      if (!isIntersecting.value) return;\n      cancelAnimationFrame(frame);\n      frame = requestAnimationFrame(() => {\n        const el = (root.value?.$el).querySelector('.v-img__img');\n        if (!el) return;\n        const scrollHeight = scrollParent instanceof Document ? document.documentElement.clientHeight : scrollParent.clientHeight;\n        const scrollPos = scrollParent instanceof Document ? window.scrollY : scrollParent.scrollTop;\n        const top = intersectionRef.value.getBoundingClientRect().top + scrollPos;\n        const height = contentRect.value.height;\n        const center = top + (height - scrollHeight) / 2;\n        const translate = floor((scrollPos - center) * scale.value);\n        const sizeScale = Math.max(1, (scale.value * (scrollHeight - height) + height) / height);\n        el.style.setProperty('transform', `translateY(${translate}px) scale(${sizeScale})`);\n      });\n    }\n    useRender(() => _createVNode(VImg, {\n      \"class\": ['v-parallax', {\n        'v-parallax--active': isIntersecting.value\n      }, props.class],\n      \"style\": props.style,\n      \"ref\": root,\n      \"cover\": true,\n      \"onLoadstart\": onScroll,\n      \"onLoad\": onScroll\n    }, slots));\n    return {};\n  }\n});\n//# sourceMappingURL=VParallax.mjs.map",
+      "start": 1731941048011,
+      "end": 1731941048210,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941048210,
+      "end": 1731941048210,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941048210,
+      "end": 1731941048210,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941048210,
+      "end": 1731941048210,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941048210,
+      "end": 1731941048210,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941048210,
+      "end": 1731941048210,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941048210,
+      "end": 1731941048210,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1731941048210,
+      "end": 1731941048210,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1731941048210,
+      "end": 1731941048210,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1731941048210,
+      "end": 1731941048210,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1731941048210,
+      "end": 1731941048210,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1731941048211,
+      "end": 1731941048211,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1731941048211,
+      "end": 1731941048211,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1731941048211,
+      "end": 1731941048211,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1731941048211,
+      "end": 1731941048211,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941048211,
+      "end": 1731941048211,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941048211,
+      "end": 1731941048211,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941048211,
+      "end": 1731941048211,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941048211,
+      "end": 1731941048211,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1731941048211,
+      "end": 1731941048211,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941048211,
+      "end": 1731941048211,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1731941048211,
+      "end": 1731941048213,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import { createVNode as _createVNode, resolveDirective as _resolveDirective } from \"vue\";\nimport \"./VParallax.css\";\nimport { VImg } from \"../VImg/index.mjs\";\nimport { useDisplay } from \"../../composables/index.mjs\";\nimport { makeComponentProps } from \"../../composables/component.mjs\";\nimport { useIntersectionObserver } from \"../../composables/intersectionObserver.mjs\";\nimport { useResizeObserver } from \"../../composables/resizeObserver.mjs\";\nimport { computed, onBeforeUnmount, ref, watch, watchEffect } from \"vue\";\nimport { clamp, genericComponent, getScrollParent, propsFactory, useRender } from \"../../util/index.mjs\";\nfunction floor(val) {\n  return Math.floor(Math.abs(val)) * Math.sign(val);\n}\nexport const makeVParallaxProps = propsFactory({\n  scale: {\n    type: [Number, String],\n    default: 0.5\n  },\n  ...makeComponentProps()\n}, \"VParallax\");\nexport const VParallax = genericComponent()({\n  name: \"VParallax\",\n  props: makeVParallaxProps(),\n  setup(props, _ref) {\n    let {\n      slots\n    } = _ref;\n    const {\n      intersectionRef,\n      isIntersecting\n    } = useIntersectionObserver();\n    const {\n      resizeRef,\n      contentRect\n    } = useResizeObserver();\n    const {\n      height: displayHeight\n    } = useDisplay();\n    const root = ref();\n    watchEffect(() => {\n      intersectionRef.value = resizeRef.value = root.value?.$el;\n    });\n    let scrollParent;\n    watch(isIntersecting, (val) => {\n      if (val) {\n        scrollParent = getScrollParent(intersectionRef.value);\n        scrollParent = scrollParent === (void 0).scrollingElement ? void 0 : scrollParent;\n        scrollParent.addEventListener(\"scroll\", onScroll, {\n          passive: true\n        });\n        onScroll();\n      } else {\n        scrollParent.removeEventListener(\"scroll\", onScroll);\n      }\n    });\n    onBeforeUnmount(() => {\n      scrollParent?.removeEventListener(\"scroll\", onScroll);\n    });\n    watch(displayHeight, onScroll);\n    watch(() => contentRect.value?.height, onScroll);\n    const scale = computed(() => {\n      return 1 - clamp(+props.scale);\n    });\n    let frame = -1;\n    function onScroll() {\n      if (!isIntersecting.value)\n        return;\n      cancelAnimationFrame(frame);\n      frame = requestAnimationFrame(() => {\n        const el = (root.value?.$el).querySelector(\".v-img__img\");\n        if (!el)\n          return;\n        const scrollHeight = scrollParent instanceof Document ? (void 0).documentElement.clientHeight : scrollParent.clientHeight;\n        const scrollPos = scrollParent instanceof Document ? (void 0).scrollY : scrollParent.scrollTop;\n        const top = intersectionRef.value.getBoundingClientRect().top + scrollPos;\n        const height = contentRect.value.height;\n        const center = top + (height - scrollHeight) / 2;\n        const translate = floor((scrollPos - center) * scale.value);\n        const sizeScale = Math.max(1, (scale.value * (scrollHeight - height) + height) / height);\n        el.style.setProperty(\"transform\", `translateY(${translate}px) scale(${sizeScale})`);\n      });\n    }\n    useRender(() => _createVNode(VImg, {\n      \"class\": [\"v-parallax\", {\n        \"v-parallax--active\": isIntersecting.value\n      }, props.class],\n      \"style\": props.style,\n      \"ref\": root,\n      \"cover\": true,\n      \"onLoadstart\": onScroll,\n      \"onLoad\": onScroll\n    }, slots));\n    return {};\n  }\n});\n",
+      "start": 1731941048213,
+      "end": 1731941048423,
+      "order": "normal",
+      "sourcemaps": "{\n  \"version\": 3,\n  \"sources\": [\"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/vuetify/lib/components/VParallax/VParallax.mjs\"],\n  \"sourcesContent\": [\"import { createVNode as _createVNode, resolveDirective as _resolveDirective } from \\\"vue\\\";\\n// Styles\\nimport \\\"./VParallax.css\\\";\\n\\n// Components\\nimport { VImg } from \\\"../VImg/index.mjs\\\"; // Composables\\nimport { useDisplay } from \\\"../../composables/index.mjs\\\";\\nimport { makeComponentProps } from \\\"../../composables/component.mjs\\\";\\nimport { useIntersectionObserver } from \\\"../../composables/intersectionObserver.mjs\\\";\\nimport { useResizeObserver } from \\\"../../composables/resizeObserver.mjs\\\"; // Utilities\\nimport { computed, onBeforeUnmount, ref, watch, watchEffect } from 'vue';\\nimport { clamp, genericComponent, getScrollParent, propsFactory, useRender } from \\\"../../util/index.mjs\\\"; // Types\\nfunction floor(val) {\\n  return Math.floor(Math.abs(val)) * Math.sign(val);\\n}\\nexport const makeVParallaxProps = propsFactory({\\n  scale: {\\n    type: [Number, String],\\n    default: 0.5\\n  },\\n  ...makeComponentProps()\\n}, 'VParallax');\\nexport const VParallax = genericComponent()({\\n  name: 'VParallax',\\n  props: makeVParallaxProps(),\\n  setup(props, _ref) {\\n    let {\\n      slots\\n    } = _ref;\\n    const {\\n      intersectionRef,\\n      isIntersecting\\n    } = useIntersectionObserver();\\n    const {\\n      resizeRef,\\n      contentRect\\n    } = useResizeObserver();\\n    const {\\n      height: displayHeight\\n    } = useDisplay();\\n    const root = ref();\\n    watchEffect(() => {\\n      intersectionRef.value = resizeRef.value = root.value?.$el;\\n    });\\n    let scrollParent;\\n    watch(isIntersecting, val => {\\n      if (val) {\\n        scrollParent = getScrollParent(intersectionRef.value);\\n        scrollParent = scrollParent === document.scrollingElement ? document : scrollParent;\\n        scrollParent.addEventListener('scroll', onScroll, {\\n          passive: true\\n        });\\n        onScroll();\\n      } else {\\n        scrollParent.removeEventListener('scroll', onScroll);\\n      }\\n    });\\n    onBeforeUnmount(() => {\\n      scrollParent?.removeEventListener('scroll', onScroll);\\n    });\\n    watch(displayHeight, onScroll);\\n    watch(() => contentRect.value?.height, onScroll);\\n    const scale = computed(() => {\\n      return 1 - clamp(+props.scale);\\n    });\\n    let frame = -1;\\n    function onScroll() {\\n      if (!isIntersecting.value) return;\\n      cancelAnimationFrame(frame);\\n      frame = requestAnimationFrame(() => {\\n        const el = (root.value?.$el).querySelector('.v-img__img');\\n        if (!el) return;\\n        const scrollHeight = scrollParent instanceof Document ? document.documentElement.clientHeight : scrollParent.clientHeight;\\n        const scrollPos = scrollParent instanceof Document ? window.scrollY : scrollParent.scrollTop;\\n        const top = intersectionRef.value.getBoundingClientRect().top + scrollPos;\\n        const height = contentRect.value.height;\\n        const center = top + (height - scrollHeight) / 2;\\n        const translate = floor((scrollPos - center) * scale.value);\\n        const sizeScale = Math.max(1, (scale.value * (scrollHeight - height) + height) / height);\\n        el.style.setProperty('transform', `translateY(${translate}px) scale(${sizeScale})`);\\n      });\\n    }\\n    useRender(() => _createVNode(VImg, {\\n      \\\"class\\\": ['v-parallax', {\\n        'v-parallax--active': isIntersecting.value\\n      }, props.class],\\n      \\\"style\\\": props.style,\\n      \\\"ref\\\": root,\\n      \\\"cover\\\": true,\\n      \\\"onLoadstart\\\": onScroll,\\n      \\\"onLoad\\\": onScroll\\n    }, slots));\\n    return {};\\n  }\\n});\\n//# sourceMappingURL=VParallax.mjs.map\"],\n  \"mappings\": \"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\",\n  \"names\": []\n}\n"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1731941048423,
+      "end": 1731941048423,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1731941048423,
+      "end": 1731941048423,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1731941048423,
+      "end": 1731941048423,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1731941048424,
+      "end": 1731941048424,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1731941048424,
+      "end": 1731941048424,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1731941048424,
+      "end": 1731941048424,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1731941048424,
+      "end": 1731941048424,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941048424,
+      "end": 1731941048424,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941048424,
+      "end": 1731941048424,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941048424,
+      "end": 1731941048424,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941048424,
+      "end": 1731941048424,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941048424,
+      "end": 1731941048424,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941048424,
+      "end": 1731941048424,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941048424,
+      "end": 1731941048425,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941048424,
+      "end": 1731941048425,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "start": 1731941048425,
+      "end": 1731941048425,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "start": 1731941048425,
+      "end": 1731941048425,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941048425,
+      "end": 1731941048425,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941048425,
+      "end": 1731941048425,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941048425,
+      "end": 1731941048425,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941048425,
+      "end": 1731941048425,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941048425,
+      "end": 1731941048425,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941048425,
+      "end": 1731941048425,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1731941048426,
+      "end": 1731941048426,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1731941048426,
+      "end": 1731941048426,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "result": "import { createVNode as _createVNode, resolveDirective as _resolveDirective } from \"vue\";\nimport \"./VParallax.css\";\nimport { VImg } from \"../VImg/index.mjs\";\nimport { useDisplay } from \"../../composables/index.mjs\";\nimport { makeComponentProps } from \"../../composables/component.mjs\";\nimport { useIntersectionObserver } from \"../../composables/intersectionObserver.mjs\";\nimport { useResizeObserver } from \"../../composables/resizeObserver.mjs\";\nimport { computed, onBeforeUnmount, ref, watch, watchEffect } from \"vue\";\nimport { clamp, genericComponent, getScrollParent, propsFactory, useRender } from \"../../util/index.mjs\";\nfunction floor(val) {\n  return Math.floor(Math.abs(val)) * Math.sign(val);\n}\nexport const makeVParallaxProps = propsFactory({\n  scale: {\n    type: [Number, String],\n    default: 0.5\n  },\n  ...makeComponentProps()\n}, \"VParallax\");\nexport const VParallax = genericComponent()({\n  name: \"VParallax\",\n  props: makeVParallaxProps(),\n  setup(props, _ref) {\n    let {\n      slots\n    } = _ref;\n    const {\n      intersectionRef,\n      isIntersecting\n    } = useIntersectionObserver();\n    const {\n      resizeRef,\n      contentRect\n    } = useResizeObserver();\n    const {\n      height: displayHeight\n    } = useDisplay();\n    const root = ref();\n    watchEffect(() => {\n      intersectionRef.value = resizeRef.value = root.value?.$el;\n    });\n    let scrollParent;\n    watch(isIntersecting, (val) => {\n      if (val) {\n        scrollParent = getScrollParent(intersectionRef.value);\n        scrollParent = scrollParent === (void 0).scrollingElement ? void 0 : scrollParent;\n        scrollParent.addEventListener(\"scroll\", onScroll, {\n          passive: true\n        });\n        onScroll();\n      } else {\n        scrollParent.removeEventListener(\"scroll\", onScroll);\n      }\n    });\n     false && /*@__PURE__*/ onBeforeUnmount(() => {\n      scrollParent?.removeEventListener(\"scroll\", onScroll);\n    });\n    watch(displayHeight, onScroll);\n    watch(() => contentRect.value?.height, onScroll);\n    const scale = computed(() => {\n      return 1 - clamp(+props.scale);\n    });\n    let frame = -1;\n    function onScroll() {\n      if (!isIntersecting.value)\n        return;\n      cancelAnimationFrame(frame);\n      frame = requestAnimationFrame(() => {\n        const el = (root.value?.$el).querySelector(\".v-img__img\");\n        if (!el)\n          return;\n        const scrollHeight = scrollParent instanceof Document ? (void 0).documentElement.clientHeight : scrollParent.clientHeight;\n        const scrollPos = scrollParent instanceof Document ? (void 0).scrollY : scrollParent.scrollTop;\n        const top = intersectionRef.value.getBoundingClientRect().top + scrollPos;\n        const height = contentRect.value.height;\n        const center = top + (height - scrollHeight) / 2;\n        const translate = floor((scrollPos - center) * scale.value);\n        const sizeScale = Math.max(1, (scale.value * (scrollHeight - height) + height) / height);\n        el.style.setProperty(\"transform\", `translateY(${translate}px) scale(${sizeScale})`);\n      });\n    }\n    useRender(() => _createVNode(VImg, {\n      \"class\": [\"v-parallax\", {\n        \"v-parallax--active\": isIntersecting.value\n      }, props.class],\n      \"style\": props.style,\n      \"ref\": root,\n      \"cover\": true,\n      \"onLoadstart\": onScroll,\n      \"onLoad\": onScroll\n    }, slots));\n    return {};\n  }\n});\n",
+      "start": 1731941048426,
+      "end": 1731941048428,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzG,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpD,CAAC;AACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC;AACJ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1F,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAA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,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClI,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvG,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjG,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5F,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACf,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1731941048429,
+      "end": 1731941048429,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1731941048429,
+      "end": 1731941048429,
+      "order": "normal"
+    }
+  ]
+}

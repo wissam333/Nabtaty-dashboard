@@ -1,0 +1,332 @@
+{
+  "resolvedId": "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/middleware/auth-product-exists.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "export default defineNuxtRouteMiddleware(() => {\n    if (process.client) {\n      const auth = useAuth();\n      const cart = useCart().value;\n      // Check if the user is logged In\n      if (!auth.value.isAuthenticated) {\n        return navigateTo('/newsite/auth/login', { redirectCode: 301 })\n      }\n      // Check if there is an product customized or not\n      if (!cart.items.length && cart.totalQty < 0 || cart.totalQty == 0) {\n        return useRouter().back()\n      }\n    }\n  \n  })",
+      "start": 1731941041968,
+      "end": 1731941042406,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941042406,
+      "end": 1731941042406,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941042406,
+      "end": 1731941042406,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941042406,
+      "end": 1731941042406,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941042406,
+      "end": 1731941042406,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941042406,
+      "end": 1731941042406,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941042406,
+      "end": 1731941042406,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1731941042406,
+      "end": 1731941042406,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1731941042406,
+      "end": 1731941042406,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1731941042406,
+      "end": 1731941042406,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1731941042406,
+      "end": 1731941042406,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1731941042406,
+      "end": 1731941042406,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1731941042407,
+      "end": 1731941042407,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1731941042407,
+      "end": 1731941042407,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1731941042407,
+      "end": 1731941042407,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941042407,
+      "end": 1731941042407,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941042407,
+      "end": 1731941042407,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941042407,
+      "end": 1731941042407,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941042407,
+      "end": 1731941042407,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1731941042407,
+      "end": 1731941042407,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941042407,
+      "end": 1731941042407,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1731941042407,
+      "end": 1731941042407,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "export default defineNuxtRouteMiddleware(() => {\n  if (false) {\n    const auth = useAuth();\n    const cart = useCart().value;\n    if (!auth.value.isAuthenticated) {\n      return navigateTo(\"/newsite/auth/login\", { redirectCode: 301 });\n    }\n    if (!cart.items.length && cart.totalQty < 0 || cart.totalQty == 0) {\n      return useRouter().back();\n    }\n  }\n});\n",
+      "start": 1731941042407,
+      "end": 1731941044224,
+      "order": "normal",
+      "sourcemaps": "{\n  \"version\": 3,\n  \"sources\": [\"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/middleware/auth-product-exists.js\"],\n  \"sourcesContent\": [\"export default defineNuxtRouteMiddleware(() => {\\n    if (process.client) {\\n      const auth = useAuth();\\n      const cart = useCart().value;\\n      // Check if the user is logged In\\n      if (!auth.value.isAuthenticated) {\\n        return navigateTo('/newsite/auth/login', { redirectCode: 301 })\\n      }\\n      // Check if there is an product customized or not\\n      if (!cart.items.length && cart.totalQty < 0 || cart.totalQty == 0) {\\n        return useRouter().back()\\n      }\\n    }\\n  \\n  })\"],\n  \"mappings\": \"AAAA,eAAe,0BAA0B,MAAM;AAC3C,MAAI,OAAgB;AAClB,UAAM,OAAO,QAAQ;AACrB,UAAM,OAAO,QAAQ,EAAE;AAEvB,QAAI,CAAC,KAAK,MAAM,iBAAiB;AAC/B,aAAO,WAAW,uBAAuB,EAAE,cAAc,IAAI,CAAC;AAAA,IAChE;AAEA,QAAI,CAAC,KAAK,MAAM,UAAU,KAAK,WAAW,KAAK,KAAK,YAAY,GAAG;AACjE,aAAO,UAAU,EAAE,KAAK;AAAA,IAC1B;AAAA,EACF;AAEF,CAAC;\",\n  \"names\": []\n}\n"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1731941044225,
+      "end": 1731941044225,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1731941044225,
+      "end": 1731941044225,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1731941044225,
+      "end": 1731941044225,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1731941044225,
+      "end": 1731941044225,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1731941044227,
+      "end": 1731941044227,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1731941044227,
+      "end": 1731941044227,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1731941044227,
+      "end": 1731941044227,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941044227,
+      "end": 1731941044232,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941044227,
+      "end": 1731941044232,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941044233,
+      "end": 1731941044233,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941044233,
+      "end": 1731941044233,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941044233,
+      "end": 1731941044233,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941044233,
+      "end": 1731941044233,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941044233,
+      "end": 1731941044233,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941044233,
+      "end": 1731941044233,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "start": 1731941044234,
+      "end": 1731941044234,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "start": 1731941044234,
+      "end": 1731941044234,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineNuxtRouteMiddleware, navigateTo, useRouter } from '#app/composables/router';\nimport { useAuth, useCart } from 'D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/composables/useState.js';\nexport default defineNuxtRouteMiddleware(() => {\n  if (false) {\n    const auth = useAuth();\n    const cart = useCart().value;\n    if (!auth.value.isAuthenticated) {\n      return navigateTo(\"/newsite/auth/login\", { redirectCode: 301 });\n    }\n    if (!cart.items.length && cart.totalQty < 0 || cart.totalQty == 0) {\n      return useRouter().back();\n    }\n  }\n});\n",
+      "start": 1731941044234,
+      "end": 1731941044254,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtE,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChC,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineNuxtRouteMiddleware, navigateTo, useRouter } from '#app/composables/router';\nimport { useAuth, useCart } from 'D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/composables/useState.js';\nexport default defineNuxtRouteMiddleware(() => {\n  if (false) {\n    const auth = useAuth();\n    const cart = useCart().value;\n    if (!auth.value.isAuthenticated) {\n      return navigateTo(\"/newsite/auth/login\", { redirectCode: 301 });\n    }\n    if (!cart.items.length && cart.totalQty < 0 || cart.totalQty == 0) {\n      return useRouter().back();\n    }\n  }\n});\n",
+      "start": 1731941044234,
+      "end": 1731941044254,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtE,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChC,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941044256,
+      "end": 1731941044256,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941044256,
+      "end": 1731941044256,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941044257,
+      "end": 1731941044257,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941044257,
+      "end": 1731941044257,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1731941044257,
+      "end": 1731941044257,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1731941044258,
+      "end": 1731941044258,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1731941044258,
+      "end": 1731941044258,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1731941044259,
+      "end": 1731941044260,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1731941044265,
+      "end": 1731941044265,
+      "order": "normal"
+    }
+  ]
+}

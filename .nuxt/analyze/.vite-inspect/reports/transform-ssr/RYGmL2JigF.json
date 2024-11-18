@@ -1,0 +1,314 @@
+{
+  "resolvedId": "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/vuetify/lib/util/dom.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * Returns:\n *  - 'null' if the node is not attached to the DOM\n *  - the root node (HTMLDocument | ShadowRoot) otherwise\n */\nexport function attachedRoot(node) {\n  /* istanbul ignore next */\n  if (typeof node.getRootNode !== 'function') {\n    // Shadow DOM not supported (IE11), lets find the root of this node\n    while (node.parentNode) node = node.parentNode;\n\n    // The root parent is the document if the node is attached to the DOM\n    if (node !== document) return null;\n    return document;\n  }\n  const root = node.getRootNode();\n\n  // The composed root node is the document if the node is attached to the DOM\n  if (root !== document && root.getRootNode({\n    composed: true\n  }) !== document) return null;\n  return root;\n}\n//# sourceMappingURL=dom.mjs.map",
+      "start": 1731941048764,
+      "end": 1731941048991,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941048991,
+      "end": 1731941048991,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941048991,
+      "end": 1731941048991,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941048991,
+      "end": 1731941048991,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941048991,
+      "end": 1731941048991,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941048991,
+      "end": 1731941048991,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941048991,
+      "end": 1731941048991,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1731941048991,
+      "end": 1731941048991,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1731941048991,
+      "end": 1731941048991,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1731941048991,
+      "end": 1731941048991,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1731941048992,
+      "end": 1731941048992,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1731941048992,
+      "end": 1731941048992,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1731941048992,
+      "end": 1731941048992,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1731941048992,
+      "end": 1731941048992,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1731941048992,
+      "end": 1731941048992,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941048992,
+      "end": 1731941048992,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941048992,
+      "end": 1731941048992,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941048992,
+      "end": 1731941048992,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941048992,
+      "end": 1731941048992,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1731941048992,
+      "end": 1731941048992,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941048992,
+      "end": 1731941048992,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1731941048992,
+      "end": 1731941048992,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "export function attachedRoot(node) {\n  if (typeof node.getRootNode !== \"function\") {\n    while (node.parentNode)\n      node = node.parentNode;\n    if (node !== void 0)\n      return null;\n    return void 0;\n  }\n  const root = node.getRootNode();\n  if (root !== void 0 && root.getRootNode({\n    composed: true\n  }) !== void 0)\n    return null;\n  return root;\n}\n",
+      "start": 1731941048992,
+      "end": 1731941049092,
+      "order": "normal",
+      "sourcemaps": "{\n  \"version\": 3,\n  \"sources\": [\"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/vuetify/lib/util/dom.mjs\"],\n  \"sourcesContent\": [\"/**\\n * Returns:\\n *  - 'null' if the node is not attached to the DOM\\n *  - the root node (HTMLDocument | ShadowRoot) otherwise\\n */\\nexport function attachedRoot(node) {\\n  /* istanbul ignore next */\\n  if (typeof node.getRootNode !== 'function') {\\n    // Shadow DOM not supported (IE11), lets find the root of this node\\n    while (node.parentNode) node = node.parentNode;\\n\\n    // The root parent is the document if the node is attached to the DOM\\n    if (node !== document) return null;\\n    return document;\\n  }\\n  const root = node.getRootNode();\\n\\n  // The composed root node is the document if the node is attached to the DOM\\n  if (root !== document && root.getRootNode({\\n    composed: true\\n  }) !== document) return null;\\n  return root;\\n}\\n//# sourceMappingURL=dom.mjs.map\"],\n  \"mappings\": \"AAKO,gBAAS,aAAa,MAAM;AAEjC,MAAI,OAAO,KAAK,gBAAgB,YAAY;AAE1C,WAAO,KAAK;AAAY,aAAO,KAAK;AAGpC,QAAI,SAAS;AAAU,aAAO;AAC9B,WAAO;AAAA,EACT;AACA,QAAM,OAAO,KAAK,YAAY;AAG9B,MAAI,SAAS,UAAY,KAAK,YAAY;AAAA,IACxC,UAAU;AAAA,EACZ,CAAC,MAAM;AAAU,WAAO;AACxB,SAAO;AACT;\",\n  \"names\": []\n}\n"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1731941049093,
+      "end": 1731941049093,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1731941049093,
+      "end": 1731941049093,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1731941049093,
+      "end": 1731941049093,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1731941049093,
+      "end": 1731941049093,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1731941049093,
+      "end": 1731941049093,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1731941049093,
+      "end": 1731941049093,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1731941049094,
+      "end": 1731941049094,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941049094,
+      "end": 1731941049094,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941049094,
+      "end": 1731941049094,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941049095,
+      "end": 1731941049095,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941049095,
+      "end": 1731941049095,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941049097,
+      "end": 1731941049097,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941049097,
+      "end": 1731941049098,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941049098,
+      "end": 1731941049098,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941049098,
+      "end": 1731941049098,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "start": 1731941049098,
+      "end": 1731941049098,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "start": 1731941049098,
+      "end": 1731941049098,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941049098,
+      "end": 1731941049098,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941049098,
+      "end": 1731941049098,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941049099,
+      "end": 1731941049099,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941049099,
+      "end": 1731941049099,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941049099,
+      "end": 1731941049099,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941049099,
+      "end": 1731941049099,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1731941049100,
+      "end": 1731941049100,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1731941049100,
+      "end": 1731941049100,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1731941049104,
+      "end": 1731941049105,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1731941049105,
+      "end": 1731941049105,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1731941049105,
+      "end": 1731941049105,
+      "order": "normal"
+    }
+  ]
+}

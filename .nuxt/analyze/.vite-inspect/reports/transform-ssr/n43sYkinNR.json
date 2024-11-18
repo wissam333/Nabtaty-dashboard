@@ -1,0 +1,314 @@
+{
+  "resolvedId": "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/vuetify/lib/components/VTabs/VTab.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { mergeProps as _mergeProps, createVNode as _createVNode, Fragment as _Fragment } from \"vue\";\n// Styles\nimport \"./VTab.css\";\n\n// Components\nimport { makeVBtnProps, VBtn } from \"../VBtn/VBtn.mjs\"; // Composables\nimport { useTextColor } from \"../../composables/color.mjs\";\nimport { forwardRefs } from \"../../composables/forwardRefs.mjs\"; // Utilities\nimport { computed, ref } from 'vue';\nimport { VTabsSymbol } from \"./shared.mjs\";\nimport { animate, genericComponent, omit, propsFactory, standardEasing, useRender } from \"../../util/index.mjs\"; // Types\nexport const makeVTabProps = propsFactory({\n  fixed: Boolean,\n  sliderColor: String,\n  hideSlider: Boolean,\n  direction: {\n    type: String,\n    default: 'horizontal'\n  },\n  ...omit(makeVBtnProps({\n    selectedClass: 'v-tab--selected',\n    variant: 'text'\n  }), ['active', 'block', 'flat', 'location', 'position', 'symbol'])\n}, 'VTab');\nexport const VTab = genericComponent()({\n  name: 'VTab',\n  props: makeVTabProps(),\n  setup(props, _ref) {\n    let {\n      slots,\n      attrs\n    } = _ref;\n    const {\n      textColorClasses: sliderColorClasses,\n      textColorStyles: sliderColorStyles\n    } = useTextColor(props, 'sliderColor');\n    const rootEl = ref();\n    const sliderEl = ref();\n    const isHorizontal = computed(() => props.direction === 'horizontal');\n    const isSelected = computed(() => rootEl.value?.group?.isSelected.value ?? false);\n    function updateSlider(_ref2) {\n      let {\n        value\n      } = _ref2;\n      if (value) {\n        const prevEl = rootEl.value?.$el.parentElement?.querySelector('.v-tab--selected .v-tab__slider');\n        const nextEl = sliderEl.value;\n        if (!prevEl || !nextEl) return;\n        const color = getComputedStyle(prevEl).color;\n        const prevBox = prevEl.getBoundingClientRect();\n        const nextBox = nextEl.getBoundingClientRect();\n        const xy = isHorizontal.value ? 'x' : 'y';\n        const XY = isHorizontal.value ? 'X' : 'Y';\n        const rightBottom = isHorizontal.value ? 'right' : 'bottom';\n        const widthHeight = isHorizontal.value ? 'width' : 'height';\n        const prevPos = prevBox[xy];\n        const nextPos = nextBox[xy];\n        const delta = prevPos > nextPos ? prevBox[rightBottom] - nextBox[rightBottom] : prevBox[xy] - nextBox[xy];\n        const origin = Math.sign(delta) > 0 ? isHorizontal.value ? 'right' : 'bottom' : Math.sign(delta) < 0 ? isHorizontal.value ? 'left' : 'top' : 'center';\n        const size = Math.abs(delta) + (Math.sign(delta) < 0 ? prevBox[widthHeight] : nextBox[widthHeight]);\n        const scale = size / Math.max(prevBox[widthHeight], nextBox[widthHeight]) || 0;\n        const initialScale = prevBox[widthHeight] / nextBox[widthHeight] || 0;\n        const sigma = 1.5;\n        animate(nextEl, {\n          backgroundColor: [color, 'currentcolor'],\n          transform: [`translate${XY}(${delta}px) scale${XY}(${initialScale})`, `translate${XY}(${delta / sigma}px) scale${XY}(${(scale - 1) / sigma + 1})`, 'none'],\n          transformOrigin: Array(3).fill(origin)\n        }, {\n          duration: 225,\n          easing: standardEasing\n        });\n      }\n    }\n    useRender(() => {\n      const btnProps = VBtn.filterProps(props);\n      return _createVNode(VBtn, _mergeProps({\n        \"symbol\": VTabsSymbol,\n        \"ref\": rootEl,\n        \"class\": ['v-tab', props.class],\n        \"style\": props.style,\n        \"tabindex\": isSelected.value ? 0 : -1,\n        \"role\": \"tab\",\n        \"aria-selected\": String(isSelected.value),\n        \"active\": false\n      }, btnProps, attrs, {\n        \"block\": props.fixed,\n        \"maxWidth\": props.fixed ? 300 : undefined,\n        \"onGroup:selected\": updateSlider\n      }), {\n        ...slots,\n        default: () => _createVNode(_Fragment, null, [slots.default?.() ?? props.text, !props.hideSlider && _createVNode(\"div\", {\n          \"ref\": sliderEl,\n          \"class\": ['v-tab__slider', sliderColorClasses.value],\n          \"style\": sliderColorStyles.value\n        }, null)])\n      });\n    });\n    return forwardRefs({}, rootEl);\n  }\n});\n//# sourceMappingURL=VTab.mjs.map",
+      "start": 1731941048242,
+      "end": 1731941048529,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941048529,
+      "end": 1731941048529,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941048529,
+      "end": 1731941048529,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941048529,
+      "end": 1731941048529,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941048529,
+      "end": 1731941048529,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941048529,
+      "end": 1731941048530,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941048529,
+      "end": 1731941048530,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1731941048530,
+      "end": 1731941048530,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1731941048530,
+      "end": 1731941048530,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1731941048530,
+      "end": 1731941048530,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1731941048530,
+      "end": 1731941048530,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1731941048530,
+      "end": 1731941048530,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1731941048530,
+      "end": 1731941048530,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1731941048530,
+      "end": 1731941048530,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1731941048530,
+      "end": 1731941048530,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941048530,
+      "end": 1731941048530,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941048530,
+      "end": 1731941048530,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941048530,
+      "end": 1731941048530,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941048530,
+      "end": 1731941048530,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1731941048530,
+      "end": 1731941048530,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941048530,
+      "end": 1731941048530,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1731941048530,
+      "end": 1731941048532,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import { mergeProps as _mergeProps, createVNode as _createVNode, Fragment as _Fragment } from \"vue\";\nimport \"./VTab.css\";\nimport { makeVBtnProps, VBtn } from \"../VBtn/VBtn.mjs\";\nimport { useTextColor } from \"../../composables/color.mjs\";\nimport { forwardRefs } from \"../../composables/forwardRefs.mjs\";\nimport { computed, ref } from \"vue\";\nimport { VTabsSymbol } from \"./shared.mjs\";\nimport { animate, genericComponent, omit, propsFactory, standardEasing, useRender } from \"../../util/index.mjs\";\nexport const makeVTabProps = propsFactory({\n  fixed: Boolean,\n  sliderColor: String,\n  hideSlider: Boolean,\n  direction: {\n    type: String,\n    default: \"horizontal\"\n  },\n  ...omit(makeVBtnProps({\n    selectedClass: \"v-tab--selected\",\n    variant: \"text\"\n  }), [\"active\", \"block\", \"flat\", \"location\", \"position\", \"symbol\"])\n}, \"VTab\");\nexport const VTab = genericComponent()({\n  name: \"VTab\",\n  props: makeVTabProps(),\n  setup(props, _ref) {\n    let {\n      slots,\n      attrs\n    } = _ref;\n    const {\n      textColorClasses: sliderColorClasses,\n      textColorStyles: sliderColorStyles\n    } = useTextColor(props, \"sliderColor\");\n    const rootEl = ref();\n    const sliderEl = ref();\n    const isHorizontal = computed(() => props.direction === \"horizontal\");\n    const isSelected = computed(() => rootEl.value?.group?.isSelected.value ?? false);\n    function updateSlider(_ref2) {\n      let {\n        value\n      } = _ref2;\n      if (value) {\n        const prevEl = rootEl.value?.$el.parentElement?.querySelector(\".v-tab--selected .v-tab__slider\");\n        const nextEl = sliderEl.value;\n        if (!prevEl || !nextEl)\n          return;\n        const color = getComputedStyle(prevEl).color;\n        const prevBox = prevEl.getBoundingClientRect();\n        const nextBox = nextEl.getBoundingClientRect();\n        const xy = isHorizontal.value ? \"x\" : \"y\";\n        const XY = isHorizontal.value ? \"X\" : \"Y\";\n        const rightBottom = isHorizontal.value ? \"right\" : \"bottom\";\n        const widthHeight = isHorizontal.value ? \"width\" : \"height\";\n        const prevPos = prevBox[xy];\n        const nextPos = nextBox[xy];\n        const delta = prevPos > nextPos ? prevBox[rightBottom] - nextBox[rightBottom] : prevBox[xy] - nextBox[xy];\n        const origin = Math.sign(delta) > 0 ? isHorizontal.value ? \"right\" : \"bottom\" : Math.sign(delta) < 0 ? isHorizontal.value ? \"left\" : \"top\" : \"center\";\n        const size = Math.abs(delta) + (Math.sign(delta) < 0 ? prevBox[widthHeight] : nextBox[widthHeight]);\n        const scale = size / Math.max(prevBox[widthHeight], nextBox[widthHeight]) || 0;\n        const initialScale = prevBox[widthHeight] / nextBox[widthHeight] || 0;\n        const sigma = 1.5;\n        animate(nextEl, {\n          backgroundColor: [color, \"currentcolor\"],\n          transform: [`translate${XY}(${delta}px) scale${XY}(${initialScale})`, `translate${XY}(${delta / sigma}px) scale${XY}(${(scale - 1) / sigma + 1})`, \"none\"],\n          transformOrigin: Array(3).fill(origin)\n        }, {\n          duration: 225,\n          easing: standardEasing\n        });\n      }\n    }\n    useRender(() => {\n      const btnProps = VBtn.filterProps(props);\n      return _createVNode(VBtn, _mergeProps({\n        \"symbol\": VTabsSymbol,\n        \"ref\": rootEl,\n        \"class\": [\"v-tab\", props.class],\n        \"style\": props.style,\n        \"tabindex\": isSelected.value ? 0 : -1,\n        \"role\": \"tab\",\n        \"aria-selected\": String(isSelected.value),\n        \"active\": false\n      }, btnProps, attrs, {\n        \"block\": props.fixed,\n        \"maxWidth\": props.fixed ? 300 : void 0,\n        \"onGroup:selected\": updateSlider\n      }), {\n        ...slots,\n        default: () => _createVNode(_Fragment, null, [slots.default?.() ?? props.text, !props.hideSlider && _createVNode(\"div\", {\n          \"ref\": sliderEl,\n          \"class\": [\"v-tab__slider\", sliderColorClasses.value],\n          \"style\": sliderColorStyles.value\n        }, null)])\n      });\n    });\n    return forwardRefs({}, rootEl);\n  }\n});\n",
+      "start": 1731941048532,
+      "end": 1731941048690,
+      "order": "normal",
+      "sourcemaps": "{\n  \"version\": 3,\n  \"sources\": [\"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/vuetify/lib/components/VTabs/VTab.mjs\"],\n  \"sourcesContent\": [\"import { mergeProps as _mergeProps, createVNode as _createVNode, Fragment as _Fragment } from \\\"vue\\\";\\n// Styles\\nimport \\\"./VTab.css\\\";\\n\\n// Components\\nimport { makeVBtnProps, VBtn } from \\\"../VBtn/VBtn.mjs\\\"; // Composables\\nimport { useTextColor } from \\\"../../composables/color.mjs\\\";\\nimport { forwardRefs } from \\\"../../composables/forwardRefs.mjs\\\"; // Utilities\\nimport { computed, ref } from 'vue';\\nimport { VTabsSymbol } from \\\"./shared.mjs\\\";\\nimport { animate, genericComponent, omit, propsFactory, standardEasing, useRender } from \\\"../../util/index.mjs\\\"; // Types\\nexport const makeVTabProps = propsFactory({\\n  fixed: Boolean,\\n  sliderColor: String,\\n  hideSlider: Boolean,\\n  direction: {\\n    type: String,\\n    default: 'horizontal'\\n  },\\n  ...omit(makeVBtnProps({\\n    selectedClass: 'v-tab--selected',\\n    variant: 'text'\\n  }), ['active', 'block', 'flat', 'location', 'position', 'symbol'])\\n}, 'VTab');\\nexport const VTab = genericComponent()({\\n  name: 'VTab',\\n  props: makeVTabProps(),\\n  setup(props, _ref) {\\n    let {\\n      slots,\\n      attrs\\n    } = _ref;\\n    const {\\n      textColorClasses: sliderColorClasses,\\n      textColorStyles: sliderColorStyles\\n    } = useTextColor(props, 'sliderColor');\\n    const rootEl = ref();\\n    const sliderEl = ref();\\n    const isHorizontal = computed(() => props.direction === 'horizontal');\\n    const isSelected = computed(() => rootEl.value?.group?.isSelected.value ?? false);\\n    function updateSlider(_ref2) {\\n      let {\\n        value\\n      } = _ref2;\\n      if (value) {\\n        const prevEl = rootEl.value?.$el.parentElement?.querySelector('.v-tab--selected .v-tab__slider');\\n        const nextEl = sliderEl.value;\\n        if (!prevEl || !nextEl) return;\\n        const color = getComputedStyle(prevEl).color;\\n        const prevBox = prevEl.getBoundingClientRect();\\n        const nextBox = nextEl.getBoundingClientRect();\\n        const xy = isHorizontal.value ? 'x' : 'y';\\n        const XY = isHorizontal.value ? 'X' : 'Y';\\n        const rightBottom = isHorizontal.value ? 'right' : 'bottom';\\n        const widthHeight = isHorizontal.value ? 'width' : 'height';\\n        const prevPos = prevBox[xy];\\n        const nextPos = nextBox[xy];\\n        const delta = prevPos > nextPos ? prevBox[rightBottom] - nextBox[rightBottom] : prevBox[xy] - nextBox[xy];\\n        const origin = Math.sign(delta) > 0 ? isHorizontal.value ? 'right' : 'bottom' : Math.sign(delta) < 0 ? isHorizontal.value ? 'left' : 'top' : 'center';\\n        const size = Math.abs(delta) + (Math.sign(delta) < 0 ? prevBox[widthHeight] : nextBox[widthHeight]);\\n        const scale = size / Math.max(prevBox[widthHeight], nextBox[widthHeight]) || 0;\\n        const initialScale = prevBox[widthHeight] / nextBox[widthHeight] || 0;\\n        const sigma = 1.5;\\n        animate(nextEl, {\\n          backgroundColor: [color, 'currentcolor'],\\n          transform: [`translate${XY}(${delta}px) scale${XY}(${initialScale})`, `translate${XY}(${delta / sigma}px) scale${XY}(${(scale - 1) / sigma + 1})`, 'none'],\\n          transformOrigin: Array(3).fill(origin)\\n        }, {\\n          duration: 225,\\n          easing: standardEasing\\n        });\\n      }\\n    }\\n    useRender(() => {\\n      const btnProps = VBtn.filterProps(props);\\n      return _createVNode(VBtn, _mergeProps({\\n        \\\"symbol\\\": VTabsSymbol,\\n        \\\"ref\\\": rootEl,\\n        \\\"class\\\": ['v-tab', props.class],\\n        \\\"style\\\": props.style,\\n        \\\"tabindex\\\": isSelected.value ? 0 : -1,\\n        \\\"role\\\": \\\"tab\\\",\\n        \\\"aria-selected\\\": String(isSelected.value),\\n        \\\"active\\\": false\\n      }, btnProps, attrs, {\\n        \\\"block\\\": props.fixed,\\n        \\\"maxWidth\\\": props.fixed ? 300 : undefined,\\n        \\\"onGroup:selected\\\": updateSlider\\n      }), {\\n        ...slots,\\n        default: () => _createVNode(_Fragment, null, [slots.default?.() ?? props.text, !props.hideSlider && _createVNode(\\\"div\\\", {\\n          \\\"ref\\\": sliderEl,\\n          \\\"class\\\": ['v-tab__slider', sliderColorClasses.value],\\n          \\\"style\\\": sliderColorStyles.value\\n        }, null)])\\n      });\\n    });\\n    return forwardRefs({}, rootEl);\\n  }\\n});\\n//# sourceMappingURL=VTab.mjs.map\"],\n  \"mappings\": \"AAAA,SAAS,cAAc,aAAa,eAAe,cAAc,YAAY,iBAAiB;AAE9F,OAAO;AAGP,SAAS,eAAe,YAAY;AACpC,SAAS,oBAAoB;AAC7B,SAAS,mBAAmB;AAC5B,SAAS,UAAU,WAAW;AAC9B,SAAS,mBAAmB;AAC5B,SAAS,SAAS,kBAAkB,MAAM,cAAc,gBAAgB,iBAAiB;AAClF,aAAM,gBAAgB,aAAa;AAAA,EACxC,OAAO;AAAA,EACP,aAAa;AAAA,EACb,YAAY;AAAA,EACZ,WAAW;AAAA,IACT,MAAM;AAAA,IACN,SAAS;AAAA,EACX;AAAA,EACA,GAAG,KAAK,cAAc;AAAA,IACpB,eAAe;AAAA,IACf,SAAS;AAAA,EACX,CAAC,GAAG,CAAC,UAAU,SAAS,QAAQ,YAAY,YAAY,QAAQ,CAAC;AACnE,GAAG,MAAM;AACF,aAAM,OAAO,iBAAiB,EAAE;AAAA,EACrC,MAAM;AAAA,EACN,OAAO,cAAc;AAAA,EACrB,MAAM,OAAO,MAAM;AACjB,QAAI;AAAA,MACF;AAAA,MACA;AAAA,IACF,IAAI;AACJ,UAAM;AAAA,MACJ,kBAAkB;AAAA,MAClB,iBAAiB;AAAA,IACnB,IAAI,aAAa,OAAO,aAAa;AACrC,UAAM,SAAS,IAAI;AACnB,UAAM,WAAW,IAAI;AACrB,UAAM,eAAe,SAAS,MAAM,MAAM,cAAc,YAAY;AACpE,UAAM,aAAa,SAAS,MAAM,OAAO,OAAO,OAAO,WAAW,SAAS,KAAK;AAChF,aAAS,aAAa,OAAO;AAC3B,UAAI;AAAA,QACF;AAAA,MACF,IAAI;AACJ,UAAI,OAAO;AACT,cAAM,SAAS,OAAO,OAAO,IAAI,eAAe,cAAc,iCAAiC;AAC/F,cAAM,SAAS,SAAS;AACxB,YAAI,CAAC,UAAU,CAAC;AAAQ;AACxB,cAAM,QAAQ,iBAAiB,MAAM,EAAE;AACvC,cAAM,UAAU,OAAO,sBAAsB;AAC7C,cAAM,UAAU,OAAO,sBAAsB;AAC7C,cAAM,KAAK,aAAa,QAAQ,MAAM;AACtC,cAAM,KAAK,aAAa,QAAQ,MAAM;AACtC,cAAM,cAAc,aAAa,QAAQ,UAAU;AACnD,cAAM,cAAc,aAAa,QAAQ,UAAU;AACnD,cAAM,UAAU,QAAQ,EAAE;AAC1B,cAAM,UAAU,QAAQ,EAAE;AAC1B,cAAM,QAAQ,UAAU,UAAU,QAAQ,WAAW,IAAI,QAAQ,WAAW,IAAI,QAAQ,EAAE,IAAI,QAAQ,EAAE;AACxG,cAAM,SAAS,KAAK,KAAK,KAAK,IAAI,IAAI,aAAa,QAAQ,UAAU,WAAW,KAAK,KAAK,KAAK,IAAI,IAAI,aAAa,QAAQ,SAAS,QAAQ;AAC7I,cAAM,OAAO,KAAK,IAAI,KAAK,KAAK,KAAK,KAAK,KAAK,IAAI,IAAI,QAAQ,WAAW,IAAI,QAAQ,WAAW;AACjG,cAAM,QAAQ,OAAO,KAAK,IAAI,QAAQ,WAAW,GAAG,QAAQ,WAAW,CAAC,KAAK;AAC7E,cAAM,eAAe,QAAQ,WAAW,IAAI,QAAQ,WAAW,KAAK;AACpE,cAAM,QAAQ;AACd,gBAAQ,QAAQ;AAAA,UACd,iBAAiB,CAAC,OAAO,cAAc;AAAA,UACvC,WAAW,CAAC,YAAY,EAAE,IAAI,KAAK,YAAY,EAAE,IAAI,YAAY,KAAK,YAAY,EAAE,IAAI,QAAQ,KAAK,YAAY,EAAE,KAAK,QAAQ,KAAK,QAAQ,CAAC,KAAK,MAAM;AAAA,UACzJ,iBAAiB,MAAM,CAAC,EAAE,KAAK,MAAM;AAAA,QACvC,GAAG;AAAA,UACD,UAAU;AAAA,UACV,QAAQ;AAAA,QACV,CAAC;AAAA,MACH;AAAA,IACF;AACA,cAAU,MAAM;AACd,YAAM,WAAW,KAAK,YAAY,KAAK;AACvC,aAAO,aAAa,MAAM,YAAY;AAAA,QACpC,UAAU;AAAA,QACV,OAAO;AAAA,QACP,SAAS,CAAC,SAAS,MAAM,KAAK;AAAA,QAC9B,SAAS,MAAM;AAAA,QACf,YAAY,WAAW,QAAQ,IAAI;AAAA,QACnC,QAAQ;AAAA,QACR,iBAAiB,OAAO,WAAW,KAAK;AAAA,QACxC,UAAU;AAAA,MACZ,GAAG,UAAU,OAAO;AAAA,QAClB,SAAS,MAAM;AAAA,QACf,YAAY,MAAM,QAAQ,MAAM;AAAA,QAChC,oBAAoB;AAAA,MACtB,CAAC,GAAG;AAAA,QACF,GAAG;AAAA,QACH,SAAS,MAAM,aAAa,WAAW,MAAM,CAAC,MAAM,UAAU,KAAK,MAAM,MAAM,CAAC,MAAM,cAAc,aAAa,OAAO;AAAA,UACtH,OAAO;AAAA,UACP,SAAS,CAAC,iBAAiB,mBAAmB,KAAK;AAAA,UACnD,SAAS,kBAAkB;AAAA,QAC7B,GAAG,IAAI,CAAC,CAAC;AAAA,MACX,CAAC;AAAA,IACH,CAAC;AACD,WAAO,YAAY,CAAC,GAAG,MAAM;AAAA,EAC/B;AACF,CAAC;\",\n  \"names\": []\n}\n"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1731941048691,
+      "end": 1731941048691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1731941048691,
+      "end": 1731941048691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1731941048691,
+      "end": 1731941048691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1731941048691,
+      "end": 1731941048691,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1731941048691,
+      "end": 1731941048691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1731941048691,
+      "end": 1731941048691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1731941048691,
+      "end": 1731941048691,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941048691,
+      "end": 1731941048692,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941048691,
+      "end": 1731941048692,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941048692,
+      "end": 1731941048692,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941048692,
+      "end": 1731941048692,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941048692,
+      "end": 1731941048692,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941048692,
+      "end": 1731941048692,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941048692,
+      "end": 1731941048692,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941048692,
+      "end": 1731941048692,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "start": 1731941048692,
+      "end": 1731941048692,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "start": 1731941048692,
+      "end": 1731941048692,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941048693,
+      "end": 1731941048693,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941048693,
+      "end": 1731941048693,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941048693,
+      "end": 1731941048693,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941048693,
+      "end": 1731941048693,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941048693,
+      "end": 1731941048693,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941048693,
+      "end": 1731941048693,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1731941048693,
+      "end": 1731941048693,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1731941048694,
+      "end": 1731941048694,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1731941048694,
+      "end": 1731941048699,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1731941048699,
+      "end": 1731941048699,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1731941048699,
+      "end": 1731941048699,
+      "order": "normal"
+    }
+  ]
+}

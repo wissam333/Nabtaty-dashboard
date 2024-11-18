@@ -1,0 +1,263 @@
+{
+  "resolvedId": "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/Category.vue?vue&type=style&index=0&scoped=d5795382&lang.scss",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n.contain {\n  position: relative;\n  overflow-x: hidden;\n  min-height: calc(100vh - 77.6px);\n  transition: all 0.3s linear;\n  width: 100%;\n  background-color: #f8f7fa;\n  float: right;\n  margin-top: 77.6px;\n  padding: 16px;\n  @media (max-width: 600px) {\n    margin-top: 55px;\n    min-height: calc(100vh - 55px);\n  }\n\n  &.shrink {\n    width: calc(100% - 260px); /* 100% + 260px(sidebar)*/\n    @media (max-width: 600px) {\n      width: 100%;\n    }\n  }\n\n  .title-container {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    margin: 16px 0px;\n    @media (max-width: 991px) {\n      flex-direction: column;\n      align-items: flex-start;\n    }\n    .head-title {\n      p {\n        font-size: 15px;\n        color: #6d6a77;\n        a {\n          color: #19ad7b;\n          text-decoration: underline;\n        }\n      }\n    }\n    .options {\n      .reload {\n        background-color: #19ad7b;\n        color: #fff;\n        border: none;\n      }\n      @media (max-width: 991px) {\n        margin-top: 10px;\n      }\n    }\n  }\n  .table-responsive {\n    background-color: #fff;\n    border-radius: 8px;\n  }\n  .cat-tabel {\n    height: calc(100vh - 274px);\n    overflow-y: scroll;\n    @media (max-width: 991px) {\n      height: calc(100vh - 320px);\n    }\n  }\n  .loading {\n    img {\n      width: 50px;\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      transform: translate(-50%, -50%);\n    }\n  }\n  thead,\n  tbody,\n  tfoot,\n  tr,\n  td,\n  th {\n    padding: 8px 15px;\n    white-space: nowrap;\n  }\n  table {\n    width: 100%;\n  }\n  thead {\n    background-color: #19ad7b;\n    color: #fff;\n  }\n  td {\n    color: #333;\n    max-width: 300px;\n    cursor: pointer;\n  }\n  .pagination {\n    select {\n      border: 1px solid #dbdbdb;\n      border-radius: 8px;\n      color: #333;\n      padding: 10px;\n      &:focus,\n      :focus-visible {\n        outline: none;\n      }\n    }\n    .page-item {\n      .page-link {\n        cursor: pointer;\n        border: none !important;\n        span {\n          color: #6b7280;\n          padding: 0.5rem 1rem;\n          @media (max-width: 768px) {\n            padding: 0;\n          }\n        }\n        &.page-num {\n          color: #19ad7b;\n        }\n      }\n    }\n    .show-info {\n      @media (max-width: 520px) {\n        display: none !important;\n      }\n    }\n  }\n\n  .rows {\n    color: #000;\n    &:nth-child(even) {\n      background-color: #eee;\n    }\n    &:nth-child(odd) {\n      background-color: #fff;\n    }\n    .cat-img {\n      img {\n        width: 50px;\n        height: 50px;\n        margin-right: 10px;\n      }\n    }\n    .cat-info {\n      h5,\n      p {\n        max-width: 200px;\n        /* will make [...] at the end */\n        text-overflow: ellipsis;\n        /* paragraph to one line */\n        white-space: nowrap;\n        /* older browsers */\n        overflow: hidden;\n      }\n      p {\n        font-size: 14px;\n      }\n    }\n    .badge {\n      font-size: 13px;\n      padding: 8px 12px;\n    }\n    .circle {\n      display: block;\n      width: 25px;\n      height: 25px;\n      border-radius: 50%;\n      border: 1px solid #cbc9c9;\n    }\n    .delete,\n    .edit {\n      padding: 6px;\n      color: #333;\n      svg {\n        font-size: 20px;\n      }\n    }\n  }\n}\n.drop-area {\n  position: relative;\n  .p-fileupload {\n    z-index: 2;\n  }\n  img {\n    position: absolute;\n    object-fit: cover;\n    z-index: 1;\n  }\n}\n.clear {\n  z-index: 2;\n  position: absolute;\n  top: 0;\n  inset-inline-end: 0;\n  margin: 10px;\n}\n",
+      "start": 1731941016379,
+      "end": 1731941016379
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941016379,
+      "end": 1731941016379,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941016379,
+      "end": 1731941016379,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941016379,
+      "end": 1731941016379,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1731941016379,
+      "end": 1731941016380,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": ".contain{background-color:#f8f7fa;float:right;margin-top:77.6px;min-height:calc(100vh - 77.6px);overflow-x:hidden;padding:16px;position:relative;transition:all .3s linear;width:100%}@media (max-width:600px){.contain{margin-top:55px;min-height:calc(100vh - 55px)}}.contain.shrink{width:calc(100% - 260px)}@media (max-width:600px){.contain.shrink{width:100%}}.contain .title-container{align-items:center;display:flex;justify-content:space-between;margin:16px 0}@media (max-width:991px){.contain .title-container{align-items:flex-start;flex-direction:column}}.contain .title-container .head-title p{color:#6d6a77;font-size:15px}.contain .title-container .head-title p a{color:#19ad7b;text-decoration:underline}.contain .title-container .options .reload{background-color:#19ad7b;border:none;color:#fff}@media (max-width:991px){.contain .title-container .options{margin-top:10px}}.contain .table-responsive{background-color:#fff;border-radius:8px}.contain .cat-tabel{height:calc(100vh - 274px);overflow-y:scroll}@media (max-width:991px){.contain .cat-tabel{height:calc(100vh - 320px)}}.contain .loading img{left:50%;position:absolute;top:50%;transform:translate(-50%,-50%);width:50px}.contain tbody,.contain td,.contain tfoot,.contain th,.contain thead,.contain tr{padding:8px 15px;white-space:nowrap}.contain table{width:100%}.contain thead{background-color:#19ad7b;color:#fff}.contain td{color:#333;cursor:pointer;max-width:300px}.contain .pagination select{border:1px solid #dbdbdb;border-radius:8px;color:#333;padding:10px}.contain .pagination select :focus-visible,.contain .pagination select:focus{outline:none}.contain .pagination .page-item .page-link{border:none!important;cursor:pointer}.contain .pagination .page-item .page-link span{color:#6b7280;padding:.5rem 1rem}@media (max-width:768px){.contain .pagination .page-item .page-link span{padding:0}}.contain .pagination .page-item .page-link.page-num{color:#19ad7b}@media (max-width:520px){.contain .pagination .show-info{display:none!important}}.contain .rows{color:#000}.contain .rows:nth-child(2n){background-color:#eee}.contain .rows:nth-child(odd){background-color:#fff}.contain .rows .cat-img img{height:50px;margin-right:10px;width:50px}.contain .rows .cat-info h5,.contain .rows .cat-info p{max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.contain .rows .cat-info p{font-size:14px}.contain .rows .badge{font-size:13px;padding:8px 12px}.contain .rows .circle{border:1px solid #cbc9c9;border-radius:50%;display:block;height:25px;width:25px}.contain .rows .delete,.contain .rows .edit{color:#333;padding:6px}.contain .rows .delete svg,.contain .rows .edit svg{font-size:20px}.drop-area{position:relative}.drop-area .p-fileupload{z-index:2}.drop-area img{-o-object-fit:cover;object-fit:cover;position:absolute;z-index:1}.clear{inset-inline-end:0;margin:10px;position:absolute;top:0;z-index:2}",
+      "start": 1731941016380,
+      "end": 1731941017806,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1731941017806,
+      "end": 1731941017806,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1731941017806,
+      "end": 1731941017806,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1731941017806,
+      "end": 1731941017806,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": ".contain[data-v-d5795382]{background-color:#f8f7fa;float:right;margin-top:77.6px;min-height:calc(100vh - 77.6px);overflow-x:hidden;padding:16px;position:relative;transition:all .3s linear;width:100%}@media (max-width:600px){.contain[data-v-d5795382]{margin-top:55px;min-height:calc(100vh - 55px)}}.contain.shrink[data-v-d5795382]{width:calc(100% - 260px)}@media (max-width:600px){.contain.shrink[data-v-d5795382]{width:100%}}.contain .title-container[data-v-d5795382]{align-items:center;display:flex;justify-content:space-between;margin:16px 0}@media (max-width:991px){.contain .title-container[data-v-d5795382]{align-items:flex-start;flex-direction:column}}.contain .title-container .head-title p[data-v-d5795382]{color:#6d6a77;font-size:15px}.contain .title-container .head-title p a[data-v-d5795382]{color:#19ad7b;text-decoration:underline}.contain .title-container .options .reload[data-v-d5795382]{background-color:#19ad7b;border:none;color:#fff}@media (max-width:991px){.contain .title-container .options[data-v-d5795382]{margin-top:10px}}.contain .table-responsive[data-v-d5795382]{background-color:#fff;border-radius:8px}.contain .cat-tabel[data-v-d5795382]{height:calc(100vh - 274px);overflow-y:scroll}@media (max-width:991px){.contain .cat-tabel[data-v-d5795382]{height:calc(100vh - 320px)}}.contain .loading img[data-v-d5795382]{left:50%;position:absolute;top:50%;transform:translate(-50%,-50%);width:50px}.contain tbody[data-v-d5795382],.contain td[data-v-d5795382],.contain tfoot[data-v-d5795382],.contain th[data-v-d5795382],.contain thead[data-v-d5795382],.contain tr[data-v-d5795382]{padding:8px 15px;white-space:nowrap}.contain table[data-v-d5795382]{width:100%}.contain thead[data-v-d5795382]{background-color:#19ad7b;color:#fff}.contain td[data-v-d5795382]{color:#333;cursor:pointer;max-width:300px}.contain .pagination select[data-v-d5795382]{border:1px solid #dbdbdb;border-radius:8px;color:#333;padding:10px}.contain .pagination select[data-v-d5795382] :focus-visible,.contain .pagination select[data-v-d5795382]:focus{outline:none}.contain .pagination .page-item .page-link[data-v-d5795382]{border:none!important;cursor:pointer}.contain .pagination .page-item .page-link span[data-v-d5795382]{color:#6b7280;padding:.5rem 1rem}@media (max-width:768px){.contain .pagination .page-item .page-link span[data-v-d5795382]{padding:0}}.contain .pagination .page-item .page-link.page-num[data-v-d5795382]{color:#19ad7b}@media (max-width:520px){.contain .pagination .show-info[data-v-d5795382]{display:none!important}}.contain .rows[data-v-d5795382]{color:#000}.contain .rows[data-v-d5795382]:nth-child(2n){background-color:#eee}.contain .rows[data-v-d5795382]:nth-child(odd){background-color:#fff}.contain .rows .cat-img img[data-v-d5795382]{height:50px;margin-right:10px;width:50px}.contain .rows .cat-info h5[data-v-d5795382],.contain .rows .cat-info p[data-v-d5795382]{max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.contain .rows .cat-info p[data-v-d5795382]{font-size:14px}.contain .rows .badge[data-v-d5795382]{font-size:13px;padding:8px 12px}.contain .rows .circle[data-v-d5795382]{border:1px solid #cbc9c9;border-radius:50%;display:block;height:25px;width:25px}.contain .rows .delete[data-v-d5795382],.contain .rows .edit[data-v-d5795382]{color:#333;padding:6px}.contain .rows .delete svg[data-v-d5795382],.contain .rows .edit svg[data-v-d5795382]{font-size:20px}.drop-area[data-v-d5795382]{position:relative}.drop-area .p-fileupload[data-v-d5795382]{z-index:2}.drop-area img[data-v-d5795382]{-o-object-fit:cover;object-fit:cover;position:absolute;z-index:1}.clear[data-v-d5795382]{inset-inline-end:0;margin:10px;position:absolute;top:0;z-index:2}",
+      "start": 1731941017841,
+      "end": 1731941017887,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1731941017888,
+      "end": 1731941017888,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941017889,
+      "end": 1731941017889,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941017890,
+      "end": 1731941017890,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1731941017890,
+      "end": 1731941017890,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1731941017890,
+      "end": 1731941017891,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941017891,
+      "end": 1731941017891,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1731941017892,
+      "end": 1731941017892,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1731941017892,
+      "end": 1731941017892,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "",
+      "start": 1731941017892,
+      "end": 1731941017892,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1731941017892,
+      "end": 1731941017892,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1731941017892,
+      "end": 1731941017892,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1731941017892,
+      "end": 1731941017892,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1731941017892,
+      "end": 1731941017892,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1731941017892,
+      "end": 1731941017892,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1731941017893,
+      "end": 1731941017893,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941017893,
+      "end": 1731941017893,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941017894,
+      "end": 1731941017894,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941017894,
+      "end": 1731941017895,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941017895,
+      "end": 1731941017895,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "result": "/* unplugin-vue-components disabled */",
+      "start": 1731941017896,
+      "end": 1731941017897,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/Category.vue?vue&type=style&index=0&scoped=d5795382&lang.scss"
+        ],
+        "sourcesContent": [
+          ""
+        ],
+        "names": [],
+        "mappings": ""
+      }
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941017897,
+      "end": 1731941017897,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941017898,
+      "end": 1731941017898,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941017898,
+      "end": 1731941017899,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1731941017899,
+      "end": 1731941017899,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1731941017900,
+      "end": 1731941017900,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1731941017900,
+      "end": 1731941017900,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1731941017901,
+      "end": 1731941017901,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1731941017901,
+      "end": 1731941017901,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1731941017901,
+      "end": 1731941017901,
+      "order": "normal"
+    }
+  ]
+}

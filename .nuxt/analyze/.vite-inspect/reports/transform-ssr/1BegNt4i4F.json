@@ -1,0 +1,379 @@
+{
+  "resolvedId": "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/error.vue?vue&type=style&index=0&scoped=395d392e&lang.scss",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n.error-box {\n  height: 100%;\n  position: fixed;\n  // background: url(/images/error-bg.jpg) center center no-repeat #fff !important;\n  width: 100%;\n}\n\n.m-t-30 {\n  margin-top: 30px !important;\n}\n\n.m-b-30 {\n  margin-bottom: 30px !important;\n}\n\n.m-b-40 {\n  margin-bottom: 40px !important;\n}\n\n.waves-effect {\n  position: relative;\n  cursor: pointer;\n  display: inline-block;\n  overflow: hidden;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  -webkit-tap-highlight-color: transparent;\n}\n\n.btn-rounded {\n  border-radius: 60px;\n}\n\n.error-box .footer {\n  width: 100%;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  color: #58666e;\n  left: 0;\n  padding: 20px 30px;\n  position: absolute;\n  right: 0;\n  background: #fff;\n}\n\n.error-body {\n  padding-top: 5%;\n}\n\n.error-body h1 {\n  font-size: fluid(100px, 210px);\n  font-weight: 900;\n  line-height: 210px;\n}\nbutton {\n  background-color: $main !important;\n}\n",
+      "start": 1731941044761,
+      "end": 1731941044761,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/error.vue"
+        ],
+        "names": [],
+        "mappings": "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",
+        "file": "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/error.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<template>\n  <section id=\"wrapper\" class=\"error-page\">\n    <div class=\"error-box\">\n      <div class=\"error-body text-center\">\n        <h1 class=\"mb-2 mb-dmd-3 mb-xl-5 gradient-text\" style=\"\">\n          {{ error?.statusCode }}\n        </h1>\n        <h3 class=\"text-uppercase gradient-text\" style=\"\">{{ heading }}</h3>\n        <p class=\"text-black m-t-30 m-b-30\">{{ description }}</p>\n        <button\n          @click=\"handleError\"\n          class=\"btn background text-white px-15 btn-rounded waves-effect waves-light\"\n        >\n          {{\n            $i18n.locale === \"ar\" ? \"الرجوع للصفحة الرئيسية\" : \"Back To Home\"\n          }}\n        </button>\n      </div>\n      <footer class=\"footer text-center\">\n        Copyright @ {{ new Date().getFullYear() }}\n        <span class=\"fw-bold gradient-text\" style=\"\">\n          {{ $t(\"Baddar Furniture\") }}\n        </span>\n      </footer>\n    </div>\n  </section>\n</template>\n\n<script setup>\nconst error = useError();\nconst i18e = useI18n();\n// console.log('error : ', error.value.message, error.value.stack)\nconst heading = computed(() =>\n  error.value?.statusCode == \"404\"\n    ? i18e.t(\"page-not-found\")\n    : i18e.t(\"server-error\")\n);\nconst description = computed(() =>\n  error.value?.statusCode === \"404\"\n    ? i18e.t(\"could-not-find-page-msg\")\n    : i18e.t(\"error-occurred-msg\")\n);\nconst handleError = () => clearError({ redirect: \"/\" });\n</script>\n\n<style lang=\"scss\" scoped>\n.error-box {\n  height: 100%;\n  position: fixed;\n  // background: url(/images/error-bg.jpg) center center no-repeat #fff !important;\n  width: 100%;\n}\n\n.m-t-30 {\n  margin-top: 30px !important;\n}\n\n.m-b-30 {\n  margin-bottom: 30px !important;\n}\n\n.m-b-40 {\n  margin-bottom: 40px !important;\n}\n\n.waves-effect {\n  position: relative;\n  cursor: pointer;\n  display: inline-block;\n  overflow: hidden;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  -webkit-tap-highlight-color: transparent;\n}\n\n.btn-rounded {\n  border-radius: 60px;\n}\n\n.error-box .footer {\n  width: 100%;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  color: #58666e;\n  left: 0;\n  padding: 20px 30px;\n  position: absolute;\n  right: 0;\n  background: #fff;\n}\n\n.error-body {\n  padding-top: 5%;\n}\n\n.error-body h1 {\n  font-size: fluid(100px, 210px);\n  font-weight: 900;\n  line-height: 210px;\n}\nbutton {\n  background-color: $main !important;\n}\n</style>\n"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941044761,
+      "end": 1731941044761,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941044761,
+      "end": 1731941044761,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941044761,
+      "end": 1731941044761,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941044761,
+      "end": 1731941044761,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941044761,
+      "end": 1731941044761,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941044761,
+      "end": 1731941044761,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1731941044762,
+      "end": 1731941044762,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1731941044762,
+      "end": 1731941044762,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": ".error-box{height:100%;position:fixed;width:100%}.m-t-30{margin-top:30px!important}.m-b-30{margin-bottom:30px!important}.m-b-40{margin-bottom:40px!important}.waves-effect{cursor:pointer;display:inline-block;overflow:hidden;position:relative;-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}.btn-rounded{border-radius:60px}.error-box .footer{background:#fff;bottom:0;color:#58666e;left:0;padding:20px 30px;position:absolute;right:0;width:100%}.error-body{padding-top:5%}.error-body h1{font-size:fluid(100px,210px);font-weight:900;line-height:210px}button{background-color:rgba(0,61,46,.761)!important}",
+      "start": 1731941044762,
+      "end": 1731941046068,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "file": "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/error.vue",
+        "mappings": "AACA,WACE,YACA,eAEA,WAGF,QACE,0BAGF,QACE,6BAGF,QACE,6BAGF,cAEE,eACA,qBACA,gBAHA,kBAIA,yBACA,sBAEA,iBACA,wCAGF,aACE,mBAGF,mBAUE,gBANA,SACA,cACA,OACA,kBACA,kBACA,QARA,WAYF,YACE,eAGF,eACE,6BACA,gBACA,kBAEF,OACE",
+        "names": [],
+        "ignoreList": [],
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/error.vue"
+        ],
+        "sourcesContent": [
+          null
+        ]
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1731941046068,
+      "end": 1731941046068,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1731941046068,
+      "end": 1731941046068,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1731941046068,
+      "end": 1731941046068,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": ".error-box[data-v-395d392e]{height:100%;position:fixed;width:100%}.m-t-30[data-v-395d392e]{margin-top:30px!important}.m-b-30[data-v-395d392e]{margin-bottom:30px!important}.m-b-40[data-v-395d392e]{margin-bottom:40px!important}.waves-effect[data-v-395d392e]{cursor:pointer;display:inline-block;overflow:hidden;position:relative;-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}.btn-rounded[data-v-395d392e]{border-radius:60px}.error-box .footer[data-v-395d392e]{background:#fff;bottom:0;color:#58666e;left:0;padding:20px 30px;position:absolute;right:0;width:100%}.error-body[data-v-395d392e]{padding-top:5%}.error-body h1[data-v-395d392e]{font-size:fluid(100px,210px);font-weight:900;line-height:210px}button[data-v-395d392e]{background-color:rgba(0,61,46,.761)!important}",
+      "start": 1731941046069,
+      "end": 1731941046077,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/error.vue",
+        "mappings": "AAAA,4BAAW,WAAW,CAAC,cAAc,CAAC,UAAU,CAAC,yBAAQ,yBAAyB,CAAC,yBAAQ,4BAA4B,CAAC,yBAAQ,4BAA4B,CAAC,+BAAc,cAAc,CAAC,oBAAoB,CAAC,eAAe,CAAC,iBAAiB,CAAC,wBAAwB,CAAC,qBAAqB,CAAC,gBAAgB,CAAC,uCAAuC,CAAC,8BAAa,kBAAkB,CAAC,oCAAmB,eAAe,CAAC,QAAQ,CAAC,aAAa,CAAC,MAAM,CAAC,iBAAiB,CAAC,iBAAiB,CAAC,OAAO,CAAC,UAAU,CAAC,6BAAY,cAAc,CAAC,gCAAe,4BAA4B,CAAC,eAAe,CAAC,iBAAiB,CAAC,wBAAO,6CAA6C",
+        "names": [],
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/error.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1731941046077,
+      "end": 1731941046077,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941046077,
+      "end": 1731941046078,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941046077,
+      "end": 1731941046078,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941046078,
+      "end": 1731941046078,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941046078,
+      "end": 1731941046078,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1731941046078,
+      "end": 1731941046078,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941046078,
+      "end": 1731941046078,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1731941046078,
+      "end": 1731941046082,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1731941046083,
+      "end": 1731941046083,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "",
+      "start": 1731941046083,
+      "end": 1731941046083,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1731941046083,
+      "end": 1731941046083,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1731941046083,
+      "end": 1731941046083,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1731941046083,
+      "end": 1731941046083,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1731941046083,
+      "end": 1731941046083,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1731941046084,
+      "end": 1731941046084,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1731941046084,
+      "end": 1731941046084,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941046084,
+      "end": 1731941046084,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941046084,
+      "end": 1731941046084,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941046085,
+      "end": 1731941046085,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941046085,
+      "end": 1731941046085,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941046085,
+      "end": 1731941046085,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941046085,
+      "end": 1731941046085,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941046085,
+      "end": 1731941046085,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941046085,
+      "end": 1731941046085,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "result": "/* unplugin-vue-components disabled */",
+      "start": 1731941046085,
+      "end": 1731941046086,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/error.vue?vue&type=style&index=0&scoped=395d392e&lang.scss"
+        ],
+        "sourcesContent": [
+          ""
+        ],
+        "names": [],
+        "mappings": ""
+      }
+    },
+    {
+      "name": "unplugin-vue-components",
+      "result": "/* unplugin-vue-components disabled */",
+      "start": 1731941046085,
+      "end": 1731941046086,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/error.vue?vue&type=style&index=0&scoped=395d392e&lang.scss"
+        ],
+        "sourcesContent": [
+          ""
+        ],
+        "names": [],
+        "mappings": ""
+      }
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941046086,
+      "end": 1731941046086,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941046086,
+      "end": 1731941046086,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941046086,
+      "end": 1731941046086,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941046086,
+      "end": 1731941046086,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941046086,
+      "end": 1731941046086,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941046086,
+      "end": 1731941046086,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1731941046086,
+      "end": 1731941046086,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1731941046087,
+      "end": 1731941046087,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1731941046087,
+      "end": 1731941046087,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1731941046087,
+      "end": 1731941046087,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1731941046087,
+      "end": 1731941046087,
+      "order": "normal"
+    }
+  ]
+}

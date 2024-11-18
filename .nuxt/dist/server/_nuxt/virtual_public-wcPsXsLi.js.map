@@ -1,0 +1,1 @@
+{"version":3,"file":"virtual_public-wcPsXsLi.js","sources":["../../../../virtual:public?%2Fphotos%2F2619fafceaedd791a39fd2a196ec0641.png"],"sourcesContent":["import { publicAssetsURL } from '#build/paths.mjs';export default publicAssetsURL(\"/photos/2619fafceaedd791a39fd2a196ec0641.png\")"],"names":[],"mappings":";AAAmD,MAAe,aAAA,gBAAgB,8CAA8C;"}

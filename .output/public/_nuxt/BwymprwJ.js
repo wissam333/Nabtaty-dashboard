@@ -1,0 +1,1 @@
+import{aV as a,J as s,aW as u,ak as o,H as r}from"./CEFpPj_H.js";const n=a(()=>{{const e=s(),t=u().value;if(!e.value.isAuthenticated)return o("/newsite/auth/login",{redirectCode:301});if(!t.items.length&&t.totalQty<0||t.totalQty==0)return r().back()}});export{n as default};

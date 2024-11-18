@@ -1,0 +1,268 @@
+{
+  "resolvedId": "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/layouts/default.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div>\n    <ClientOnly>\n      <div :class=\"locale == 'ar' ? 'bodyAR' : 'bodyEN'\">\n        <SharedNavbar />\n        <slot />\n      </div>\n    </ClientOnly>\n  </div>\n</template>\n<script setup>\nconst { locale } = useI18n();\nuseLang().value = locale;\n\n// // get the country\n// const arabicCountries = [\n//   \"SA\",\n//   \"AE\",\n//   \"EG\",\n//   \"LY\",\n//   \"JO\",\n//   \"LB\",\n//   \"DZ\",\n//   \"MA\",\n//   \"SY\",\n//   \"SD\",\n//   \"IQ\",\n//   \"YE\",\n//   \"OM\",\n//   \"KW\",\n//   \"QA\",\n//   \"BH\",\n//   \"PS\",\n//   \"MR\",\n//   \"SO\",\n//   \"TN\",\n//   \"DJ\",\n// ];\n// const { data, error } = await useFetch(\"https://ipapi.co/json/\");\n\n// let changed = ref(false);\n// watchEffect(() => {\n//   if (process.client) {\n//     if (data.value) {\n//       if (!changed.value)\n//         if (!error.value && data.value?.country_code) {\n//           locale.value = arabicCountries.includes(data.value.country_code)\n//             ? \"ar\"\n//             : \"en\";\n//         }\n//       changed.value = true;\n//     }\n//   }\n// });\n\n// watchEffect(() => {\n//   if (locale.value) {\n//     if (locale.value === \"ar\") {\n//       useCookie(\"lang\").value = \"ar\";\n//       useCookie(\"i18n_redirected\").value = \"ar\";\n//     } else {\n//       useCookie(\"lang\").value = \"en\";\n//       useCookie(\"i18n_redirected\").value = \"en\";\n//     }\n//   }\n// });\n</script>\n",
+      "start": 1731941013257,
+      "end": 1731941014089,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941014089,
+      "end": 1731941014089,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941014089,
+      "end": 1731941014089,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941014089,
+      "end": 1731941014089,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1731941014089,
+      "end": 1731941014089,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1731941014089,
+      "end": 1731941014089,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1731941014089,
+      "end": 1731941014089,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1731941014090,
+      "end": 1731941014090,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1731941014090,
+      "end": 1731941014090,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, renderSlot as _renderSlot, normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\n\nconst _sfc_main = {\n  __name: 'default',\n  setup(__props) {\n\nconst { locale } = useI18n();\nuseLang().value = locale;\n\n// // get the country\n// const arabicCountries = [\n//   \"SA\",\n//   \"AE\",\n//   \"EG\",\n//   \"LY\",\n//   \"JO\",\n//   \"LB\",\n//   \"DZ\",\n//   \"MA\",\n//   \"SY\",\n//   \"SD\",\n//   \"IQ\",\n//   \"YE\",\n//   \"OM\",\n//   \"KW\",\n//   \"QA\",\n//   \"BH\",\n//   \"PS\",\n//   \"MR\",\n//   \"SO\",\n//   \"TN\",\n//   \"DJ\",\n// ];\n// const { data, error } = await useFetch(\"https://ipapi.co/json/\");\n\n// let changed = ref(false);\n// watchEffect(() => {\n//   if (process.client) {\n//     if (data.value) {\n//       if (!changed.value)\n//         if (!error.value && data.value?.country_code) {\n//           locale.value = arabicCountries.includes(data.value.country_code)\n//             ? \"ar\"\n//             : \"en\";\n//         }\n//       changed.value = true;\n//     }\n//   }\n// });\n\n// watchEffect(() => {\n//   if (locale.value) {\n//     if (locale.value === \"ar\") {\n//       useCookie(\"lang\").value = \"ar\";\n//       useCookie(\"i18n_redirected\").value = \"ar\";\n//     } else {\n//       useCookie(\"lang\").value = \"en\";\n//       useCookie(\"i18n_redirected\").value = \"en\";\n//     }\n//   }\n// });\n\nreturn (_ctx, _cache) => {\n  const _component_SharedNavbar = _resolveComponent(\"SharedNavbar\")\n  const _component_ClientOnly = _resolveComponent(\"ClientOnly\")\n\n  return (_openBlock(), _createElementBlock(\"div\", null, [\n    _createVNode(_component_ClientOnly, null, {\n      default: _withCtx(() => [\n        _createElementVNode(\"div\", {\n          class: _normalizeClass(_unref(locale) == 'ar' ? 'bodyAR' : 'bodyEN')\n        }, [\n          _createVNode(_component_SharedNavbar),\n          _renderSlot(_ctx.$slots, \"default\")\n        ], 2)\n      ]),\n      _: 3\n    })\n  ]))\n}\n}\n\n}\n\n\n\nexport default _sfc_main",
+      "start": 1731941014090,
+      "end": 1731941014093,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1731941014093,
+      "end": 1731941014093,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941014093,
+      "end": 1731941014093,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941014093,
+      "end": 1731941014093,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1731941014093,
+      "end": 1731941014093,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1731941014094,
+      "end": 1731941014094,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941014094,
+      "end": 1731941014094,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1731941014094,
+      "end": 1731941014094,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, renderSlot as _renderSlot, normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nconst _sfc_main = {\n  __name: \"default\",\n  setup(__props) {\n    const { locale } = useI18n();\n    useLang().value = locale;\n    return (_ctx, _cache) => {\n      const _component_SharedNavbar = _resolveComponent(\"SharedNavbar\");\n      const _component_ClientOnly = _resolveComponent(\"ClientOnly\");\n      return _openBlock(), _createElementBlock(\"div\", null, [\n        _createVNode(_component_ClientOnly, null, {\n          default: _withCtx(() => [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(locale) == \"ar\" ? \"bodyAR\" : \"bodyEN\")\n            }, [\n              _createVNode(_component_SharedNavbar),\n              _renderSlot(_ctx.$slots, \"default\")\n            ], 2)\n          ]),\n          _: 3\n        })\n      ]);\n    };\n  }\n};\nexport default _sfc_main;\n",
+      "start": 1731941014094,
+      "end": 1731941015210,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1731941015210,
+      "end": 1731941015210,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1731941015211,
+      "end": 1731941015211,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1731941015211,
+      "end": 1731941015211,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1731941015211,
+      "end": 1731941015211,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1731941015211,
+      "end": 1731941015212,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1731941015212,
+      "end": 1731941015212,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1731941015212,
+      "end": 1731941015213,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941015213,
+      "end": 1731941015213,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941015213,
+      "end": 1731941015213,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941015214,
+      "end": 1731941015214,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941015214,
+      "end": 1731941015214,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "result": "/* unplugin-vue-components disabled */import { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, renderSlot as _renderSlot, normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nconst _sfc_main = {\n  __name: \"default\",\n  setup(__props) {\n    const { locale } = useI18n();\n    useLang().value = locale;\n    return (_ctx, _cache) => {\n      const _component_SharedNavbar = _resolveComponent(\"SharedNavbar\");\n      const _component_ClientOnly = _resolveComponent(\"ClientOnly\");\n      return _openBlock(), _createElementBlock(\"div\", null, [\n        _createVNode(_component_ClientOnly, null, {\n          default: _withCtx(() => [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(locale) == \"ar\" ? \"bodyAR\" : \"bodyEN\")\n            }, [\n              _createVNode(_component_SharedNavbar),\n              _renderSlot(_ctx.$slots, \"default\")\n            ], 2)\n          ]),\n          _: 3\n        })\n      ]);\n    };\n  }\n};\nexport default _sfc_main;\n",
+      "start": 1731941015214,
+      "end": 1731941015216,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/layouts/default.vue"
+        ],
+        "sourcesContent": [
+          "import { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, renderSlot as _renderSlot, normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nconst _sfc_main = {\n  __name: \"default\",\n  setup(__props) {\n    const { locale } = useI18n();\n    useLang().value = locale;\n    return (_ctx, _cache) => {\n      const _component_SharedNavbar = _resolveComponent(\"SharedNavbar\");\n      const _component_ClientOnly = _resolveComponent(\"ClientOnly\");\n      return _openBlock(), _createElementBlock(\"div\", null, [\n        _createVNode(_component_ClientOnly, null, {\n          default: _withCtx(() => [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(locale) == \"ar\" ? \"bodyAR\" : \"bodyEN\")\n            }, [\n              _createVNode(_component_SharedNavbar),\n              _renderSlot(_ctx.$slots, \"default\")\n            ], 2)\n          ]),\n          _: 3\n        })\n      ]);\n    };\n  }\n};\nexport default _sfc_main;\n"
+        ],
+        "names": [],
+        "mappings": "sCAAA,MAAM,CAAC,CAAC,CAAC,KAAK,CAAC,EAAE,CAAC,MAAM,CAAC,CAAC,gBAAgB,CAAC,EAAE,CAAC,iBAAiB,CAAC,CAAC,WAAW,CAAC,EAAE,CAAC,YAAY,CAAC,CAAC,UAAU,CAAC,EAAE,CAAC,WAAW,CAAC,CAAC,cAAc,CAAC,EAAE,CAAC,eAAe,CAAC,CAAC,kBAAkB,CAAC,EAAE,CAAC,mBAAmB,CAAC,CAAC,OAAO,CAAC,EAAE,CAAC,QAAQ,CAAC,CAAC,SAAS,CAAC,EAAE,CAAC,UAAU,CAAC,CAAC,kBAAkB,CAAC,EAAE,CAAC,mBAAmB,CAAC,CAAC,CAAC,IAAI,CAAC,CAAC,GAAG,CAAC,CAAC;AAC5S,KAAK,CAAC,SAAS,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,MAAM,CAAC,CAAC,CAAC,OAAO,CAAC,CAAC;AACpB,CAAC,CAAC,KAAK,CAAC,OAAO,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,KAAK,CAAC,CAAC,CAAC,MAAM,CAAC,CAAC,CAAC,CAAC,CAAC,OAAO,CAAC,CAAC,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,OAAO,CAAC,CAAC,CAAC,KAAK,CAAC,CAAC,CAAC,MAAM,CAAC;AAC7B,CAAC,CAAC,CAAC,CAAC,MAAM,CAAC,CAAC,IAAI,CAAC,CAAC,MAAM,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,KAAK,CAAC,uBAAuB,CAAC,CAAC,CAAC,iBAAiB,CAAC,CAAC,YAAY,CAAC,CAAC,CAAC;AACxE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,KAAK,CAAC,qBAAqB,CAAC,CAAC,CAAC,iBAAiB,CAAC,CAAC,UAAU,CAAC,CAAC,CAAC;AACpE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,MAAM,CAAC,UAAU,CAAC,CAAC,CAAC,CAAC,mBAAmB,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC,IAAI,CAAC,CAAC,CAAC;AAC7D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,YAAY,CAAC,qBAAqB,CAAC,CAAC,IAAI,CAAC,CAAC,CAAC;AACnD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,OAAO,CAAC,CAAC,QAAQ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,mBAAmB,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC;AACxC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,KAAK,CAAC,CAAC,eAAe,CAAC,MAAM,CAAC,MAAM,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,MAAM,CAAC,CAAC,CAAC,CAAC,CAAC,MAAM,CAAC,CAAC;AAClF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,YAAY,CAAC,uBAAuB,CAAC,CAAC;AACpD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,WAAW,CAAC,IAAI,CAAC,CAAC,KAAK,CAAC,CAAC,CAAC,OAAO,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC;AACH,CAAC,CAAC;AACF,MAAM,CAAC,OAAO,CAAC,SAAS,CAAC;"
+      }
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useI18n } from 'D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/vue-i18n/dist/vue-i18n.mjs';\nimport { useLang } from 'D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/composables/useState.js';\n/* unplugin-vue-components disabled */import { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, renderSlot as _renderSlot, normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nconst _sfc_main = {\n  __name: \"default\",\n  setup(__props) {\n    const { locale } = useI18n();\n    useLang().value = locale;\n    return (_ctx, _cache) => {\n      const _component_SharedNavbar = _resolveComponent(\"SharedNavbar\");\n      const _component_ClientOnly = _resolveComponent(\"ClientOnly\");\n      return _openBlock(), _createElementBlock(\"div\", null, [\n        _createVNode(_component_ClientOnly, null, {\n          default: _withCtx(() => [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(locale) == \"ar\" ? \"bodyAR\" : \"bodyEN\")\n            }, [\n              _createVNode(_component_SharedNavbar),\n              _renderSlot(_ctx.$slots, \"default\")\n            ], 2)\n          ]),\n          _: 3\n        })\n      ]);\n    };\n  }\n};\nexport default _sfc_main;\n",
+      "start": 1731941015218,
+      "end": 1731941015223,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC;AACH,CAAC,CAAC;AACF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941015224,
+      "end": 1731941015224,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941015224,
+      "end": 1731941015224,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1731941015225,
+      "end": 1731941015225,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1731941015225,
+      "end": 1731941015225,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/components/Shared/Navbar/index.vue\";\nimport { default as __nuxt_component_1 } from \"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/nuxt/dist/app/components/client-only\";\nimport { useI18n } from 'D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/vue-i18n/dist/vue-i18n.mjs';\nimport { useLang } from 'D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/composables/useState.js';\n/* unplugin-vue-components disabled */import { unref as _unref, resolveComponent as _resolveComponent, createVNode as _createVNode, renderSlot as _renderSlot, normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nconst _sfc_main = {\n  __name: \"default\",\n  setup(__props) {\n    const { locale } = useI18n();\n    useLang().value = locale;\n    return (_ctx, _cache) => {\n      const _component_SharedNavbar = __nuxt_component_0;\n      const _component_ClientOnly = __nuxt_component_1;\n      return _openBlock(), _createElementBlock(\"div\", null, [\n        _createVNode(_component_ClientOnly, null, {\n          default: _withCtx(() => [\n            _createElementVNode(\"div\", {\n              class: _normalizeClass(_unref(locale) == \"ar\" ? \"bodyAR\" : \"bodyEN\")\n            }, [\n              _createVNode(_component_SharedNavbar),\n              _renderSlot(_ctx.$slots, \"default\")\n            ], 2)\n          ]),\n          _: 3\n        })\n      ]);\n    };\n  }\n};\nexport default _sfc_main;\n",
+      "start": 1731941015225,
+      "end": 1731941015226,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1731941015226,
+      "end": 1731941015226,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1731941015227,
+      "end": 1731941015227,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1731941015228,
+      "end": 1731941015228,
+      "order": "normal"
+    }
+  ]
+}

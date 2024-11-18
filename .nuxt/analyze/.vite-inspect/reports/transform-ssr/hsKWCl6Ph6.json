@@ -1,0 +1,314 @@
+{
+  "resolvedId": "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/vuetify/lib/components/VCarousel/VCarouselItem.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { createVNode as _createVNode, mergeProps as _mergeProps, resolveDirective as _resolveDirective } from \"vue\";\n// Components\nimport { makeVImgProps, VImg } from \"../VImg/VImg.mjs\";\nimport { makeVWindowItemProps, VWindowItem } from \"../VWindow/VWindowItem.mjs\"; // Utilities\nimport { genericComponent, propsFactory, useRender } from \"../../util/index.mjs\"; // Types\nexport const makeVCarouselItemProps = propsFactory({\n  ...makeVImgProps(),\n  ...makeVWindowItemProps()\n}, 'VCarouselItem');\nexport const VCarouselItem = genericComponent()({\n  name: 'VCarouselItem',\n  inheritAttrs: false,\n  props: makeVCarouselItemProps(),\n  setup(props, _ref) {\n    let {\n      slots,\n      attrs\n    } = _ref;\n    useRender(() => {\n      const imgProps = VImg.filterProps(props);\n      const windowItemProps = VWindowItem.filterProps(props);\n      return _createVNode(VWindowItem, _mergeProps({\n        \"class\": \"v-carousel-item\"\n      }, windowItemProps), {\n        default: () => [_createVNode(VImg, _mergeProps(attrs, imgProps), slots)]\n      });\n    });\n  }\n});\n//# sourceMappingURL=VCarouselItem.mjs.map",
+      "start": 1731941046379,
+      "end": 1731941046843,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941046843,
+      "end": 1731941046843,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941046843,
+      "end": 1731941046843,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941046843,
+      "end": 1731941046843,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941046843,
+      "end": 1731941046843,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941046843,
+      "end": 1731941046843,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941046843,
+      "end": 1731941046843,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1731941046843,
+      "end": 1731941046844,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1731941046844,
+      "end": 1731941046844,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1731941046844,
+      "end": 1731941046844,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1731941046844,
+      "end": 1731941046844,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1731941046844,
+      "end": 1731941046844,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1731941046844,
+      "end": 1731941046844,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1731941046844,
+      "end": 1731941046844,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1731941046844,
+      "end": 1731941046844,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941046844,
+      "end": 1731941046844,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941046844,
+      "end": 1731941046844,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941046844,
+      "end": 1731941046844,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941046844,
+      "end": 1731941046844,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1731941046844,
+      "end": 1731941046844,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941046844,
+      "end": 1731941046844,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1731941046844,
+      "end": 1731941046845,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import { createVNode as _createVNode, mergeProps as _mergeProps, resolveDirective as _resolveDirective } from \"vue\";\nimport { makeVImgProps, VImg } from \"../VImg/VImg.mjs\";\nimport { makeVWindowItemProps, VWindowItem } from \"../VWindow/VWindowItem.mjs\";\nimport { genericComponent, propsFactory, useRender } from \"../../util/index.mjs\";\nexport const makeVCarouselItemProps = propsFactory({\n  ...makeVImgProps(),\n  ...makeVWindowItemProps()\n}, \"VCarouselItem\");\nexport const VCarouselItem = genericComponent()({\n  name: \"VCarouselItem\",\n  inheritAttrs: false,\n  props: makeVCarouselItemProps(),\n  setup(props, _ref) {\n    let {\n      slots,\n      attrs\n    } = _ref;\n    useRender(() => {\n      const imgProps = VImg.filterProps(props);\n      const windowItemProps = VWindowItem.filterProps(props);\n      return _createVNode(VWindowItem, _mergeProps({\n        \"class\": \"v-carousel-item\"\n      }, windowItemProps), {\n        default: () => [_createVNode(VImg, _mergeProps(attrs, imgProps), slots)]\n      });\n    });\n  }\n});\n",
+      "start": 1731941046845,
+      "end": 1731941047323,
+      "order": "normal",
+      "sourcemaps": "{\n  \"version\": 3,\n  \"sources\": [\"D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/vuetify/lib/components/VCarousel/VCarouselItem.mjs\"],\n  \"sourcesContent\": [\"import { createVNode as _createVNode, mergeProps as _mergeProps, resolveDirective as _resolveDirective } from \\\"vue\\\";\\n// Components\\nimport { makeVImgProps, VImg } from \\\"../VImg/VImg.mjs\\\";\\nimport { makeVWindowItemProps, VWindowItem } from \\\"../VWindow/VWindowItem.mjs\\\"; // Utilities\\nimport { genericComponent, propsFactory, useRender } from \\\"../../util/index.mjs\\\"; // Types\\nexport const makeVCarouselItemProps = propsFactory({\\n  ...makeVImgProps(),\\n  ...makeVWindowItemProps()\\n}, 'VCarouselItem');\\nexport const VCarouselItem = genericComponent()({\\n  name: 'VCarouselItem',\\n  inheritAttrs: false,\\n  props: makeVCarouselItemProps(),\\n  setup(props, _ref) {\\n    let {\\n      slots,\\n      attrs\\n    } = _ref;\\n    useRender(() => {\\n      const imgProps = VImg.filterProps(props);\\n      const windowItemProps = VWindowItem.filterProps(props);\\n      return _createVNode(VWindowItem, _mergeProps({\\n        \\\"class\\\": \\\"v-carousel-item\\\"\\n      }, windowItemProps), {\\n        default: () => [_createVNode(VImg, _mergeProps(attrs, imgProps), slots)]\\n      });\\n    });\\n  }\\n});\\n//# sourceMappingURL=VCarouselItem.mjs.map\"],\n  \"mappings\": \"AAAA,SAAS,eAAe,cAAc,cAAc,aAAa,oBAAoB,yBAAyB;AAE9G,SAAS,eAAe,YAAY;AACpC,SAAS,sBAAsB,mBAAmB;AAClD,SAAS,kBAAkB,cAAc,iBAAiB;AACnD,aAAM,yBAAyB,aAAa;AAAA,EACjD,GAAG,cAAc;AAAA,EACjB,GAAG,qBAAqB;AAC1B,GAAG,eAAe;AACX,aAAM,gBAAgB,iBAAiB,EAAE;AAAA,EAC9C,MAAM;AAAA,EACN,cAAc;AAAA,EACd,OAAO,uBAAuB;AAAA,EAC9B,MAAM,OAAO,MAAM;AACjB,QAAI;AAAA,MACF;AAAA,MACA;AAAA,IACF,IAAI;AACJ,cAAU,MAAM;AACd,YAAM,WAAW,KAAK,YAAY,KAAK;AACvC,YAAM,kBAAkB,YAAY,YAAY,KAAK;AACrD,aAAO,aAAa,aAAa,YAAY;AAAA,QAC3C,SAAS;AAAA,MACX,GAAG,eAAe,GAAG;AAAA,QACnB,SAAS,MAAM,CAAC,aAAa,MAAM,YAAY,OAAO,QAAQ,GAAG,KAAK,CAAC;AAAA,MACzE,CAAC;AAAA,IACH,CAAC;AAAA,EACH;AACF,CAAC;\",\n  \"names\": []\n}\n"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1731941047323,
+      "end": 1731941047323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1731941047323,
+      "end": 1731941047323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1731941047323,
+      "end": 1731941047323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1731941047323,
+      "end": 1731941047323,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1731941047323,
+      "end": 1731941047323,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1731941047324,
+      "end": 1731941047324,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1731941047324,
+      "end": 1731941047324,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941047324,
+      "end": 1731941047324,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941047324,
+      "end": 1731941047324,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941047324,
+      "end": 1731941047324,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941047324,
+      "end": 1731941047324,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941047324,
+      "end": 1731941047324,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941047324,
+      "end": 1731941047324,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941047324,
+      "end": 1731941047324,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941047324,
+      "end": 1731941047324,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "start": 1731941047324,
+      "end": 1731941047324,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "start": 1731941047324,
+      "end": 1731941047324,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941047324,
+      "end": 1731941047325,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941047324,
+      "end": 1731941047325,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941047325,
+      "end": 1731941047325,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941047325,
+      "end": 1731941047325,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941047325,
+      "end": 1731941047325,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941047325,
+      "end": 1731941047325,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1731941047325,
+      "end": 1731941047325,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1731941047325,
+      "end": 1731941047325,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1731941047325,
+      "end": 1731941047328,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1731941047328,
+      "end": 1731941047328,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1731941047328,
+      "end": 1731941047328,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,379 @@
+{
+  "resolvedId": "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/components/elements/loader.vue?vue&type=style&index=0&scoped=ec94a255&lang.scss",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n@import \"~/assets/styles/scss/theme/variables\";\n@import \"~/assets/styles/scss/theme/mixin\";\n#preloader {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 9999;\n  overflow: hidden;\n  // background: $blue;\n  // background: $primary;\n  background: linear-gradient(to left, #fff, #fff);\n}\n\n#preloaders {\n  width: 100%;\n  height: 100%;\n  position: relative;\n}\nimg.logoLoader {\n  // height: 130px;\n  // width: 350px;\n  top: 20%;\n  position: absolute;\n  left: 50%;\n  transform: translateX(-50%);\n  width: 300px;\n  @media (max-width: 991px) {\n    width: 200px;\n  }\n}\nimg.Loader {\n  top: 70%;\n  position: absolute;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n\n@-webkit-keyframes animate-preloader {\n  0% {\n    width: 400px;\n  }\n  25% {\n    width: 350px;\n  }\n  50% {\n    width: 400px;\n  }\n  75% {\n    width: 350px;\n  }\n  100% {\n    width: 400px;\n  }\n}\n\n@keyframes animate-preloader {\n  0% {\n    width: 200px;\n  }\n  25% {\n    width: 250px;\n  }\n  50% {\n    width: 300px;\n  }\n  75% {\n    width: 250px;\n  }\n  100% {\n    width: 200px;\n  }\n}\n",
+      "start": 1731941049021,
+      "end": 1731941049021,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/components/elements/loader.vue"
+        ],
+        "names": [],
+        "mappings": "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",
+        "file": "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/components/elements/loader.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<template>\n  <div>\n    <ClientOnly>\n      <div class=\"main-loader-overlay\" v-if=\"data.show\">\n        <div id=\"preloader\">\n          <div id=\"preloaders\" class=\"preloader\">\n            <img\n              id=\"logoLoader\"\n              class=\"logoLoader\"\n              src=\"/photos/nabt.png\"\n              alt=\"UnionLogo\"\n            />\n            <img\n              class=\"Loader\"\n              width=\"150\"\n              src=\"/loading/loadingnew2.svg\"\n              alt=\"\"\n            />\n          </div>\n        </div>\n      </div>\n    </ClientOnly>\n  </div>\n</template>\n\n<script setup>\nconst props = defineProps({\n  throttle: {\n    type: Number,\n    default: 200,\n  },\n  duration: {\n    type: Number,\n    default: 2000,\n  },\n  height: {\n    type: Number,\n    default: 3,\n  },\n});\n// Options & Data\nconst data = reactive({\n  percent: 0,\n  show: false,\n  canSucceed: true,\n});\n// Local variables\nlet _timer = null;\nlet _throttle = null;\nlet _cut;\n\n// Functions\nconst clear = () => {\n  _timer && clearInterval(_timer);\n  _throttle && clearTimeout(_throttle);\n  _timer = null;\n};\nconst start = () => {\n  clear();\n  data.percent = 0;\n  data.canSucceed = true;\n\n  if (props.throttle) {\n    _throttle = setTimeout(startTimer, props.throttle);\n  } else {\n    startTimer();\n  }\n};\nconst set = (num) => {\n  data.show = true;\n  data.canSucceed = true;\n  data.percent = Math.min(100, Math.max(0, Math.floor(num)));\n};\nconst increase = (num) => {\n  data.percent = Math.min(100, Math.floor(data.percent + num));\n};\nconst decrease = (num) => {\n  data.percent = Math.max(0, Math.floor(data.percent - num));\n};\nconst pause = () => clearInterval(_timer);\nconst resume = () => startTimer();\nconst finish = () => {\n  // isLoaded.value = useImageLouded().value.loaded\n  data.percent = 100;\n  hide();\n};\nconst hide = () => {\n  clear();\n  setTimeout(() => {\n    data.show = false;\n    // isLoaded.value = useImageLouded().value.loaded = false;\n    setTimeout(() => {\n      data.percent = 0;\n    }, 400);\n  }, 500);\n};\nconst startTimer = () => {\n  data.show = true;\n  _cut = 10000 / Math.floor(props.duration);\n  _timer = setInterval(() => {\n    increase(_cut);\n  }, 100);\n};\n\n// Hooks\nconst nuxtApp = useNuxtApp();\n\nnuxtApp.hook(\"page:start\", start);\nnuxtApp.hook(\"page:finish\", finish);\n\n// watchEffect(() => {\n//   isLoaded.value = useImageLouded().value.loaded\n//   console.log('loader check 1', isLoaded.value);\n// })\nonBeforeUnmount(() => clear);\n</script>\n<style lang=\"scss\" scoped>\n@import \"~/assets/styles/scss/theme/variables\";\n@import \"~/assets/styles/scss/theme/mixin\";\n#preloader {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 9999;\n  overflow: hidden;\n  // background: $blue;\n  // background: $primary;\n  background: linear-gradient(to left, #fff, #fff);\n}\n\n#preloaders {\n  width: 100%;\n  height: 100%;\n  position: relative;\n}\nimg.logoLoader {\n  // height: 130px;\n  // width: 350px;\n  top: 20%;\n  position: absolute;\n  left: 50%;\n  transform: translateX(-50%);\n  width: 300px;\n  @media (max-width: 991px) {\n    width: 200px;\n  }\n}\nimg.Loader {\n  top: 70%;\n  position: absolute;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n\n@-webkit-keyframes animate-preloader {\n  0% {\n    width: 400px;\n  }\n  25% {\n    width: 350px;\n  }\n  50% {\n    width: 400px;\n  }\n  75% {\n    width: 350px;\n  }\n  100% {\n    width: 400px;\n  }\n}\n\n@keyframes animate-preloader {\n  0% {\n    width: 200px;\n  }\n  25% {\n    width: 250px;\n  }\n  50% {\n    width: 300px;\n  }\n  75% {\n    width: 250px;\n  }\n  100% {\n    width: 200px;\n  }\n}\n</style>\n"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941049021,
+      "end": 1731941049021,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941049021,
+      "end": 1731941049021,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941049021,
+      "end": 1731941049021,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941049021,
+      "end": 1731941049022,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941049022,
+      "end": 1731941049022,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941049022,
+      "end": 1731941049022,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1731941049022,
+      "end": 1731941049022,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1731941049022,
+      "end": 1731941049022,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": "#preloader{background:linear-gradient(270deg,#fff,#fff);bottom:0;left:0;overflow:hidden;position:fixed;right:0;top:0;z-index:9999}#preloaders{height:100%;position:relative;width:100%}img.logoLoader{left:50%;position:absolute;top:20%;transform:translateX(-50%);width:300px}@media (max-width:991px){img.logoLoader{width:200px}}img.Loader{left:50%;position:absolute;top:70%;transform:translate(-50%,-50%)}@keyframes animate-preloader{0%{width:200px}25%{width:250px}50%{width:300px}75%{width:250px}to{width:200px}}",
+      "start": 1731941049022,
+      "end": 1731941049805,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "file": "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/components/elements/loader.vue",
+        "mappings": "AAGA,WAUE,6CALA,SAFA,OAIA,gBANA,eAGA,QAFA,MAIA,aAOF,YAEE,YACA,kBAFA,WAIF,eAKE,SADA,kBADA,QAGA,2BACA,YACA,yBARF,eASI,aAGJ,WAGE,SADA,kBADA,QAGA,+BAqBF,6BACE,GACE,YAEF,IACE,YAEF,IACE,YAEF,IACE,YAEF,GACE",
+        "names": [],
+        "ignoreList": [],
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/components/elements/loader.vue"
+        ],
+        "sourcesContent": [
+          null
+        ]
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1731941049805,
+      "end": 1731941049805,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1731941049805,
+      "end": 1731941049805,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1731941049805,
+      "end": 1731941049805,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "#preloader[data-v-ec94a255]{background:linear-gradient(270deg,#fff,#fff);bottom:0;left:0;overflow:hidden;position:fixed;right:0;top:0;z-index:9999}#preloaders[data-v-ec94a255]{height:100%;position:relative;width:100%}img.logoLoader[data-v-ec94a255]{left:50%;position:absolute;top:20%;transform:translateX(-50%);width:300px}@media (max-width:991px){img.logoLoader[data-v-ec94a255]{width:200px}}img.Loader[data-v-ec94a255]{left:50%;position:absolute;top:70%;transform:translate(-50%,-50%)}@keyframes animate-preloader-ec94a255{0%{width:200px}25%{width:250px}50%{width:300px}75%{width:250px}to{width:200px}}",
+      "start": 1731941049805,
+      "end": 1731941049807,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/components/elements/loader.vue",
+        "mappings": "AAAA,4BAAW,4CAA4C,CAAC,QAAQ,CAAC,MAAM,CAAC,eAAe,CAAC,cAAc,CAAC,OAAO,CAAC,KAAK,CAAC,YAAY,CAAC,6BAAY,WAAW,CAAC,iBAAiB,CAAC,UAAU,CAAC,gCAAe,QAAQ,CAAC,iBAAiB,CAAC,OAAO,CAAC,0BAA0B,CAAC,WAAW,CAAC,yBAAyB,gCAAe,WAAW,CAAC,CAAC,4BAAW,QAAQ,CAAC,iBAAiB,CAAC,OAAO,CAAC,8BAA8B,CAAC,sCAA6B,GAAG,WAAW,CAAC,IAAI,WAAW,CAAC,IAAI,WAAW,CAAC,IAAI,WAAW,CAAC,GAAG,WAAW,CAAC",
+        "names": [],
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/components/elements/loader.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1731941049807,
+      "end": 1731941049807,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941049807,
+      "end": 1731941049807,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941049807,
+      "end": 1731941049807,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941049807,
+      "end": 1731941049807,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941049807,
+      "end": 1731941049807,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1731941049807,
+      "end": 1731941049807,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941049807,
+      "end": 1731941049807,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1731941049807,
+      "end": 1731941049809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1731941049809,
+      "end": 1731941049809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "",
+      "start": 1731941049809,
+      "end": 1731941049809,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1731941049809,
+      "end": 1731941049809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1731941049809,
+      "end": 1731941049809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1731941049809,
+      "end": 1731941049809,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1731941049809,
+      "end": 1731941049809,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1731941049809,
+      "end": 1731941049810,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1731941049810,
+      "end": 1731941049810,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941049810,
+      "end": 1731941049810,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941049810,
+      "end": 1731941049810,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941049810,
+      "end": 1731941049810,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941049810,
+      "end": 1731941049810,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941049810,
+      "end": 1731941049810,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941049810,
+      "end": 1731941049810,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941049810,
+      "end": 1731941049810,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941049810,
+      "end": 1731941049810,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "result": "/* unplugin-vue-components disabled */",
+      "start": 1731941049810,
+      "end": 1731941049810,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/components/elements/loader.vue?vue&type=style&index=0&scoped=ec94a255&lang.scss"
+        ],
+        "sourcesContent": [
+          ""
+        ],
+        "names": [],
+        "mappings": ""
+      }
+    },
+    {
+      "name": "unplugin-vue-components",
+      "result": "/* unplugin-vue-components disabled */",
+      "start": 1731941049810,
+      "end": 1731941049810,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/components/elements/loader.vue?vue&type=style&index=0&scoped=ec94a255&lang.scss"
+        ],
+        "sourcesContent": [
+          ""
+        ],
+        "names": [],
+        "mappings": ""
+      }
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941049810,
+      "end": 1731941049810,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941049810,
+      "end": 1731941049810,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941049810,
+      "end": 1731941049810,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941049810,
+      "end": 1731941049810,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941049810,
+      "end": 1731941049811,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941049810,
+      "end": 1731941049811,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1731941049811,
+      "end": 1731941049811,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1731941049811,
+      "end": 1731941049811,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1731941049811,
+      "end": 1731941049811,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1731941049811,
+      "end": 1731941049811,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1731941049811,
+      "end": 1731941049811,
+      "order": "normal"
+    }
+  ]
+}

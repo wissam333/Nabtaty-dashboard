@@ -1,0 +1,379 @@
+{
+  "resolvedId": "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/SignIn.vue?vue&type=style&index=0&scoped=933fa409&lang.scss",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n.sign {\n  background-color: #eee;\n  min-height: 100vh;\n  display: flex;\n  align-items: center;\n  .title {\n    color: #003d29;\n  }\n  .logo {\n    width: 350px;\n    height: 150px;\n    object-fit: contain;\n    @media (max-width: 425px) {\n      width: 225px;\n      height: 90px;\n    }\n  }\n  .login {\n    input {\n      width: 100%;\n      padding: 5px;\n      border-radius: 3px;\n      border: none;\n      background-color: #003d29;\n      color: #fff;\n    }\n  }\n  .text-box {\n    position: relative;\n    display: block;\n    background-color: #003d29;\n    border-top-right-radius: 8px;\n    border-bottom-right-radius: 8px;\n    overflow: hidden;\n    @media (max-width: 991px) {\n      display: none !important;\n    }\n    img {\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      transform: translate(-50%, -50%);\n      width: 80%;\n      opacity: 0.3;\n      mix-blend-mode: multiply;\n    }\n    h4,\n    p {\n      position: relative;\n      z-index: 4;\n    }\n  }\n}\n.box {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  text-align: center;\n}\n\ninput,\ntextarea {\n  color: #000;\n}\n",
+      "start": 1731941046458,
+      "end": 1731941046458,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/SignIn.vue"
+        ],
+        "names": [],
+        "mappings": "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",
+        "file": "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/SignIn.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<template>\n  <section\n    class=\"sign gradient-form\"\n    :class=\"$i18n.locale === 'ar' ? 'bodyAR' : ''\"\n  >\n    <div class=\"container\">\n      <div class=\"row d-flex justify-content-center align-items-center h-100\">\n        <div class=\"col-xl-10\">\n          <div class=\"card rounded-3 text-black\">\n            <div class=\"row g-0\">\n              <div class=\"col-lg-6\">\n                <div class=\"card-body p-md-5 mx-md-4\">\n                  <div class=\"text-center\">\n                    <div class=\"d-flex mb-4 justify-content-center\">\n                      <img\n                        src=\"/photos/g.png\"\n                        alt=\"\"\n                        class=\"logo\"\n                        loading=\"lazy\"\n                      />\n                      <div class=\"d-flex flex-column\">\n                        <!-- <img style=\"width: 50px; height: 50px\" src=\"../assets/bdgOne.png\" alt=\"\" />\n                          <img style=\"width: 50px; height: 50px\" src=\"../assets/bdgTwo.png\" alt=\"\" /> -->\n                      </div>\n                    </div>\n\n                    <h4 class=\"title mt-1 mb-5 pb-1\">\n                      {{\n                        $i18n.locale === \"ar\"\n                          ? \"نحن فريق نبتتي 🌱\"\n                          : \"We are The Nabtaty Team 🌱\"\n                      }}\n                    </h4>\n                  </div>\n\n                  <div>\n                    <!-- <div class=\"d-flex flex-column-reverse mb-3\">\n                      <input\n                        v-model=\"username\"\n                        id=\"username\"\n                        type=\"text\"\n                        required\n                        maxlength=\"30\"\n                        :placeholder=\"\n                          $i18n.locale === 'ar'\n                            ? 'اكتب اسم المستخدم الخاص بك'\n                            : 'Type your username'\n                        \"\n                      />\n                      <label for=\"username\">{{\n                        $i18n.locale == \"ar\" ? \"اسم المستخدم\" : \"Username\"\n                      }}</label>\n                    </div>\n\n                    <div class=\"d-flex flex-column-reverse mb-3\">\n                      <input\n                        v-model=\"password\"\n                        id=\"password\"\n                        type=\"password\"\n                        required\n                        maxlength=\"30\"\n                        :placeholder=\"\n                          $i18n.locale === 'ar'\n                            ? 'اكتب كلمة المرور الخاصة بك'\n                            : 'Type your password'\n                        \"\n                        minlength=\"6\"\n                      />\n                      <label for=\"username\"\n                        >{{ $i18n.locale === \"ar\" ? \"كلمة السر\" : \"Password\" }}\n                      </label>\n                    </div> -->\n\n                    <!-- Submit button -->\n                    <div class=\"text-center pt-1 mb-1 pb-1\">\n                      <div class=\"login\">\n                        <input\n                          type=\"submit\"\n                          class=\"basic\"\n                          @click=\"login\"\n                          :value=\"\n                            $i18n.locale === 'ar'\n                              ? 'تسجيل الدخول عن طريق غوغل'\n                              : 'Log In With Google'\n                          \"\n                        />\n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n              <div\n                class=\"text-box col-lg-6 d-flex align-items-center gradient-custom-2\"\n              >\n                <div class=\"text-white box px-3 py-4 p-md-5 mx-md-4\">\n                  <img src=\"/photos/tabLogo.png\" alt=\"\" loading=\"lazy\" />\n                  <h4 class=\"mb-4\">\n                    {{\n                      $i18n.locale === \"ar\"\n                        ? \"نحن أكثر من مجرد متجر!\"\n                        : \"We’re more than just a store!\"\n                    }}\n                  </h4>\n\n                  <p class=\"small mb-0\">\n                    {{\n                      $i18n.locale === \"ar\"\n                        ? \"انضم إلينا في العالم الساحر للتسوق عبر الإنترنت واكتشف طريقة جديدة للعثور على الخضروات المفضلة لديك. مرحبًا بكم في نبتي، حيث تجتمع الراحة مع متعة رعاية الطبيعة! زراعة سعيدة!\"\n                        : \"Join us in the enchanting world of online plant shopping and uncover a fresh approach to finding your favorite greens. Welcome to Nabtty, where convenience meets the joy of nurturing nature! Happy planting!\"\n                    }}\n                  </p>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </section>\n</template>\n\n<script setup>\ndefinePageMeta({\n  layout: false, // This will disable the default layout\n});\nconst username = ref(\"\");\nconst password = ref(\"\");\nconst login = () => {\n  useAuth().value.isAuthenticated = true;\n  // const backendURL = \"https://server.nabtaty.com\";\n  // window.location.href = `${backendURL}/auth/providers/google`;\n  navigateTo(\"/\");\n};\n</script>\n\n<style lang=\"scss\" scoped>\n.sign {\n  background-color: #eee;\n  min-height: 100vh;\n  display: flex;\n  align-items: center;\n  .title {\n    color: #003d29;\n  }\n  .logo {\n    width: 350px;\n    height: 150px;\n    object-fit: contain;\n    @media (max-width: 425px) {\n      width: 225px;\n      height: 90px;\n    }\n  }\n  .login {\n    input {\n      width: 100%;\n      padding: 5px;\n      border-radius: 3px;\n      border: none;\n      background-color: #003d29;\n      color: #fff;\n    }\n  }\n  .text-box {\n    position: relative;\n    display: block;\n    background-color: #003d29;\n    border-top-right-radius: 8px;\n    border-bottom-right-radius: 8px;\n    overflow: hidden;\n    @media (max-width: 991px) {\n      display: none !important;\n    }\n    img {\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      transform: translate(-50%, -50%);\n      width: 80%;\n      opacity: 0.3;\n      mix-blend-mode: multiply;\n    }\n    h4,\n    p {\n      position: relative;\n      z-index: 4;\n    }\n  }\n}\n.box {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  text-align: center;\n}\n\ninput,\ntextarea {\n  color: #000;\n}\n</style>\n"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941046458,
+      "end": 1731941046458,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1731941046458,
+      "end": 1731941046458,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941046458,
+      "end": 1731941046458,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1731941046458,
+      "end": 1731941046458,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941046458,
+      "end": 1731941046458,
+      "order": "pre"
+    },
+    {
+      "name": "unplugin-vue-i18n",
+      "start": 1731941046458,
+      "end": 1731941046458,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1731941046458,
+      "end": 1731941046458,
+      "order": "pre"
+    },
+    {
+      "name": "server-only-component-transform",
+      "start": 1731941046458,
+      "end": 1731941046459,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": ".sign{align-items:center;background-color:#eee;display:flex;min-height:100vh}.sign .title{color:#003d29}.sign .logo{height:150px;-o-object-fit:contain;object-fit:contain;width:350px}@media (max-width:425px){.sign .logo{height:90px;width:225px}}.sign .login input{background-color:#003d29;border:none;border-radius:3px;color:#fff;padding:5px;width:100%}.sign .text-box{background-color:#003d29;border-bottom-right-radius:8px;border-top-right-radius:8px;display:block;overflow:hidden;position:relative}@media (max-width:991px){.sign .text-box{display:none!important}}.sign .text-box img{left:50%;mix-blend-mode:multiply;opacity:.3;position:absolute;top:50%;transform:translate(-50%,-50%);width:80%}.sign .text-box h4,.sign .text-box p{position:relative;z-index:4}.box{align-items:center;display:flex;flex-direction:column;justify-content:center;text-align:center}input,textarea{color:#000}",
+      "start": 1731941046459,
+      "end": 1731941047129,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "file": "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/SignIn.vue",
+        "mappings": "AACA,MAIE,mBAHA,sBAEA,aADA,iBAGA,aACE,cAEF,YAEE,aACA,yCAFA,YAGA,yBAJF,YAMI,YADA,aAKF,mBAKE,yBADA,YADA,kBAGA,WAJA,YADA,WAQJ,gBAGE,yBAEA,+BADA,4BAFA,cAIA,gBALA,kBAMA,yBAPF,gBAQI,wBAEF,oBAGE,SAIA,wBADA,WALA,kBACA,QAEA,+BACA,UAIF,qCAEE,kBACA,UAIN,KAGE,mBAFA,aAGA,sBAFA,uBAGA,kBAGF,eAEE",
+        "names": [],
+        "ignoreList": [],
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/SignIn.vue"
+        ],
+        "sourcesContent": [
+          null
+        ]
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1731941047129,
+      "end": 1731941047129,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1731941047129,
+      "end": 1731941047129,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1731941047129,
+      "end": 1731941047129,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": ".sign[data-v-933fa409]{align-items:center;background-color:#eee;display:flex;min-height:100vh}.sign .title[data-v-933fa409]{color:#003d29}.sign .logo[data-v-933fa409]{height:150px;-o-object-fit:contain;object-fit:contain;width:350px}@media (max-width:425px){.sign .logo[data-v-933fa409]{height:90px;width:225px}}.sign .login input[data-v-933fa409]{background-color:#003d29;border:none;border-radius:3px;color:#fff;padding:5px;width:100%}.sign .text-box[data-v-933fa409]{background-color:#003d29;border-bottom-right-radius:8px;border-top-right-radius:8px;display:block;overflow:hidden;position:relative}@media (max-width:991px){.sign .text-box[data-v-933fa409]{display:none!important}}.sign .text-box img[data-v-933fa409]{left:50%;mix-blend-mode:multiply;opacity:.3;position:absolute;top:50%;transform:translate(-50%,-50%);width:80%}.sign .text-box h4[data-v-933fa409],.sign .text-box p[data-v-933fa409]{position:relative;z-index:4}.box[data-v-933fa409]{align-items:center;display:flex;flex-direction:column;justify-content:center;text-align:center}input[data-v-933fa409],textarea[data-v-933fa409]{color:#000}",
+      "start": 1731941047129,
+      "end": 1731941047159,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/SignIn.vue",
+        "mappings": "AAAA,uBAAM,kBAAkB,CAAC,qBAAqB,CAAC,YAAY,CAAC,gBAAgB,CAAC,8BAAa,aAAa,CAAC,6BAAY,YAAY,CAAC,qBAAqB,CAAC,kBAAkB,CAAC,WAAW,CAAC,yBAAyB,6BAAY,WAAW,CAAC,WAAW,CAAC,CAAC,oCAAmB,wBAAwB,CAAC,WAAW,CAAC,iBAAiB,CAAC,UAAU,CAAC,WAAW,CAAC,UAAU,CAAC,iCAAgB,wBAAwB,CAAC,8BAA8B,CAAC,2BAA2B,CAAC,aAAa,CAAC,eAAe,CAAC,iBAAiB,CAAC,yBAAyB,iCAAgB,sBAAsB,CAAC,CAAC,qCAAoB,QAAQ,CAAC,uBAAuB,CAAC,UAAU,CAAC,iBAAiB,CAAC,OAAO,CAAC,8BAA8B,CAAC,SAAS,CAAC,uEAAqC,iBAAiB,CAAC,SAAS,CAAC,sBAAK,kBAAkB,CAAC,YAAY,CAAC,qBAAqB,CAAC,sBAAsB,CAAC,iBAAiB,CAAC,iDAAe,UAAU",
+        "names": [],
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/SignIn.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1731941047159,
+      "end": 1731941047159,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941047159,
+      "end": 1731941047159,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941047159,
+      "end": 1731941047159,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941047159,
+      "end": 1731941047159,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1731941047159,
+      "end": 1731941047159,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1731941047159,
+      "end": 1731941047160,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1731941047160,
+      "end": 1731941047160,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1731941047160,
+      "end": 1731941047167,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1731941047167,
+      "end": 1731941047167,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "",
+      "start": 1731941047167,
+      "end": 1731941047167,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1731941047167,
+      "end": 1731941047167,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1731941047167,
+      "end": 1731941047167,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1731941047167,
+      "end": 1731941047167,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1731941047167,
+      "end": 1731941047167,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1731941047168,
+      "end": 1731941047169,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1731941047170,
+      "end": 1731941047170,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941047170,
+      "end": 1731941047170,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1731941047170,
+      "end": 1731941047170,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941047170,
+      "end": 1731941047170,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-macros-transform",
+      "start": 1731941047170,
+      "end": 1731941047170,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941047171,
+      "end": 1731941047171,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-resource",
+      "start": 1731941047171,
+      "end": 1731941047171,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941047171,
+      "end": 1731941047171,
+      "order": "post"
+    },
+    {
+      "name": "nuxtjs:i18n-meta-deprecation",
+      "start": 1731941047171,
+      "end": 1731941047171,
+      "order": "post"
+    },
+    {
+      "name": "unplugin-vue-components",
+      "result": "/* unplugin-vue-components disabled */",
+      "start": 1731941047171,
+      "end": 1731941047172,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/SignIn.vue?vue&type=style&index=0&scoped=933fa409&lang.scss"
+        ],
+        "sourcesContent": [
+          ""
+        ],
+        "names": [],
+        "mappings": ""
+      }
+    },
+    {
+      "name": "unplugin-vue-components",
+      "result": "/* unplugin-vue-components disabled */",
+      "start": 1731941047171,
+      "end": 1731941047172,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/pages/SignIn.vue?vue&type=style&index=0&scoped=933fa409&lang.scss"
+        ],
+        "sourcesContent": [
+          ""
+        ],
+        "names": [],
+        "mappings": ""
+      }
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941047172,
+      "end": 1731941047172,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1731941047172,
+      "end": 1731941047172,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941047172,
+      "end": 1731941047172,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1731941047172,
+      "end": 1731941047172,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941047172,
+      "end": 1731941047173,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1731941047172,
+      "end": 1731941047173,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1731941047173,
+      "end": 1731941047173,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1731941047173,
+      "end": 1731941047173,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1731941047173,
+      "end": 1731941047173,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1731941047174,
+      "end": 1731941047174,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1731941047174,
+      "end": 1731941047174,
+      "order": "normal"
+    }
+  ]
+}

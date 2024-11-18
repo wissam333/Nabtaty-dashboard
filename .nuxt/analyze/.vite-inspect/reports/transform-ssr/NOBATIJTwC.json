@@ -1,0 +1,17 @@
+{
+  "resolvedId": "D:/Projects/Nabtaty-dashboard-de3bd56d6663c71275c3f076b188500fce6955c7/node_modules/nuxt/dist/app/types.js",
+  "transforms": [
+    {
+      "name": "__load__",
+      "result": "",
+      "start": 1731941044729,
+      "end": 1731941044729
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1731941044729,
+      "end": 1731941044729,
+      "order": "normal"
+    }
+  ]
+}
